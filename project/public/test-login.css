@@ -46,6 +46,14 @@ body {
     width: 300px;
 }
 
+.signup-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+}
+
 .form-input {
     margin: 5px;
     width: 80%;
@@ -94,4 +102,59 @@ input[type=password] {
 .create-account {
     font-size: 14px;
     margin-top: 10px;
+}
+
+
+/* testing */
+
+
+.signup-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    border: 5px solid rgba(160, 217, 239, 0.8);
+    border-radius: 10px;
+    margin: 20px;
+    color: rgb(100, 197, 236);
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    border: 5px solid rgba(160, 217, 239, 0.8);
+    border-radius: 10px;
+    margin: 20px;
+    color: rgb(100, 197, 236);
+}
+
+.bi-person-plus-fill {
+    font-size: 55px;
+    margin-left: 10px;
+
+}
+
+
+.bi-person-check-fill {
+    font-size: 55px;
+    margin-left: 10px;
+}
+
+
+.back {
+    margin-top: 35px;
+    width: 70px;
+    background-color: rgba(160, 217, 239, 0.8);
+    border: 5px solid rgba(160, 217, 239, 0.8);
+    border-radius: 10px;
+}
+
+.back:hover {
+    cursor: pointer;
 }

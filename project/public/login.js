@@ -1,3 +1,7 @@
+//swap 
+
+
+
 // login
 
 async function login() {
@@ -11,23 +15,28 @@ async function login() {
         console.log(username)
         console.log(password)
 
-        // const res = await fetch('/login', {
-        //     method: 'POST',
-        //     headers: {
-        //         contentType: 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //         username,
-        //         password
-        //     })
+        const res = await fetch('/login', {
+            method: 'POST',
+            headers: {
+                contentType: 'application/json'
+            },
+            body: JSON.stringify({
+                username,
+                //email
+                password
+            })
 
-        // })
-
-
-        // if (res.ok) {
-        // }
+        })
+        if (res.ok) {
+            window.location.replace('/homepage.html')
+        }
 
     })
 }
 
 login()
+
+
+// signup
+
+
