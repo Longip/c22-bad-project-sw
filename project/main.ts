@@ -1,4 +1,6 @@
 import express from "express";
+import expressSession from 'express-session'
+import { Client } from 'pg';   //npm install pg @types/pg dotenv 
 
 const app = express();
 const PORT = 8080;
@@ -21,6 +23,33 @@ app.post('/login', async (req, res) => {
 
 
 })
+
+
+// session + declare module
+
+app.use(
+    expressSession({
+        secret: 'Tecky Academy teaches typescript',
+        resave: true,
+        saveUninitialized: true,
+    }),
+)
+
+declare module 'express-session' {
+    interface SessionData {
+        name?: string
+    }
+}
+
+
+// connect DB 
+
+export const client = new Client({
+    database: process.env.DB_NAME,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD
+});
+
 
 
 
