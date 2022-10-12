@@ -95,6 +95,6 @@ app.use((req, res) => {
     res.redirect('/404.html')
 })
 console.log(`B`)
-// app.listen(8080, () => {
-//     console.log(`Listening on http://localhost:${PORT}`)
-// })
+app.listen(8080, () => {
+    console.log(`Listening on http://localhost:${PORT}`)
+})
