@@ -1,99 +1,100 @@
-console.log(`Listening  Testing`)
-// import express from "express";
-// import expressSession from 'express-session'
-// import { userRoutes } from './routes/userRoute'
-// import dotenv from 'dotenv';
-// import { Client } from 'pg';   //npm install pg @types/pg dotenv 
-// // import fetch from 'cross-fetch' //npm install cross-fetch
-// //npm install grant  dotenv @types/dotenv
+console.log(`A`)
 
-// export const app = express();
+import express from "express";
+import expressSession from 'express-session'
+import { userRoutes } from './routes/userRoute'
+import dotenv from 'dotenv';
+import { Client } from 'pg';   //npm install pg @types/pg dotenv 
+// import fetch from 'cross-fetch' //npm install cross-fetch
+//npm install grant  dotenv @types/dotenv
 
-// const PORT = 8080;
+export const app = express();
 
-// app.use(express.json());
+const PORT = 8080;
 
-// // login 
+app.use(express.json());
 
-// app.post('/login', async (req, res) => {
-//     const username = req.body.username
-//     const password = req.body.password
-//     if (!username || !password) {
-//         res.status(400).json({
-//             message: 'Invalid username or password'
-//         })
-//         return
-//     }
-//     let userResult = await client.query(`SELECT * FROM users WHERE username = $1`, [username])
-//     let dbUser = userResult.rows[0]
+// login 
 
-//     if (!dbUser) {
-//         res.status(400).json({
-//             message: 'Invalid username or password'
-//         })
-//         return
-//     }
+app.post('/login', async (req, res) => {
+    const username = req.body.username
+    const password = req.body.password
+    if (!username || !password) {
+        res.status(400).json({
+            message: 'Invalid username or password'
+        })
+        return
+    }
+    let userResult = await client.query(`SELECT * FROM users WHERE username = $1`, [username])
+    let dbUser = userResult.rows[0]
 
-
-// })
-
-// //signup 
-
-// app.post('/signup', async (req, res) => {
-
-//     const username = req.body.username
-//     const password = req.body.password
-//     // console.log(username, password)
-
-//     if (!username || !password) {
-//         res.status(400).json({
-//             message: 'Missing information'
-//         })
-//         return
-//     }
-//     await client.query(`INSERT INTO users (username, password, created_at) VALUES ($1, $2, NOW())`, [username, password])
-//     res.json({ message: 'Create successful' })
-// })
+    if (!dbUser) {
+        res.status(400).json({
+            message: 'Invalid username or password'
+        })
+        return
+    }
 
 
-// // session + declare module
+})
 
-// app.use(
-//     expressSession({
-//         secret: 'what to eat',
-//         resave: true,
-//         saveUninitialized: true,
-//     }),
-// )
+//signup 
 
-// declare module 'express-session' {
-//     interface SessionData {
-//         name?: string
-//     }
-// }
+app.post('/signup', async (req, res) => {
+
+    const username = req.body.username
+    const password = req.body.password
+    // console.log(username, password)
+
+    if (!username || !password) {
+        res.status(400).json({
+            message: 'Missing information'
+        })
+        return
+    }
+    await client.query(`INSERT INTO users (username, password, created_at) VALUES ($1, $2, NOW())`, [username, password])
+    res.json({ message: 'Create successful' })
+})
 
 
-// // connect DB 
+// session + declare module
+
+app.use(
+    expressSession({
+        secret: 'what to eat',
+        resave: true,
+        saveUninitialized: true,
+    }),
+)
+
+declare module 'express-session' {
+    interface SessionData {
+        name?: string
+    }
+}
 
 
-// dotenv.config();
+// connect DB 
 
-// export const client = new Client({
-//     database: process.env.DB_NAME,
-//     user: process.env.DB_USERNAME,
-//     password: process.env.DB_PASSWORD
-// });
 
-// client.connect();
+dotenv.config();
 
-// app.use('/user', userRoutes)
+export const client = new Client({
+    database: process.env.DB_NAME,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD
+});
 
-// app.use(express.static('public'));
+client.connect();
 
-// app.use((req, res) => {
-//     res.redirect('/404.html')
-// })
+app.use('/user', userRoutes)
 
+app.use(express.static('public'));
+
+app.use((req, res) => {
+    res.redirect('/404.html')
+})
+console.log(`B`)
 // app.listen(8080, () => {
 //     console.log(`Listening on http://localhost:${PORT}`)
 // })
