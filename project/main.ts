@@ -1,7 +1,7 @@
 import express from "express";
 import expressSession from 'express-session'
 import { Client } from 'pg';   //npm install pg @types/pg dotenv 
-import fetch from 'cross-fetch' //npm install cross-fetch
+// import fetch from 'cross-fetch' //npm install cross-fetch
 import grant from 'grant'   //npm install grant  dotenv @types/dotenv
 
 const app = express();
@@ -20,10 +20,36 @@ app.post('/login', async (req, res) => {
         })
         return
     }
-    // let userInfo = await client.query(`SELECT * FROM users WHERE username = $1`, [username])
-    // let dbUserInfo = userInfo.rows[0]
+    let userResult = await client.query(`SELECT * FROM users WHERE username = $1`, [username])
+    let dbUser = userResult.rows[0]
+
+    if (!dbUser) {
+        res.status(400).json({
+            message: 'Invalid username or password'
+        })
+        return
+    }
 
 
+})
+
+
+//signup 
+
+app.post('/signup', async (req, res) => {
+
+    const username = req.body.username
+    const password = req.body.password
+    console.log(username, password)
+
+    if (!username || !password) {
+        res.status(400).json({
+            message: 'Missing information'
+        })
+        return
+    }
+    await client.query(`INSERT INTO users (username, password, created_at) VALUES ($1, $2, NOW())`, [username, password])
+    res.json({ message: 'Create successful' })
 })
 
 

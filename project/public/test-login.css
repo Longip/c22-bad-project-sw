@@ -36,6 +36,7 @@ body {
     flex-direction: column;
     overflow: hidden;
     border: 8px solid rgba(160, 217, 239, 0.8);
+    z-index: 10;
 }
 
 .login-form {
@@ -80,6 +81,33 @@ input[type=password] {
     border-radius: 10px;
 }
 
+.login-btn {
+    margin-top: 15px;
+    width: 70px;
+    background-color: rgba(160, 217, 239, 0.8);
+    border: 5px solid rgba(160, 217, 239, 0.8);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.signup-btn {
+    margin-top: 15px;
+    width: 70px;
+    background-color: rgba(160, 217, 239, 0.8);
+    border: 5px solid rgba(160, 217, 239, 0.8);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.back {
+    margin-top: 35px;
+    width: 70px;
+    background-color: rgba(160, 217, 239, 0.8);
+    border: 5px solid rgba(160, 217, 239, 0.8);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 .submit-btn:hover {
     cursor: pointer;
 }
@@ -99,16 +127,27 @@ input[type=password] {
     cursor: pointer;
 }
 
-.create-account {
+.signup-refer {
     font-size: 14px;
     margin-top: 10px;
+    text-decoration: underline;
+    cursor: pointer;
 }
+
+.bi-person-plus-fill {
+    font-size: 25px;
+    text-decoration: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
 
 
 /* testing */
 
 
-.signup-box {
+/* .signup-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -147,14 +186,23 @@ input[type=password] {
 }
 
 
-.back {
-    margin-top: 35px;
-    width: 70px;
-    background-color: rgba(160, 217, 239, 0.8);
-    border: 5px solid rgba(160, 217, 239, 0.8);
-    border-radius: 10px;
-}
+
 
 .back:hover {
     cursor: pointer;
-}
+} */
+
+
+/* .login-inner-wrapper {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 390px;
+    height: 600px;
+    background: rgb(255, 255, 255, 0.9);
+    border-radius: 10px;
+    flex-direction: column;
+    overflow: hidden;
+    border: 8px solid rgba(160, 217, 239, 0.8);
+} */
