@@ -1,10 +1,13 @@
 import express from "express";
 import expressSession from 'express-session'
+import { userRoutes } from './routes/userRoute'
+import dotenv from 'dotenv';
 import { Client } from 'pg';   //npm install pg @types/pg dotenv 
 // import fetch from 'cross-fetch' //npm install cross-fetch
-import grant from 'grant'   //npm install grant  dotenv @types/dotenv
+//npm install grant  dotenv @types/dotenv
 
-const app = express();
+export const app = express();
+
 const PORT = 8080;
 
 app.use(express.json());
@@ -33,14 +36,13 @@ app.post('/login', async (req, res) => {
 
 })
 
-
 //signup 
 
 app.post('/signup', async (req, res) => {
 
     const username = req.body.username
     const password = req.body.password
-    console.log(username, password)
+    // console.log(username, password)
 
     if (!username || !password) {
         res.status(400).json({
@@ -72,34 +74,18 @@ declare module 'express-session' {
 
 // connect DB 
 
+
+dotenv.config();
+
 export const client = new Client({
     database: process.env.DB_NAME,
     user: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD
 });
 
+client.connect();
 
-//grant middleware
-
-
-const grantExpress = grant.express({
-    "defaults": {
-        "origin": "http://localhost:8080",
-        "transport": "session",
-        "state": true,
-    },
-    "google": {
-        "key": process.env.GOOGLE_CLIENT_ID || "",
-        "secret": process.env.GOOGLE_CLIENT_SECRET || "",
-        "scope": ["profile", "email"],
-        "callback": "/login/google"
-    }
-});
-
-app.use(grantExpress as express.RequestHandler);
-
-
-
+app.use('/user', userRoutes)
 
 app.use(express.static('public'));
 

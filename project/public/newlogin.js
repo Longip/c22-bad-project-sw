@@ -26,7 +26,7 @@ swapToSignupBtn.addEventListener('click', () => {
 // signup system
 
 async function signupInit() {
-    let signupFormElem = document.querySelector('.login-form')
+    let signupFormElem = document.querySelector('.signup-form')
 
     signupFormElem.addEventListener('submit', async (e) => {
         e.preventDefault();
