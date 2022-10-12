@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express'
-import client from './main'
+import { client } from '../main'
 export const userRoutes = express.Router();
 userRoutes.post('/login', login);
 
