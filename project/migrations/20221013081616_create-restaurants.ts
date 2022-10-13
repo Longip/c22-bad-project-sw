@@ -8,8 +8,6 @@ export async function up(knex: Knex): Promise<void> {
             table.increments();
             table.string("name");
             table.string("address");
-            table.integer("district_id");
-            table.integer("category_id");
             table.string("shop_photo");
             table.integer("like_count");
             table.integer("dislike_count");

@@ -2,14 +2,21 @@
 import express from "express";
 import expressSession from 'express-session'
 import { userRoutes } from './routes/userRoute'
+
 import dotenv from 'dotenv';
 import { Client } from 'pg';   //npm install pg @types/pg dotenv 
+import Knex from "knex"; //yarn add knex  pg @types/pg
 // import fetch from 'cross-fetch' //npm install cross-fetch
 //npm install grant  dotenv @types/dotenv
 
 export const app = express();
 
 const PORT = 8080;
+
+const knexConfigs = require("./knexfile");
+const configMode = process.env.NODE_ENV || "development";
+const knexConfig = knexConfigs[configMode];
+const knex = Knex(knexConfig);
 
 app.use(express.json());
 
