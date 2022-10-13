@@ -7,7 +7,7 @@ export async function up(knex: Knex): Promise<void> {
         await knex.schema.createTable("qty_report", (table) => {
             table.increments();
             table.integer("vietnamese");
-            table.integer("japaneses");
+            table.integer("japanese");
             table.integer("western");
             table.integer("chinese");
             table.integer("indian");

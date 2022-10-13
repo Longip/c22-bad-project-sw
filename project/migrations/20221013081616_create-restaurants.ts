@@ -8,7 +8,8 @@ export async function up(knex: Knex): Promise<void> {
             table.increments();
             table.string("name");
             table.string("address");
-            table.string("region");
+            table.integer("district_id");
+            table.integer("category_id");
             table.string("shop_photo");
             table.integer("like_count");
             table.integer("dislike_count");
@@ -16,6 +17,8 @@ export async function up(knex: Knex): Promise<void> {
             table.integer("lower_price");
             table.integer("category_id").unsigned();
             table.foreign("category_id").references("food_categories.id");
+            table.integer("district_id").unsigned();
+            table.foreign("district_id").references("districts.id");
             table.timestamps(false, true);
         });
     }
