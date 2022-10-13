@@ -10,15 +10,15 @@ swapToSignupBtn.addEventListener('click', () => {
     <form class="signup-form" >
     
         <label for="username">Username</label>
-        <input type="text" class="form-input" placeholder="Enter your username / email" id="username">
+        <input type="text" class="form-input" name="username" placeholder="Enter your username / email" id="username">
         <label for="password">Password</label>
-        <input type="password" class="form-input" placeholder="Enter your Password" id="password">
+        <input type="password" class="form-input" name="password" placeholder="Enter your Password" id="password">
     
         <input type="submit" value="Signup" class="signup-btn">
     
     </form>
     
-    <a href="./newlogin.html"><button class="back">Back</button></a>
+    <a href="./index.html"><button class="back">Back</button></a>
     `
 })
 
