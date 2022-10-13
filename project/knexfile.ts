@@ -7,26 +7,9 @@ dotenv.config();
 
 const config: { [key: string]: Knex.Config } = {
   development: {
-    // debug: true,
-    client: "postgresql",
-    connection: {
-      database: process.env.DB_NAME,
-      user: process.env.DB_USERNAME,
-      password: process.env.DB_PASSWORD
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: "knex_migrations"
-    }
-  },
-
-  test: {
     client: 'postgresql',
     connection: {
-      database: process.env.TESTDB_NAME,
+      database: process.env.DB_NAME,
       user: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD
     },
@@ -38,29 +21,28 @@ const config: { [key: string]: Knex.Config } = {
       tableName: 'knex_migrations'
     }
   },
-
-  staging: {
-    client: "postgresql",
+  test: {
+    client: 'postgresql',
     connection: {
-      database: "my_db",
-      user: "username",
-      password: "password"
+      host: process.env.POSTGRES_HOST,
+      database: process.env.POSTGRES_DB,
+      user: process.env.POSTGRES_USER,
+      password: process.env.POSTGRES_PASSWORD
     },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: "knex_migrations"
+      tableName: 'knex_migrations'
     }
   },
-
   production: {
     client: "postgresql",
     connection: {
-      database: "my_db",
-      user: "username",
-      password: "password"
+      database: process.env.DB_NAME,
+      user: process.env.DB_USERNAME,
+      password: process.env.DB_PASSWORD
     },
     pool: {
       min: 2,
