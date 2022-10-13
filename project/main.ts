@@ -1,5 +1,4 @@
-console.log(`A`)
-
+// console.log(`A`)
 import express from "express";
 import expressSession from 'express-session'
 import { userRoutes } from './routes/userRoute'
@@ -44,7 +43,7 @@ app.post('/signup', async (req, res) => {
 
     const username = req.body.username
     const password = req.body.password
-    // console.log(username, password)
+    console.log(username, password)
 
     if (!username || !password) {
         res.status(400).json({
@@ -94,7 +93,7 @@ app.use(express.static('public'));
 app.use((req, res) => {
     res.redirect('/404.html')
 })
-console.log(`B`)
+// console.log(`B`)
 app.listen(8080, () => {
     console.log(`Listening on http://localhost:${PORT}`)
 })
