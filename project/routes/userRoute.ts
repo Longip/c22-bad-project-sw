@@ -1,32 +1,11 @@
-import express, { Request, Response } from 'express'
-import { client } from '../main'
+import express from 'express'
+import { UserController } from "../controllers/user-controller"
+import { UserService } from "../services/user-service"
 export const userRoutes = express.Router();
-userRoutes.post('/login', login);
+
+let userService = new UserService()
+let userController = new UserController(userService)
 
 
-
-async function login(req: Request, res: Response) {
-
-    const username = req.body.username
-    const password = req.body.password
-
-    if (!username || !password) {
-        res.status(400).json({
-            message: 'Invalid username or password'
-        })
-        return
-    }
-
-    let userResult = await client.query(
-        `select * from users where username = $1`,
-        [username]
-    )
-    let dbUser = userResult.rows[0]
-
-    if (!dbUser) {
-        res.status(400).json({
-            message: 'Invalid username or password'
-        })
-        return
-    }
-}
+userRoutes.post('/login', userController.login);
+userRoutes.post('/register', userController.register);

@@ -2,68 +2,15 @@
 import express from "express";
 import expressSession from 'express-session'
 import { userRoutes } from './routes/userRoute'
-
 import dotenv from 'dotenv';
-import { Client } from 'pg';   //npm install pg @types/pg dotenv 
-import Knex from "knex"; //yarn add knex  pg @types/pg
-// import fetch from 'cross-fetch' //npm install cross-fetch
-//npm install grant  dotenv @types/dotenv
+import { Client } from 'pg';
 
 export const app = express();
-
 const PORT = 8080;
 
-const knexConfigs = require("./knexfile");
-const configMode = process.env.NODE_ENV || "development";
-const knexConfig = knexConfigs[configMode];
-const knex = Knex(knexConfig);
 
 app.use(express.json());
 
-// login 
-
-app.post('/login', async (req, res) => {
-    const username = req.body.username
-    const password = req.body.password
-    if (!username || !password) {
-        res.status(400).json({
-            message: 'Invalid username or password'
-        })
-        return
-    }
-    let userResult = await client.query(`SELECT * FROM users WHERE username = $1`, [username])
-    let dbUser = userResult.rows[0]
-
-    if (!dbUser) {
-        res.status(400).json({
-            message: 'Invalid username or password'
-        })
-        return
-    }
-
-
-})
-
-//signup 
-
-app.post('/signup', async (req, res) => {
-
-    const username = req.body.username
-    const password = req.body.password
-    console.log(username, password)
-
-    if (!username || !password) {
-        res.status(400).json({
-            message: 'Missing information'
-        })
-        return
-    }
-    await client.query(`INSERT INTO users (username, password, created_at) VALUES ($1, $2, NOW())`, [username, password])
-    res.json({ message: 'Create successful' })
-})
-
-
-// session + declare module
 
 app.use(
     expressSession({
