@@ -6,13 +6,9 @@ export async function up(knex: Knex): Promise<void> {
     if (!quantityTable) {
         await knex.schema.createTable("qty_report", (table) => {
             table.increments();
-            table.integer("vietnamese");
             table.integer("japanese");
-            table.integer("western");
-            table.integer("chinese");
-            table.integer("indian");
-            table.integer("korean");
-            table.integer("thai");
+            table.integer("dimsum");
+            table.integer("curry");
             table.integer("hot_pot");
             table.integer("dessert");
             table.integer("bakery");
@@ -23,6 +19,7 @@ export async function up(knex: Knex): Promise<void> {
             table.integer("noodles");
             table.integer("beverage");
             table.integer("fastfood");
+            table.integer("burger");
             table.timestamps(false, true);
         });
     }

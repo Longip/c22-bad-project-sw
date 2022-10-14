@@ -2,8 +2,8 @@ import { Knex } from "knex";
 
 
 export async function up(knex: Knex): Promise<void> {
-    const foodCategoriesTable = await knex.schema.hasTable("food_categories");
-    if (!foodCategoriesTable) {
+    const districtTable = await knex.schema.hasTable("food_categories");
+    if (!districtTable) {
         await knex.schema.createTable("food_categories", (table) => {
             table.increments();
             table.string("name");
@@ -16,4 +16,3 @@ export async function up(knex: Knex): Promise<void> {
 export async function down(knex: Knex): Promise<void> {
     await knex.schema.dropTableIfExists("food_categories");
 }
-
