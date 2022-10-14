@@ -20,6 +20,7 @@ export class UserController {
         }
 
         let dbUser = await this.userService.getUserByUsername(username)
+        console.log("dbUser: ", dbUser)
 
         if (!dbUser) {
             res.status(400).json({
@@ -34,6 +35,7 @@ export class UserController {
         console.log("request body: ", req.body)
         const username = req.body.username
         const password = req.body.password
+
         console.log(username, password)
 
         if (!username || !password) {

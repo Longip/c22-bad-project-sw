@@ -50,9 +50,9 @@ async function signupInit() {
         })
 
         if (res.ok) {
-            // setTimeout(() => {
-            //     window.location.replace('/index.html'f)
-            // }, 2000)
+            setTimeout(() => {
+                window.location.replace('/index.html')
+            }, 2000)
             console.log("sign up successfully")
 
         } else {
