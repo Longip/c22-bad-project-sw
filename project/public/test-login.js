@@ -13,7 +13,7 @@ loginClicked.addEventListener('click', () => {
     signupClicked.style.display = 'none';
     loginClicked.style.display = 'none';
 
-    loginWrapperContent.innerHTML = `
+    loginWrapperContent.innerHTML = /*html*/`
 
     <h2>Login</h2>
     <form class="login-form">
@@ -36,7 +36,7 @@ signupClicked.addEventListener('click', () => {
     signupClicked.style.display = 'none';
     loginClicked.style.display = 'none';
 
-    loginWrapperContent.innerHTML = `
+    loginWrapperContent.innerHTML = /*html*/`
 
     <h2>Signup</h2>
     <form class="signup-form" >

@@ -4,7 +4,7 @@ const wrapperContent = document.querySelector('.login-wrapper')
 const swapToSignupBtn = document.querySelector('.signup-refer')
 
 swapToSignupBtn.addEventListener('click', () => {
-    wrapperContent.innerHTML = `
+    wrapperContent.innerHTML = /*html*/`
 
     <h2>Signup</h2>
     <form class="signup-form" >
@@ -20,6 +20,8 @@ swapToSignupBtn.addEventListener('click', () => {
     
     <a href="./index.html"><button class="back">Back</button></a>
     `
+
+    signupInit();
 })
 
 
@@ -37,19 +39,21 @@ async function signupInit() {
         }
 
         console.log(signupFormObj)
+        console.log("successfully submitted the form")
 
-        const res = await fetch('/signup', {
+        const res = await fetch('/user/register', {
             method: 'POST',
             headers: {
-                contentType: 'application/json'
+                "Content-Type": 'application/json'
             },
             body: JSON.stringify(signupFormObj)
         })
 
         if (res.ok) {
-            setTimeout(() => {
-                window.location.replace('/index.html')
-            }, 2000)
+            // setTimeout(() => {
+            //     window.location.replace('/index.html'f)
+            // }, 2000)
+            console.log("sign up successfully")
 
         } else {
             console.log("failed")
@@ -57,7 +61,6 @@ async function signupInit() {
     })
 }
 
-signupInit();
 
 
 // login system

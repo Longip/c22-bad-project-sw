@@ -1,6 +1,8 @@
 import express from "express"
 import { UserService } from "../services/user-service"
 
+// import {chekckPassword, checkPassword} from "../utils/hash"
+
 
 
 export class UserController {
@@ -25,11 +27,11 @@ export class UserController {
             })
             return
         }
-
-
     }
 
     register = async (req: express.Request, res: express.Response) => {
+        console.log("server side receives signal")
+        console.log("request body: ", req.body)
         const username = req.body.username
         const password = req.body.password
         console.log(username, password)
@@ -41,8 +43,8 @@ export class UserController {
             return
         }
         await this.userService.createUser(username, password)
+
         res.json({ message: 'Create successfully' })
     }
-
 }
 

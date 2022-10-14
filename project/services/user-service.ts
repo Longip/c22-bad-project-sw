@@ -1,24 +1,25 @@
-import { client } from "../main";
+import { Knex } from "knex";
+
 
 export class UserService {
-    constructor() { }
+    constructor(private knex: Knex) { }
 
     async getUserByUsername(username: string): Promise<any> {
         (
-            await client.query(/*sql*/`
+            await this.knex.raw(/*sql*/`
             SELECT * 
             FROM users 
-            WHERE username = $1
+            WHERE username = ?
         `,
                 [username])
         ).rows[0]
     }
 
     async createUser(username: string, password: string): Promise<any> {
-        await client.query(/*sql*/`
+        await this.knex.raw(/*sql*/`
             INSERT INTO users 
             (username, password, created_at) 
-            VALUES ($1, $2, NOW())
+            VALUES (?,?, NOW())
         `,
             [username, password])
     }
