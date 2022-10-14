@@ -7,10 +7,9 @@ export async function up(knex: Knex): Promise<void> {
         if (!userTable) {
             await knex.schema.createTable("users", (table) => {
                 table.increments();
-                table.string("name");
+                table.string("username");
                 table.string("password");
                 table.string("email");
-                table.integer("qty_report_id")
                 table.timestamps(false, true);
             });
         }
