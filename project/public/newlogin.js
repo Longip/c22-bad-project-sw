@@ -50,9 +50,9 @@ async function signupInit() {
         })
 
         if (res.ok) {
-            setTimeout(() => {
-                window.location.replace('/index.html')
-            }, 2000)
+            // setTimeout(() => {
+            //     window.location.replace('/index.html')
+            // }, 2000)
             console.log("sign up successfully")
 
         } else {
@@ -77,7 +77,7 @@ async function loginInit() {
         console.log(username)
         console.log(password)
 
-        const res = await fetch('/login', {
+        const res = await fetch('/user/login', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
