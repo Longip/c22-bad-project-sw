@@ -1,6 +1,9 @@
 import express from "express"
 import { UserService } from "../services/user-service"
 import { checkPassword } from "../utils/hash"
+import fetch from "cross-fetch"
+import crypto from "crypto"
+import { User } from "../model/User"
 
 
 export class UserController {
@@ -11,7 +14,7 @@ export class UserController {
         const username = req.body.username
         const password = req.body.password
 
-        // If no input
+        // Check input
         if (!username || !password) {
             res.status(400).json({
                 message: 'Invalid username or password'
@@ -19,10 +22,10 @@ export class UserController {
             return
         }
 
+        // Check DB
         let userResult = await this.userService.getUserByUsername(username)
-        let dbUser = userResult.rows[0]
+        let dbUser: User = userResult.rows[0]
 
-        //If such username does not exist
         if (!dbUser) {
             res.status(400).json({
                 message: 'No such user'
@@ -35,15 +38,49 @@ export class UserController {
 
         if (isValid) {
             console.log('login successfully')
-            res.status(200).json({
-                message: 'login successfully'
-            })
+            req.session.name = dbUser.username
+            res.status(200).redirect('/homepage.html')
         }
         else {
             res.status(401).json({
                 message: 'wrong password'
             })
         }
+
+
+    }
+
+    loginGoogle = async (req: express.Request, res: express.Response) => {
+        const accessToken = req.session?.['grant'].response.access_token;
+        console.log("accessToken: ", accessToken)
+        const fetchRes = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
+            method: "get",
+            headers: {
+                "Authorization": `Bearer ${accessToken}`
+            }
+        });
+        const result = await fetchRes.json();
+        console.log("google result:", result)
+
+        // Create a random password for Google users
+        const randomString = crypto.randomBytes(32).toString("hex")
+
+        const username = result.email
+        const password = randomString
+        const email = result.email
+
+        let userResult = await this.userService.getUserByUsername(username)
+        let dbUser: User = userResult.rows[0]
+        if (dbUser) {
+            res.redirect('/homepage.html')
+            return
+        }
+        await this.userService.createUser(username, password, email)
+
+        req.session.name = dbUser["username"]
+
+        res.redirect('/homepage.html')
+
     }
 
     register = async (req: express.Request, res: express.Response) => {
@@ -55,10 +92,11 @@ export class UserController {
         console.log(username, password)
 
         let userResult = await this.userService.getUserByUsername(username)
-        let dbUser = userResult.rows[0]
+        let dbUser: User = userResult.rows[0]
 
         if (dbUser) {
             console.log("user found in DB")
+            console.log(dbUser)
             res.status(400).json({
                 message: 'User already exists'
             })
@@ -71,7 +109,7 @@ export class UserController {
             })
             return
         }
-        await this.userService.createUser(username, password)
+        await this.userService.createUser(username, password, null)
 
         res.json({ message: 'Create successfully' })
     }

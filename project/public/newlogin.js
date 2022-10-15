@@ -50,9 +50,9 @@ async function signupInit() {
         })
 
         if (res.ok) {
-            // setTimeout(() => {
-            //     window.location.replace('/index.html')
-            // }, 2000)
+            setTimeout(() => {
+                window.location.replace('/index.html')
+            }, 2000)
             console.log("sign up successfully")
 
         } else {
@@ -88,7 +88,8 @@ async function loginInit() {
             })
         })
         if (res.ok) {
-            location.replace('/index.html')
+            console.log("login successfully")
+            location.replace('/homepage.html')
         }
     })
 }

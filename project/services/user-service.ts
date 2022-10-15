@@ -18,16 +18,16 @@ export class UserService {
         return userResult
     }
 
-    async createUser(username: string, password: string): Promise<any> {
+    async createUser(username: string, password: string, email: string | null): Promise<any> {
 
         let hashedPassword = await hashPassword(password)
 
         let userResult = await this.knex.raw(/*sql*/`
             INSERT INTO users 
-            (username, password, created_at) 
-            VALUES (?,?, NOW())
+            (username, password, email, created_at) 
+            VALUES (?,?,?, NOW())
         `,
-            [username, hashedPassword])
+            [username, hashedPassword, email])
 
         return userResult
     }
