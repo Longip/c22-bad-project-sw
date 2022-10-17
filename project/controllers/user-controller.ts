@@ -113,5 +113,13 @@ export class UserController {
 
         res.json({ message: 'Create successfully' })
     }
-}
 
+    //logout
+
+    logout = async (req: express.Request, res: express.Response) => {
+        req.session.destroy(() => {
+            console.log('user logged out')
+        })
+        res.redirect('/index.html')
+    }
+}

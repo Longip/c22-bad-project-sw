@@ -5,11 +5,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="user-profile.css">
     <title>User Profile</title>
 </head>
 
 <body>
+    <div class="body-container">
+        <div class="left-bg"></div>
 
+        <div class="userlogo"><i class="fa-regular fa-circle-user"></i></div>
+        <div class="login-container">
+
+            <div class="login-wrapper">
+                <h1>Welcome Back</h1>
+                <h2>Login</h2>
+                <form class="login-form">
+
+                    <label for="username">Username</label>
+                    <input type="text" class="form-input" placeholder="Enter your username / email" id="username">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-input" placeholder="Enter your Password" id="password">
+
+                    <input type="submit" value="Login" class="login-btn">
+
+                </form>
+                <div class="login-suggest">or login using</div>
+
+
+                <a href="/connect/google" class="google-logo"><img src="google-icon.jpg" alt="GOOGLE"></a>
+
+                <div class="signup-refer">Don't have an account yet ? <i class="bi bi-person-plus-fill"></i></div>
+            </div>
+
+        </div>
+        <div class="right-bg"></div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/dda97d4095.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
