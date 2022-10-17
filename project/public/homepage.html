@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Domine&family=Dosis&family=League+Gothic&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="homepage.css">
     <title>Home</title>
@@ -13,35 +18,54 @@
 <body>
     <div class="page-container">
         <section class="banner-container">
-            <div class="banner-test-wrapper">
-                <div class="logo"><i class="fa-solid fa-utensils"></i></div>
-                <div class="banner-text">Eat Wat 7</div>
+        </section>
+
+        <section class="navbar-container">
+            <div class="navbar">
+                <div class="navbar-content">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#explore">Explore</a></li>
+                    </ul>
+                    <div class="dropdown">
+                        <button class="dropdown-btn"><i class="bi bi-list"></i></button>
+                        <div class="dropdown-content">
+                            <a href="#"><i class="fa-solid fa-user-pen"></i> Your Info</a>
+                            <a href="#"><i class="fa-solid fa-camera-retro"></i> Your Album</a>
+                            <a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </section>
 
         <section class="content-container">
-            <div class="feed-container">
-                <div class="ai-restaurant-wrapper">
-                    <div class="ai-restaurant card"></div>
-                    <div class="ai-restaurant card"></div>
-                    <div class="ai-restaurant card"></div>
-                    <div class="ai-restaurant card"></div>
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <h3>image area</h3>
+                        <p>Name:</p>
+                        <p>Address:</p>
+                        <p>Phone:</p>
+                        <p>Price:</p>
+                    </div>
                 </div>
-                <div class="explore-restaurant-wrapper">
-                    <div class="alternate-restaurant card"></div>
-                    <div class="alternate-restaurant card"></div>
-
+                <div class="column">
+                    <div class="card"></div>
                 </div>
-
+                <div class="column">
+                    <div class="card"></div>
+                </div>
             </div>
         </section>
-        <section class="footer-container">
+        <!-- <section class="footer-container">
             <div class="home-log"><i class="bi bi-house-heart"></i></div>
             <div class="camera-log"><i class="bi bi-camera-fill"></i></div>
             <div class="user-log"><i class="bi bi-person-circle"></i></i></div>
 
-        </section>
+        </section> -->
 
     </div>
 
