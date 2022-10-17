@@ -87,6 +87,7 @@ async function loginInit() {
                 password
             })
         })
+        console.log("sent login request")
         if (res.ok) {
             console.log("login successfully")
             location.replace('/homepage.html')

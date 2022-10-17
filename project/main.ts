@@ -44,7 +44,7 @@ client.connect();
 // Google Login
 const grantExpress = grant.express({
     "defaults": {
-        "origin": "http://localhost:8080",
+        "origin": "http://localhost:8080", // To be changed to the elastic IP if not working on AWS server
         "transport": "session",
         "state": true,
     },
