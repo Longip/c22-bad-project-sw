@@ -4,6 +4,7 @@ import expressSession from 'express-session'
 import { userRoutes } from './routes/userRoute'
 import dotenv from 'dotenv';
 import { Client } from 'pg';
+import grant from 'grant';
 
 export const app = express();
 const PORT = 8080;
@@ -40,7 +41,35 @@ export const client = new Client({
 
 client.connect();
 
+// Google Login
+const grantExpress = grant.express({
+    "defaults": {
+        "origin": "http://localhost:8080",
+        "transport": "session",
+        "state": true,
+    },
+    "google": {
+        "key": process.env.GOOGLE_CLIENT_ID || "",
+        "secret": process.env.GOOGLE_CLIENT_SECRET || "",
+        "scope": ["profile", "email"],
+        "callback": "/user/login/google"
+    }
+});
+
+app.use(grantExpress as express.RequestHandler);
+
+
+
+
 app.use('/user', userRoutes)
+
+
+
+
+
+
+
+
 
 app.use(express.static('public'));
 
