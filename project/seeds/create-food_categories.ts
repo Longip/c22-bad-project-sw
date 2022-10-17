@@ -36,7 +36,7 @@ export async function seed(knex: Knex): Promise<void> {
 
     const options = {
         method: 'GET',
-        headers: { cookie: 'DefaultRegionIds=%7B%22hk%22%3A0%7D; RegionId=0; webhash=68c4458d-eecd-4870-91f2-d0a1274b0a43; isguest=1; _gcl_au=1.1.1989161410.1664529584; __utmc=183676536; CookiesAgreed=agreed; CultureInfo=zh-HK; __utmz=183676536.1665627171.6.2.utmcsr=hk.search.yahoo.com|utmccn=(referral)|utmcmd=referral|utmcct=/; autha=iQ-gC_r5Nl2Bp97XQFaDvTRtrCJB2GtUJc6I7LTPY2RdPQVUl0JZm_JvNv21H1cfrTO2BKxiQr0tZluHBMa1n6anFUfQsSoNg7XeYvRrKT2j92ezv1Xoh88K1AJx6PFJvfmyn1knqZs8voUT3dWteOVuR-MOb8nSf5Ia4-XxHS34QY6RyGV6SbmF1UUqpDzblhakKiCx_UCNtO91ZsNYpj6quo4qdPlCFNEWv7Hh07tsc1fvlsW0S8ZxDFVEllFBhQTowRdKnppcTYV4xzUaCjpMKvBxyZhiK6jVamzxUUa_Q_O096n8lwzfu_WJ2onsZhMOqIWTx2j6OZ0Fsya6pPAeVfTmVXnZKbKUD2MECHBw5nfug3ua15RPodHR2Wae-H9o1aV767nF5QUsQqVDJmj8jr2DbeHs9PMfhHTWz-g6DDBR5KEVcP8lFrGDtrINPbxzlg; authr=bDgJ1xDEjzAjerb3Kq-H6pS-H2VvJ6ORc-orreFd4sIfmr-2UcYHFcDKEuTffC2hmhLqFf1aNryPS1gMTZBJtnodMsT9Wla16v4FnrJ1M0xcw4UHjEaBZr9UOuAd_tkbnLmX8N4TOw2dG_1F9ahfKPmXqjsZOsR3GZ5KyJ1jX7EEsIcBNBs3Rhvc3XvioZIC_lo7TYlwUpBDrwI1L3gMCtZ0L9gfiE3H8BDOHGPz4iHmOXZFmmTwXMwFzswjwtiobFwUQFmSeXXt2fUiCsLOfUheXYzN59geBmcfZz0SXUp9YfTJaB6RUc58PS5X4aM9ujI-Zd9cWcOH6WoTxYzK_fp74-agG6nVsbTr7Xs5AYpjMTNazzP-fb9kgT5tFP8Xpr-qznFnmldr-IO080BlVFZeV3fq-zdykj5DBo_qVPJUNsRcLyYFSTOmpGly660jnJe_ZjHMPZIW0UTnwJ5G2cCVXLY; authe=I5MbeYB1HGZ06FjyjOarr1yyelDB3WfRhwXicEdwkWr/nhrZHX7ejEtoulx1fe624g4y0E5EnKTrS3gdcYhzUNTvADExnyuQ7GMmfA0md+U=; __utma=183676536.968376170.1664529584.1665801014.1665971259.16; __utmt_UA-652541-1=1; __utmb=183676536.1.10.1665971259; _gid=GA1.2.1063574153.1665971259; _ga_WM2DLEGHYP=GS1.1.1665971258.18.1.1665971258.0.0.0; _ga=GA1.1.968376170.1664529584' }
+        headers: { cookie: 'DefaultRegionIds=%7B%22hk%22%3A0%7D; RegionId=0; webhash=68c4458d-eecd-4870-91f2-d0a1274b0a43; isguest=1; _gcl_au=1.1.1989161410.1664529584; __utmc=183676536; CookiesAgreed=agreed; CultureInfo=zh-HK; _gid=GA1.2.1063574153.1665971259; __utmz=183676536.1665976347.17.3.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); autha=QDC17fX9Qyf2NNcJy-AFbh8eVRhmudhhybq33ntIv1g6TtRBv9BRV8svHrQXTk72zXk96a__oOsylbBrnMcJsyplU89KwGMV4RpZKv_102e3SnyYf56gY7DDubPHthZgpTEe8qmJihv4PwcQuw50ACckWS72YAwq_hPmq_Gcp7L7JV-UEo7cCO8QAKrwOclDnaqieIsVJ7G3nSwgLx8LKuBo4Mv_zCkWitU7WM-kQHSfX2AR6gX7dEJCC0xg1yOol0B9Q3YX1wzvfqPuS4Cwk91gWMIvTYsLURZJwzbpi0gHhyHRR0IVGodL-9k-3rk5azqhqcaTP78GqI8WkGjrAAGqS2D9c1a47YSoe1teTs-9OtwayldcdMye3NZG6nCf399uDnlkKlNeo59HxwBBTlk_1e8d-QV4OWOvgX3fe063qtmEV0wnnGZhrIVZoCMpaxduYg; authr=vseHpi9pgumhlja8vKxkG2AwLtO8LeziHp0speVgRDTGQmL72nE5SOHetixiX9lhdzNUfNPSXKNmU0qtm2XnWHI0PKo_x_q-BrHyqvMlZf2pAZCKDghFh8VX2TXXOE73u6ZKTvolpsV2W4pm0HQgXa5JPhDLF3m8F5iqWramAV5KDsnDzdzVcee5BUJDCrKrw6QCZowXjvlSBjK5j6uzIOFpBWtZ5hKcqEpQwiqdndqgY0uqOYsSLivMOWHqUFHgFhg9xgD4kTH03RQV8rde0BhYEFm4Gc8DsKmOGoODalvlalrwtNy0U3GRZptFYvmt8sXIl_MrrbFATU-pfDC67RR0LD7VV8p7h38ju1NeIxUZZiT8g7Ud4uMwSOB52-q--6rLwCAEMtxRswGH0znyqkDBGU6ZlQieAkGsBPWGVhURxdMmDjbn2KFLrpvLht5E8ihtKA; authe=I5MbeYB1HGZ06FjyjOarr1yyelDB3WfRhwXicEdwkWr/nhrZHX7ejEtoulx1fe624g4y0E5EnKTrS3gdcYhzUCFnG4zZ3OidBblK3Pu1b7w=; __utma=183676536.968376170.1664529584.1665971259.1665971259.17; __utmt_UA-652541-1=1; __utmb=183676536.15.9.1665976667000; _ga_WM2DLEGHYP=GS1.1.1665976347.19.1.1665977647.0.0.0; _ga=GA1.1.968376170.1664529584' }
     };
 
     //日本菜 1
@@ -72,13 +72,14 @@ export async function seed(knex: Knex): Promise<void> {
                     name: searchResult.paginationResult.results[i].name,
                     address: searchResult.paginationResult.results[i].address,
                     district_id: districtId,
-                    //change
                     category_id: 1,
                     shop_photo: searchResult.paginationResult.results[i].doorPhoto?.url || "no photo",
                     like_count: searchResult.paginationResult.results[i].scoreSmile,
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
-                    price_range_id: price_range_id
+                    price_range_id: price_range_id,
+                    latitude: searchResult.paginationResult.results[i].mapLatitude,
+                    longitude: searchResult.paginationResult.results[i].mapLongitude
                 },
             ]).into('restaurants');
 
@@ -126,7 +127,9 @@ export async function seed(knex: Knex): Promise<void> {
                     like_count: searchResult.paginationResult.results[i].scoreSmile,
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
-                    price_range_id: price_range_id
+                    price_range_id: price_range_id,
+                    latitude: searchResult.paginationResult.results[i].mapLatitude,
+                    longitude: searchResult.paginationResult.results[i].mapLongitude
                 },
             ]).into('restaurants');
 
@@ -174,7 +177,9 @@ export async function seed(knex: Knex): Promise<void> {
                     like_count: searchResult.paginationResult.results[i].scoreSmile,
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
-                    price_range_id: price_range_id
+                    price_range_id: price_range_id,
+                    latitude: searchResult.paginationResult.results[i].mapLatitude,
+                    longitude: searchResult.paginationResult.results[i].mapLongitude
                 },
             ]).into('restaurants');
 
@@ -222,7 +227,9 @@ export async function seed(knex: Knex): Promise<void> {
                     like_count: searchResult.paginationResult.results[i].scoreSmile,
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
-                    price_range_id: price_range_id
+                    price_range_id: price_range_id,
+                    latitude: searchResult.paginationResult.results[i].mapLatitude,
+                    longitude: searchResult.paginationResult.results[i].mapLongitude
                 },
             ]).into('restaurants');
 
@@ -270,7 +277,9 @@ export async function seed(knex: Knex): Promise<void> {
                     like_count: searchResult.paginationResult.results[i].scoreSmile,
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
-                    price_range_id: price_range_id
+                    price_range_id: price_range_id,
+                    latitude: searchResult.paginationResult.results[i].mapLatitude,
+                    longitude: searchResult.paginationResult.results[i].mapLongitude
                 },
             ]).into('restaurants');
 
@@ -318,7 +327,9 @@ export async function seed(knex: Knex): Promise<void> {
                     like_count: searchResult.paginationResult.results[i].scoreSmile,
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
-                    price_range_id: price_range_id
+                    price_range_id: price_range_id,
+                    latitude: searchResult.paginationResult.results[i].mapLatitude,
+                    longitude: searchResult.paginationResult.results[i].mapLongitude
                 },
             ]).into('restaurants');
 
@@ -366,7 +377,9 @@ export async function seed(knex: Knex): Promise<void> {
                     like_count: searchResult.paginationResult.results[i].scoreSmile,
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
-                    price_range_id: price_range_id
+                    price_range_id: price_range_id,
+                    latitude: searchResult.paginationResult.results[i].mapLatitude,
+                    longitude: searchResult.paginationResult.results[i].mapLongitude
                 },
             ]).into('restaurants');
 
@@ -414,7 +427,9 @@ export async function seed(knex: Knex): Promise<void> {
                     like_count: searchResult.paginationResult.results[i].scoreSmile,
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
-                    price_range_id: price_range_id
+                    price_range_id: price_range_id,
+                    latitude: searchResult.paginationResult.results[i].mapLatitude,
+                    longitude: searchResult.paginationResult.results[i].mapLongitude
                 },
             ]).into('restaurants');
 
@@ -462,7 +477,9 @@ export async function seed(knex: Knex): Promise<void> {
                     like_count: searchResult.paginationResult.results[i].scoreSmile,
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
-                    price_range_id: price_range_id
+                    price_range_id: price_range_id,
+                    latitude: searchResult.paginationResult.results[i].mapLatitude,
+                    longitude: searchResult.paginationResult.results[i].mapLongitude
                 },
             ]).into('restaurants');
 
@@ -510,7 +527,9 @@ export async function seed(knex: Knex): Promise<void> {
                     like_count: searchResult.paginationResult.results[i].scoreSmile,
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
-                    price_range_id: price_range_id
+                    price_range_id: price_range_id,
+                    latitude: searchResult.paginationResult.results[i].mapLatitude,
+                    longitude: searchResult.paginationResult.results[i].mapLongitude
                 },
             ]).into('restaurants');
 
@@ -558,7 +577,9 @@ export async function seed(knex: Knex): Promise<void> {
                     like_count: searchResult.paginationResult.results[i].scoreSmile,
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
-                    price_range_id: price_range_id
+                    price_range_id: price_range_id,
+                    latitude: searchResult.paginationResult.results[i].mapLatitude,
+                    longitude: searchResult.paginationResult.results[i].mapLongitude
                 },
             ]).into('restaurants');
 
@@ -606,7 +627,9 @@ export async function seed(knex: Knex): Promise<void> {
                     like_count: searchResult.paginationResult.results[i].scoreSmile,
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
-                    price_range_id: price_range_id
+                    price_range_id: price_range_id,
+                    latitude: searchResult.paginationResult.results[i].mapLatitude,
+                    longitude: searchResult.paginationResult.results[i].mapLongitude
                 },
             ]).into('restaurants');
 
@@ -654,7 +677,9 @@ export async function seed(knex: Knex): Promise<void> {
                     like_count: searchResult.paginationResult.results[i].scoreSmile,
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
-                    price_range_id: price_range_id
+                    price_range_id: price_range_id,
+                    latitude: searchResult.paginationResult.results[i].mapLatitude,
+                    longitude: searchResult.paginationResult.results[i].mapLongitude
                 },
             ]).into('restaurants');
 
@@ -702,7 +727,9 @@ export async function seed(knex: Knex): Promise<void> {
                     like_count: searchResult.paginationResult.results[i].scoreSmile,
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
-                    price_range_id: price_range_id
+                    price_range_id: price_range_id,
+                    latitude: searchResult.paginationResult.results[i].mapLatitude,
+                    longitude: searchResult.paginationResult.results[i].mapLongitude
                 },
             ]).into('restaurants');
 
