@@ -122,4 +122,6 @@ export class UserController {
         })
         res.redirect('/index.html')
     }
+
+
 }

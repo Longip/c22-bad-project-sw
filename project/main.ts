@@ -5,6 +5,7 @@ import { userRoutes } from './routes/userRoute'
 import dotenv from 'dotenv';
 import { Client } from 'pg';
 import grant from 'grant';
+import { restaurantsRoute } from "./routes/restaurantsRoute";
 
 export const app = express();
 const PORT = 8080;
@@ -62,6 +63,7 @@ app.use(grantExpress as express.RequestHandler);
 
 
 app.use('/user', userRoutes)
+app.use('/restaurants', restaurantsRoute);
 
 
 
