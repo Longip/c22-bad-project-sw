@@ -4,6 +4,7 @@ body {
     box-sizing: border-box;
     background-color: white;
     font-family: 'Domine', serif;
+    font-size: 18px;
 }
 
 .page-container {
