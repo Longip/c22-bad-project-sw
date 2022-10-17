@@ -12,8 +12,8 @@ export async function up(knex: Knex): Promise<void> {
             table.integer("like_count");
             table.integer("dislike_count");
             table.string("phone");
-            table.string("latitude");
-            table.string("longitude");
+            table.float("latitude");
+            table.float("longitude");
             table.integer("district_id").unsigned();
             table.foreign("district_id").references("districts.id");
             table.integer("category_id").unsigned();
