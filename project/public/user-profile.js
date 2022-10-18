@@ -20,6 +20,32 @@ let progress = setInterval(() => {
     }
 }, speed);
 
+// profile bar 
+
+let button = document.querySelector(".toggle-button");
+let leftSideBarElem = document.querySelector(".left-sidebar");
+let newButton = document.querySelector(".new-toggle-button");
+
+function leftSideBar() {
+    button = document.querySelector(".toggle-button");
+    button.addEventListener("click", (e) => {
+        leftSideBarElem.style["max-width"] = '100px';
+        button.className = "new-toggle-button";
+        leftSideBar2()
+    })
+}
+
+function leftSideBar2() {
+    newButton = document.querySelector(".new-toggle-button");
+    document.querySelector(".new-toggle-button").addEventListener("click", () => {
+        leftSideBarElem.style["max-width"] = '200px';
+        newButton.className = "toggle-button";
+        leftSideBar()
+    })
+}
+leftSideBar()
+
+
 
 // logout
 
