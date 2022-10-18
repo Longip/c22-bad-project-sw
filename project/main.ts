@@ -73,6 +73,62 @@ const form = formidable({
     filter: part => part.mimetype?.startsWith('image/') || false,
 })
 
+//front end
+
+// const contractData = document.querySelector("#contract-form");
+// contractData.addEventListener("submit", async function (e) {
+//     console.log(contractData);
+
+//     e.preventDefault();
+//     const form = e.target
+//     const formData = new FormData(form)
+
+
+//     console.log(formData);
+
+//     const res = await fetch('/memos/order', {
+//         method: "POST",
+//         body: formData,
+//     })
+//     const result = await res.json()
+//     console.log('form result', result)
+//     if (res.status === 401) {
+//         alert('Please login first')
+//         location.replace('/loginsignup.html')
+//         return
+//     }
+//     if (!res.ok) {
+//         alert('Please create target first')
+//         location.replace('/create-target.html')
+//         return
+//     }
+//     if (res.ok) {
+//         alert(`Order pending admin's approval`)
+//         location.replace('/userinformation.html')
+//         return
+// location.replace('/homepage.html')
+//     }
+// }
+// )
+
+// backend
+
+
+// memosRoutes.post('/order', async (req, res) => {
+// 	if (!req.session['user']) {
+// 		res.status(401).json({
+// 			message: 'invalid session'
+// 		})
+// 		return
+// 	}
+// 	try {
+// 		// console.log(req)
+// 		const {
+// 			files,
+// 			fields
+// 		}: any = await formParseBetter(req);
+
+
 app.use(grantExpress as express.RequestHandler);
 
 
