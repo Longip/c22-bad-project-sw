@@ -36,8 +36,10 @@ export async function seed(knex: Knex): Promise<void> {
 
     const options = {
         method: 'GET',
-        headers: { cookie: 'DefaultRegionIds=%7B%22hk%22%3A0%7D; RegionId=0; webhash=68c4458d-eecd-4870-91f2-d0a1274b0a43; isguest=1; gcl_au=1.1.1989161410.1664529584; __utmc=183676536; CookiesAgreed=agreed; CultureInfo=zh-HK; _gid=GA1.2.1063574153.1665971259; __utmz=183676536.1665976347.17.3.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); autha=QDC17fX9Qyf2NNcJy-AFbh8eVRhmudhhybq33ntIv1g6TtRBv9BRV8svHrQXTk72zXk96a_oOsylbBrnMcJsyplU89KwGMV4RpZKv_102e3SnyYf56gY7DDubPHthZgpTEe8qmJihv4PwcQuw50ACckWS72YAwq_hPmq_Gcp7L7JV-UEo7cCO8QAKrwOclDnaqieIsVJ7G3nSwgLx8LKuBo4Mv_zCkWitU7WM-kQHSfX2AR6gX7dEJCC0xg1yOol0B9Q3YX1wzvfqPuS4Cwk91gWMIvTYsLURZJwzbpi0gHhyHRR0IVGodL-9k-3rk5azqhqcaTP78GqI8WkGjrAAGqS2D9c1a47YSoe1teTs-9OtwayldcdMye3NZG6nCf399uDnlkKlNeo59HxwBBTlk_1e8d-QV4OWOvgX3fe063qtmEV0wnnGZhrIVZoCMpaxduYg; authr=vseHpi9pgumhlja8vKxkG2AwLtO8LeziHp0speVgRDTGQmL72nE5SOHetixiX9lhdzNUfNPSXKNmU0qtm2XnWHI0PKo_x_q-BrHyqvMlZf2pAZCKDghFh8VX2TXXOE73u6ZKTvolpsV2W4pm0HQgXa5JPhDLF3m8F5iqWramAV5KDsnDzdzVcee5BUJDCrKrw6QCZowXjvlSBjK5j6uzIOFpBWtZ5hKcqEpQwiqdndqgY0uqOYsSLivMOWHqUFHgFhg9xgD4kTH03RQV8rde0BhYEFm4Gc8DsKmOGoODalvlalrwtNy0U3GRZptFYvmt8sXIl_MrrbFATU-pfDC67RR0LD7VV8p7h38ju1NeIxUZZiT8g7Ud4uMwSOB52-q--6rLwCAEMtxRswGH0znyqkDBGU6ZlQieAkGsBPWGVhURxdMmDjbn2KFLrpvLht5E8ihtKA; authe=I5MbeYB1HGZ06FjyjOarr1yyelDB3WfRhwXicEdwkWr/nhrZHX7ejEtoulx1fe624g4y0E5EnKTrS3gdcYhzUCFnG4zZ3OidBblK3Pu1b7w=; __utma=183676536.968376170.1664529584.1665971259.1665971259.17; _ga=GA1.2.968376170.1664529584; _ga_WM2DLEGHYP=GS1.1.1665986355.20.0.1665986355.0.0.0' }
+        headers: { cookie: 'DefaultRegionIds=%7B%22hk%22%3A0%7D; RegionId=0; webhash=68c4458d-eecd-4870-91f2-d0a1274b0a43; isguest=1; _gcl_au=1.1.1989161410.1664529584; __utmc=183676536; CookiesAgreed=agreed; CultureInfo=zh-HK; _gid=GA1.2.1063574153.1665971259; autha=Jzyw6LAdLLKchm3bJOvYcromg58KIMbeW_5IW9esrgUkFHyIbJUd6bBJpxqS6SIOvhf9wBhRd8okCYxDPSMKLVb1VeJjEOUp7SSoEANMGTCbpQFbsgX7k0sE7tsdlXYS5Wyu45HCB6xLW-qYkNblkhvaQbTZ-JSf6qDYrNkQinbev1jOgvJUWfIWeqjigrBWkddP9jCY33Lac3gzwhcMG79WfzNbDUty55ZCfz4osykmBo7inuAdVO8SRtr7x9FZ17ADx6E7WsdekGss2Q0HirV6ON_7NZELDsCcZrKvVntZcUN2Ki8qeTGRTrGqST1b-M-Ev4i0iftakHbTfqBoeiY6SoVvv_6v1E_fPo_OPNaBo3U9mggIyK3t8TgbVeYTfMxSpziA0FZkBZPMtqZZlZzNwltaQUCu7ihZB6gTT32sY74l-JbL8hC1Kd5BNCdDmlmP3g; authr=BAUjpwoGk7mGMIQyzQMAnaSDtzdovY65B3cCJWppKkcEptu9rLN4ztR9zuBdGsiBML5sMmFLlNde6cKnZXE07y1UYkvZBphtLtXKN3uZ6QNoG2J_5G47b1xNQvhWQSjsZPPoBSTxXd1wz69dkLL4dfL5kHBlFS_lYw9cAIYrcLQtZ9YDRQDSSPFNnhgWKHaBL29cAsR_WgjFW9sM_MYvcI3CBFZiwHOQWNFLgnxMeHX2OZCw51H3g0Vdk7WWGofCNnkRlWf_y5IrPW-_w_kBQMEeuYTXfrSMyJRtiecl5iu_m8hfsvRJD8YuyXtg0uHFK3FY846dHl8kVIUq3sxw9TfPseGVCP5696PAGrJe-sCezKc-661Hnm1e-YLMg0UlduDFLeyg1Io1_z60xfjycYM6vMlBQ0ARhMh3k4avAlcwq0kPw_q3DsWSDEfvCrR07eF31w; authe=I5MbeYB1HGZ06FjyjOarr1yyelDB3WfRhwXicEdwkWr/nhrZHX7ejEtoulx1fe62bXDb+Fg2sx9Wg9do130wc81himXgIPlGtFxvdvWUnIk=; __utma=183676536.968376170.1664529584.1665992262.1666064100.20; __utmz=183676536.1666064100.20.4.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); __utmt_UA-652541-1=1; __utmb=183676536.5.10.1666064100; _ga_WM2DLEGHYP=GS1.1.1666064100.22.1.1666064164.0.0.0; _ga=GA1.1.968376170.1664529584' }
     };
+
+    // SELECT split_part(trim(coordinates::text, '()'), ',', 1)::float AS lat, split_part(trim(coordinates::text, '()'), ',', 2)::float AS lng FROM restaurants;
 
     //日本菜 1
     for (let page = 1; page < 10; page++) {
@@ -78,8 +80,7 @@ export async function seed(knex: Knex): Promise<void> {
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
                     price_range_id: price_range_id,
-                    latitude: searchResult.paginationResult.results[i].mapLatitude,
-                    longitude: searchResult.paginationResult.results[i].mapLongitude
+                    coordinates: `${searchResult.paginationResult.results[i].mapLatitude},${searchResult.paginationResult.results[i].mapLongitude}`
                 },
             ]).into('restaurants');
 
@@ -128,8 +129,7 @@ export async function seed(knex: Knex): Promise<void> {
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
                     price_range_id: price_range_id,
-                    latitude: searchResult.paginationResult.results[i].mapLatitude,
-                    longitude: searchResult.paginationResult.results[i].mapLongitude
+                    coordinates: `${searchResult.paginationResult.results[i].mapLatitude},${searchResult.paginationResult.results[i].mapLongitude}`
                 },
             ]).into('restaurants');
 
@@ -178,8 +178,7 @@ export async function seed(knex: Knex): Promise<void> {
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
                     price_range_id: price_range_id,
-                    latitude: searchResult.paginationResult.results[i].mapLatitude,
-                    longitude: searchResult.paginationResult.results[i].mapLongitude
+                    coordinates: `${searchResult.paginationResult.results[i].mapLatitude},${searchResult.paginationResult.results[i].mapLongitude}`
                 },
             ]).into('restaurants');
 
@@ -228,8 +227,7 @@ export async function seed(knex: Knex): Promise<void> {
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
                     price_range_id: price_range_id,
-                    latitude: searchResult.paginationResult.results[i].mapLatitude,
-                    longitude: searchResult.paginationResult.results[i].mapLongitude
+                    coordinates: `${searchResult.paginationResult.results[i].mapLatitude},${searchResult.paginationResult.results[i].mapLongitude}`
                 },
             ]).into('restaurants');
 
@@ -278,8 +276,7 @@ export async function seed(knex: Knex): Promise<void> {
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
                     price_range_id: price_range_id,
-                    latitude: searchResult.paginationResult.results[i].mapLatitude,
-                    longitude: searchResult.paginationResult.results[i].mapLongitude
+                    coordinates: `${searchResult.paginationResult.results[i].mapLatitude},${searchResult.paginationResult.results[i].mapLongitude}`
                 },
             ]).into('restaurants');
 
@@ -328,8 +325,7 @@ export async function seed(knex: Knex): Promise<void> {
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
                     price_range_id: price_range_id,
-                    latitude: searchResult.paginationResult.results[i].mapLatitude,
-                    longitude: searchResult.paginationResult.results[i].mapLongitude
+                    coordinates: `${searchResult.paginationResult.results[i].mapLatitude},${searchResult.paginationResult.results[i].mapLongitude}`
                 },
             ]).into('restaurants');
 
@@ -378,8 +374,7 @@ export async function seed(knex: Knex): Promise<void> {
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
                     price_range_id: price_range_id,
-                    latitude: searchResult.paginationResult.results[i].mapLatitude,
-                    longitude: searchResult.paginationResult.results[i].mapLongitude
+                    coordinates: `${searchResult.paginationResult.results[i].mapLatitude},${searchResult.paginationResult.results[i].mapLongitude}`
                 },
             ]).into('restaurants');
 
@@ -428,8 +423,7 @@ export async function seed(knex: Knex): Promise<void> {
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
                     price_range_id: price_range_id,
-                    latitude: searchResult.paginationResult.results[i].mapLatitude,
-                    longitude: searchResult.paginationResult.results[i].mapLongitude
+                    coordinates: `${searchResult.paginationResult.results[i].mapLatitude},${searchResult.paginationResult.results[i].mapLongitude}`
                 },
             ]).into('restaurants');
 
@@ -478,8 +472,7 @@ export async function seed(knex: Knex): Promise<void> {
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
                     price_range_id: price_range_id,
-                    latitude: searchResult.paginationResult.results[i].mapLatitude,
-                    longitude: searchResult.paginationResult.results[i].mapLongitude
+                    coordinates: `${searchResult.paginationResult.results[i].mapLatitude},${searchResult.paginationResult.results[i].mapLongitude}`
                 },
             ]).into('restaurants');
 
@@ -528,8 +521,7 @@ export async function seed(knex: Knex): Promise<void> {
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
                     price_range_id: price_range_id,
-                    latitude: searchResult.paginationResult.results[i].mapLatitude,
-                    longitude: searchResult.paginationResult.results[i].mapLongitude
+                    coordinates: `${searchResult.paginationResult.results[i].mapLatitude},${searchResult.paginationResult.results[i].mapLongitude}`
                 },
             ]).into('restaurants');
 
@@ -578,8 +570,7 @@ export async function seed(knex: Knex): Promise<void> {
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
                     price_range_id: price_range_id,
-                    latitude: searchResult.paginationResult.results[i].mapLatitude,
-                    longitude: searchResult.paginationResult.results[i].mapLongitude
+                    coordinates: `${searchResult.paginationResult.results[i].mapLatitude},${searchResult.paginationResult.results[i].mapLongitude}`
                 },
             ]).into('restaurants');
 
@@ -628,8 +619,7 @@ export async function seed(knex: Knex): Promise<void> {
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
                     price_range_id: price_range_id,
-                    latitude: searchResult.paginationResult.results[i].mapLatitude,
-                    longitude: searchResult.paginationResult.results[i].mapLongitude
+                    coordinates: `${searchResult.paginationResult.results[i].mapLatitude},${searchResult.paginationResult.results[i].mapLongitude}`
                 },
             ]).into('restaurants');
 
@@ -678,8 +668,7 @@ export async function seed(knex: Knex): Promise<void> {
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
                     price_range_id: price_range_id,
-                    latitude: searchResult.paginationResult.results[i].mapLatitude,
-                    longitude: searchResult.paginationResult.results[i].mapLongitude
+                    coordinates: `${searchResult.paginationResult.results[i].mapLatitude},${searchResult.paginationResult.results[i].mapLongitude}`
                 },
             ]).into('restaurants');
 
@@ -728,8 +717,7 @@ export async function seed(knex: Knex): Promise<void> {
                     dislike_count: searchResult.paginationResult.results[i].scoreCry,
                     phone: searchResult.paginationResult.results[i].phones[0],
                     price_range_id: price_range_id,
-                    latitude: searchResult.paginationResult.results[i].mapLatitude,
-                    longitude: searchResult.paginationResult.results[i].mapLongitude
+                    coordinates: `${searchResult.paginationResult.results[i].mapLatitude},${searchResult.paginationResult.results[i].mapLongitude}`
                 },
             ]).into('restaurants');
 

@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Domine&family=Dosis&family=League+Gothic&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="homepage.css">
     <title>Home</title>
@@ -31,8 +31,10 @@
                     <div class="dropdown">
                         <button class="dropdown-btn"><i class="bi bi-list"></i></button>
                         <div class="dropdown-content">
-                            <div class="info-btn"><a href="#"><i class="fa-solid fa-user-pen"></i> Your Info</a></div>
-                            <div class="album-btn"><a href="#"><i class="fa-solid fa-camera-retro"></i> Your Album</a>
+                            <div class="info-btn"><a href="./user-profile.html"><i class="fa-solid fa-user-pen"></i>
+                                    Your Info</a></div>
+                            <div class="album-btn"><a href="./album.html"><i class="fa-solid fa-camera-retro"></i> Your
+                                    Album</a>
                             </div>
                             <div class="logout-btn"><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>
                                     Logout</a></div>
@@ -44,21 +46,20 @@
         </section>
 
         <section class="content-container">
+            <div class="display-btn"><i class="bi bi-arrow-clockwise"></i></div>
             <div class="row">
                 <div class="column">
                     <div class="card">
-                        <h3>image area</h3>
-                        <p>Name:</p>
-                        <p>Address:</p>
-                        <p>Phone:</p>
-                        <p>Price:</p>
+                        <div class="restaurant-image-area">
+                            <div class="restaurant-image"></div>
+                        </div>
+                        <div class="restaurant-info">
+                            <div class="rest-name">Name: </div>
+                            <div class="rest-address">Address: </div>
+                            <div class="rest-phone">Phone: </div>
+                            <div class="rest-price">Price: </div>
+                        </div>
                     </div>
-                </div>
-                <div class="column">
-                    <div class="card"></div>
-                </div>
-                <div class="column">
-                    <div class="card"></div>
                 </div>
             </div>
         </section>

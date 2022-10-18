@@ -5,6 +5,9 @@ import { userRoutes } from './routes/userRoute'
 import dotenv from 'dotenv';
 import { Client } from 'pg';
 import grant from 'grant';
+import { restaurantsRoute } from "./routes/restaurantsRoute";
+// import formidable from 'formidable'
+
 
 export const app = express();
 const PORT = 8080;
@@ -56,12 +59,83 @@ const grantExpress = grant.express({
     }
 });
 
+
+//formidable
+const uploadDir = 'uploads'
+const form = formidable({
+    uploadDir,
+    // filename(name, ext, part, form) {
+    // 	return `${new Date().getDay}`
+    // },
+    keepExtensions: true,
+    maxFiles: 1,
+    maxFileSize: 20000 * 1024 ** 2,
+    filter: part => part.mimetype?.startsWith('image/') || false,
+})
+
+//front end
+
+// const contractData = document.querySelector("#contract-form");
+// contractData.addEventListener("submit", async function (e) {
+//     console.log(contractData);
+
+//     e.preventDefault();
+//     const form = e.target
+//     const formData = new FormData(form)
+
+
+//     console.log(formData);
+
+//     const res = await fetch('/memos/order', {
+//         method: "POST",
+//         body: formData,
+//     })
+//     const result = await res.json()
+//     console.log('form result', result)
+//     if (res.status === 401) {
+//         alert('Please login first')
+//         location.replace('/loginsignup.html')
+//         return
+//     }
+//     if (!res.ok) {
+//         alert('Please create target first')
+//         location.replace('/create-target.html')
+//         return
+//     }
+//     if (res.ok) {
+//         alert(`Order pending admin's approval`)
+//         location.replace('/userinformation.html')
+//         return
+// location.replace('/homepage.html')
+//     }
+// }
+// )
+
+// backend
+
+
+// memosRoutes.post('/order', async (req, res) => {
+// 	if (!req.session['user']) {
+// 		res.status(401).json({
+// 			message: 'invalid session'
+// 		})
+// 		return
+// 	}
+// 	try {
+// 		// console.log(req)
+// 		const {
+// 			files,
+// 			fields
+// 		}: any = await formParseBetter(req);
+
+
 app.use(grantExpress as express.RequestHandler);
 
 
 
 
 app.use('/user', userRoutes)
+app.use('/restaurants', restaurantsRoute);
 
 
 
@@ -72,6 +146,7 @@ app.use('/user', userRoutes)
 
 
 app.use(express.static('public'));
+app.use(express.static('uploads'))
 
 app.use((req, res) => {
     res.redirect('/404.html')

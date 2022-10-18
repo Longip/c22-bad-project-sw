@@ -11,38 +11,66 @@
 </head>
 
 <body>
-    <div class="body-container">
-        <div class="left-bg"></div>
+    <div class="page-container">
+        <section class="banner-container">
+        </section>
 
-        <div class="userlogo"><i class="fa-regular fa-circle-user"></i></div>
-        <div class="login-container">
+        <section class="navbar-container">
+            <div class="navbar">
+                <div class="navbar-content">
+                    <ul>
+                        <li><a href="./homepage.html">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#explore">Explore</a></li>
+                    </ul>
+                    <div class="dropdown">
+                        <button class="dropdown-btn"><i class="bi bi-list"></i></button>
+                        <div class="dropdown-content">
+                            <div class="info-btn"><a href="./user-profile.html"><i class="fa-solid fa-user-pen"></i>
+                                    Your Info</a></div>
+                            <div class="album-btn"><a href="#"><i class="fa-solid fa-camera-retro"></i> Your Album</a>
+                            </div>
+                            <div class="logout-btn"><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                    Logout</a></div>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="login-wrapper">
-                <h1>Welcome Back</h1>
-                <h2>Login</h2>
-                <form class="login-form">
-
-                    <label for="username">Username</label>
-                    <input type="text" class="form-input" placeholder="Enter your username / email" id="username">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-input" placeholder="Enter your Password" id="password">
-
-                    <input type="submit" value="Login" class="login-btn">
-
-                </form>
-                <div class="login-suggest">or login using</div>
-
-
-                <a href="/connect/google" class="google-logo"><img src="google-icon.jpg" alt="GOOGLE"></a>
-
-                <div class="signup-refer">Don't have an account yet ? <i class="bi bi-person-plus-fill"></i></div>
             </div>
+        </section>
 
-        </div>
-        <div class="right-bg"></div>
-    </div>
 
-    <script src="https://kit.fontawesome.com/dda97d4095.js" crossorigin="anonymous"></script>
+        <section class="left-profile bar">
+            <div class="main-container">
+                <div class="left-sidebar">
+                    <div class="inner">
+                        <div class="user-profile">
+                            <!-- <div class="user-background"></div> -->
+                            <div class="user-image">
+                                <img src="./eeyore.jpeg">
+                            </div>
+                            <div class="user-info">
+                                <p class="user-name">Name: Test Test</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toggle-button"><i class="bi bi-caret-right"></i></div>
+                </div>
+        </section>
+
+        <section class="right-profile bar">
+            <div class="right-container">
+                <div class="right-sidebar">
+                    <div class="circular-container">
+                        <div class="circular-progress">
+                            <div class="value-container">70%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://kit.fontawesome.com/dda97d4095.js" crossorigin="anonymous"></script>
+        <script src="./user-profile.js"></script>
 </body>
 
 </html>

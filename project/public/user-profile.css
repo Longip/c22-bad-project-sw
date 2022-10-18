@@ -1,14 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100vh;
+    background-color: white;
+    font-family: 'Domine', serif;
+    font-size: 18px;
 }
 
 .page-container {
@@ -16,175 +12,271 @@ body {
     padding: 0;
 }
 
-.body-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.left-bg {
-    background-image: url(./left.jpeg);
-    background-size: contain;
-    background-repeat: no-repeat;
-
-    background-position: center;
-    height: 100vh;
-    width: 100%;
-
-}
-
-.right-bg {
-    background-image: url(./right.jpeg);
-    background-size: contain;
-    background-repeat: no-repeat;
-
-    background-position: center;
-    height: 100vh;
-    width: 100%;
-}
-
-.userlogo {
-    transform: translate(20px, 0);
-}
-
-.fa-circle-user {
-    font-size: 50px;
-    text-align: center;
-    color: grey;
-
-}
-
-
-.login-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    position: relative;
-    z-index: 1;
-}
-
-.login-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    height: 600px;
-    background: rgb(255, 255, 255, 0.9);
-    border-radius: 10px;
-    flex-direction: column;
-    overflow: hidden;
-    border: 8px solid grey;
-    z-index: 10;
-}
 
 /* ======================================= TOP BANNER ======================================= */
 
 
-/* .banner-container {
-    background-image: url(./cuisine.jpg);
+.banner-container {
+    background-image: url(./header4.png);
     background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+    background-attachment: scroll;
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed;
+    background-position: center; */
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    height: 10vh;
-
+    height: 12vh;
+    opacity: 0.8;
 
 }
 
-.banner-test-wrapper {
+/* ======================================= NAVBAR ======================================= */
+
+.navbar-container {
     display: flex;
-    justify-content: center;
+}
+
+.navbar {
+    width: 100vw;
+    height: 6vh;
+    background-color: rgba(61, 84, 112, 0.8);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    background-color: rgba(165, 244, 244, 0.739);
-    border-radius: 20px;
-    padding: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+.bi-list {
+    font-size: 34px;
+    padding-right: 10px;
+}
+
+.bi-list:hover {
+    cursor: pointer;
+    background-color: gray;
+    padding-right: 10px;
+}
+
+
+/* ======================================= Dropdown ======================================= */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background-color: transparent;
+    border: none;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgba(61, 84, 112, 0.8);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: solid 1px white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.bi-list {
     color: white;
 }
 
-.logo {
+.display-btn {
     font-size: 30px;
-    margin-left: 10px;
+    cursor: pointer;
 }
 
-.banner-text {
-    font-size: 22px;
-    margin-left: 10px;
-} */
+/* ======================================= Profile-bar ======================================= */
 
-/* ======================================= Content ======================================= */
 
-/* .content-container {
+.main-container {
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center; */
-/* height: 100vh;
-    overflow: hidden; */
-/* } */
-
-/* .progress {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    width: 160px;
-    height: 160px; */
-/* background: cornflowerblue; */
-/* position: relative;
+    overflow: hidden;
 }
 
+.left-sidebar {
+    flex-grow: 2;
+    max-width: 200px;
+    padding: 10px;
+    /* border-right: 1px solid white; */
+    position: relative;
+    transition: all 0.5s;
+    box-shadow: 2px 0px 3px gray;
+    background-color: rgba(61, 84, 112, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.318);
 
-.outer {
-    width: 160px;
-    height: 160px;
-    margin-top: 10px;
-    border-radius: 50%;
-    border: 1px solid gray;
-    padding: 19px;
-    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
-        -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
 }
-
 
 .inner {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 1px solid gray;
-    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.15),
-        inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
-        -0.5px -0.5px 0px rgba(255, 255, 255, 1),
-        0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
-        0px 12px 10px -10px rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+    height: 100%;
 }
 
-#number {
-
-    font-weight: 600;
-    color: gray;
-} */
-
-
-/* ======================================= FOOTER ======================================= */
-
-/* .footer-container {
-    position: absolute;
-    bottom: 0px;
+.user-profile {
+    flex-grow: 2;
+    max-height: 345px;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-    height: 10vh;
-    width: 100%;
-    color: rgb(255, 255, 255);
-    background-color: #CEEBF7;
-    font-size: 30px;
+    transition: all 0.5s;
+    border: white;
+    position: relative;
+    /* background-color: rgba(61, 84, 112, 0.8); */
+    color: white;
+}
 
-} */
+.user-profile {
+    border-bottom: 1px solid white;
+    max-height: 200px;
+}
+
+.user-image {
+    margin: 50px 0 25px 0;
+    border-color: #1a233d;
+    transition: all 0.5s;
+}
+
+.user-image>img {
+    width: 120px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.5s;
+}
+
+.user-info {
+    text-align: center;
+}
+
+.user-name {
+    font-family: 'Oswald';
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.user-image {
+    margin: 25px 0;
+}
+
+.user-image>img {
+    width: 75px;
+}
+
+
+.user-info {
+    height: 0px;
+    transition-delay: 0s;
+    animation: animate-sidebar-text 0.5s;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    border: 1px solid #1a233d;
+    width: 20px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 0 50% 50% 0;
+    cursor: pointer;
+    transform: translate(0, -50%);
+    box-shadow: 2px 0px 5px gray;
+    background: rgba(61, 84, 112, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.318);
+    color: white;
+    z-index: 1;
+}
+
+.toggle-button i::before {
+    transform: rotate(180deg);
+}
+
+
+/* ======================================= Circular-progress-bar ======================================= */
+
+.circular-container {
+    height: 250px;
+    width: 250px;
+    background-color: #ffffff;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 8px;
+    /* box-shadow: 20px 20px 40px rgba(60, 60, 150, 0.25); */
+    display: grid;
+    place-items: center;
+}
+
+.circular-progress {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.circular-progress:before {
+    content: "";
+    position: absolute;
+    height: 84%;
+    width: 84%;
+    /* background-color: #ffffff; */
+    background-color: #4d5b79;
+    border-radius: 50%;
+}
+
+.value-container {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    color: cornflowerblue;
+}
