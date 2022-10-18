@@ -23,16 +23,16 @@ logoutInit();
 
 
 async function displayCard() {
-    console.log(2)
+
     let displayCardElem = document.querySelector('.display-btn');
     displayCardElem.addEventListener("click", async function (event) {
-        console.log(3)
+
         event.preventDefault();
 
 
         let res = await fetch('/restaurants/card')
         let cardDatas = (await res.json()).result
-        console.log(4)
+
         let html = ''
         console.log(cardDatas)
         for (let cardData of cardDatas) {

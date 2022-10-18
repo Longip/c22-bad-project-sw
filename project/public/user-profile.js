@@ -5,7 +5,7 @@ let valueContainer = document.querySelector(".value-container");
 
 
 let progressValue = 0;
-let progressEndValue = 50;
+let progressEndValue = 67;  // wait for the training model value
 let speed = 20;
 
 let progress = setInterval(() => {
@@ -38,7 +38,7 @@ function leftSideBar() {
 function leftSideBar2() {
     newButton = document.querySelector(".new-toggle-button");
     document.querySelector(".new-toggle-button").addEventListener("click", () => {
-        leftSideBarElem.style["max-width"] = '200px';
+        leftSideBarElem.style["max-width"] = '150px';
         newButton.className = "toggle-button";
         leftSideBar()
     })
