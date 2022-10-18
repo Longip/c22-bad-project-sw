@@ -9,7 +9,7 @@ export async function up(knex: Knex): Promise<void> {
             await knex.schema.createTable("user_album_images", (table) => {
                 table.increments();
                 table.string("image_source");
-                table.integer("user_id").unsigned();
+                table.integer("user_id").unsigned().notNullable();
                 table.foreign("user_id").references("users.id");
                 table.timestamps(false, true);
             });
