@@ -2,9 +2,9 @@ import { Knex } from "knex";
 
 
 export async function up(knex: Knex): Promise<void> {
-    const quantityTable = await knex.schema.hasTable("quantities");
+    const quantityTable = await knex.schema.hasTable("user_food_quantities");
     if (!quantityTable) {
-        await knex.schema.createTable("quantities", (table) => {
+        await knex.schema.createTable("user_food_quantities", (table) => {
             table.increments();
             table.integer("user_id").unsigned();
             table.foreign("user_id").references("users.id");
@@ -18,5 +18,5 @@ export async function up(knex: Knex): Promise<void> {
 
 
 export async function down(knex: Knex): Promise<void> {
-    await knex.schema.dropTableIfExists("quantities");
+    await knex.schema.dropTableIfExists("user_food_quantities");
 }
