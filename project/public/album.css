@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+    font-family: 'Domine', serif;
+    font-size: 18px;
+}
+
+.page-container {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ======================================= TOP BANNER ======================================= */
+
+
+.banner-container {
+    background-image: url(./header4.png);
+    background-size: cover;
+    background-attachment: scroll;
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed;
+    background-position: center; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+    opacity: 0.8;
+
+}
+
+/* ======================================= NAVBAR ======================================= */
+
+.navbar-container {
+    display: flex;
+}
+
+.navbar {
+    width: 100vw;
+    height: 6vh;
+    background-color: rgba(61, 84, 112, 0.8);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+.bi-list {
+    font-size: 34px;
+    padding-right: 10px;
+}
+
+.bi-list:hover {
+    cursor: pointer;
+    background-color: gray;
+    padding-right: 10px;
+}
+
+
+/* ======================================= Dropdown ======================================= */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background-color: transparent;
+    border: none;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgba(61, 84, 112, 0.8);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: solid 1px white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.bi-list {
+    color: white;
+}
+
+.display-btn {
+    font-size: 30px;
+    cursor: pointer;
+}
