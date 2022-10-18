@@ -6,6 +6,8 @@ import dotenv from 'dotenv';
 import { Client } from 'pg';
 import grant from 'grant';
 import { restaurantsRoute } from "./routes/restaurantsRoute";
+import formidable from 'formidable'
+
 
 export const app = express();
 const PORT = 8080;
@@ -57,6 +59,20 @@ const grantExpress = grant.express({
     }
 });
 
+
+//formidable
+const uploadDir = 'uploads'
+const form = formidable({
+    uploadDir,
+    // filename(name, ext, part, form) {
+    // 	return `${new Date().getDay}`
+    // },
+    keepExtensions: true,
+    maxFiles: 1,
+    maxFileSize: 20000 * 1024 ** 2,
+    filter: part => part.mimetype?.startsWith('image/') || false,
+})
+
 app.use(grantExpress as express.RequestHandler);
 
 
@@ -74,6 +90,7 @@ app.use('/restaurants', restaurantsRoute);
 
 
 app.use(express.static('public'));
+app.use(express.static('uploads'))
 
 app.use((req, res) => {
     res.redirect('/404.html')
