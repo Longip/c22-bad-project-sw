@@ -81,7 +81,7 @@ app.use('/album', albumRoute)
 
 
 app.use(express.static('public'));
-app.use(express.static('uploads'))
+app.use("/uploads",express.static('uploads'))
 
 app.use((req, res) => {
     res.redirect('/404.html')

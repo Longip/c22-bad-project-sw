@@ -9,10 +9,8 @@ export class RestuarantController {
 
 
     displayCard = async (req: express.Request, res: express.Response) => {
-        // console.log(req.body)
         let cardResults = await this.restaurantsService.getRestaurantInfo(1)
         let result = cardResults.rows
-        console.log(cardResults.rows)
         res.json({ result })
     }
 

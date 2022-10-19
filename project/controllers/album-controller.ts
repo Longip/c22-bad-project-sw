@@ -21,7 +21,6 @@ export class AlbumController {
             let currentUser = req.session['user']
             let { files } = await formParse(req)
             for (let fieldName in files) {
-                console.log((files[fieldName] as any).newFilename)
                 await this.albumService.uploadToAlbum((files[fieldName] as any).newFilename, currentUser.id)
                 //轉base 64俾python
             }
@@ -32,6 +31,34 @@ export class AlbumController {
 
             res.status(400).send("Upload Fail")
             return
+        }
+    }
+
+    getAlbum = async (req: Request, res: Response) => {
+        let currentUser = req.session['user']
+        const albumResult = await this.albumService.getAlbum(currentUser.id);
+        
+        res.json(albumResult)
+        
+        return
+    }
+
+    deletePhotoFromAlbum = async (req: Request, res: Response) => {
+        try {
+            const photoName = req.body.index
+            console.log(photoName)
+    
+            
+            await this.albumService.deletePhoto(photoName)
+            
+            res.json({
+                message: 'del success'
+            })
+        } catch (e) {
+            console.log('error : ' + e)
+            res.status(500).json({
+                message: 'del fail'
+            })
         }
     }
 
