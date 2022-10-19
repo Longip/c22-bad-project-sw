@@ -68,8 +68,9 @@ app.use('/restaurants', restaurantsRoute);
 
 app.post("/predict", async (req, res) => {
     try {
+        console.log('Calling AI server :', process.env.AI_SERVER_URL)
         console.log("start calling python", req.body)
-        let results = await fetch("https://ai.eatwat7.today/get-food-identity", {
+        let results = await fetch(`${process.env.AI_SERVER_URL}/get-food-identity`, {
             method: "POST",
             body: req.body.image
         })
