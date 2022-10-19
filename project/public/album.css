@@ -151,7 +151,7 @@ li a {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
+
 /* ======================================= Album ======================================= */
 
 
@@ -172,8 +172,8 @@ li a {
 .fa-circle-xmark {
     color: rgba(61, 84, 112, 0.8);
     font-size: 22px;
+}
 
-=======
 /* ======================================= Gallery ======================================= */
 
 .gallery-Container {
@@ -224,5 +224,5 @@ li a {
     justify-content: center;
     align-items: center;
     cursor: pointer;
->>>>>>> 900dc99ad66f2c7091a9f08982a1d4850d81675c
+
 }
