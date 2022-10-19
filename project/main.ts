@@ -66,9 +66,24 @@ app.use('/user', userRoutes)
 app.use('/restaurants', restaurantsRoute);
 
 
+app.post("/predict", async (req, res) => {
+    try {
+        console.log("start calling python", req.body)
+        let results = await fetch("https://ai.eatwat7.today/get-food-identity", {
+            method: "POST",
+            body: req.body.image
+        })
+        let food_identity = await results.json();
+        console.log(food_identity)
+        console.log("Connecting to Sanic Server..")
+        res.status(200).json(food_identity)
+        console.log("Responded result from Sanic predict_server")
+    } catch (error) {
+        console.log(error)
+        res.status(400).json({ "message": "Invalid" })
+    }
 
-
-
+})
 
 
 
