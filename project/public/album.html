@@ -40,6 +40,7 @@
 
             </div>
         </section>
+
         <section class="album-container">
             <div class="container">
                 <div class="row">
@@ -48,44 +49,30 @@
                             <i class="fa fa-camera-retro heading-icon" aria-hidden="true"></i>
                             Your Photo Gallery
                         </h3>
-
-                        <ul class="box-container three-cols">
-                            <li class="box">
-                                <div class="inner">
-                                    <a href="./eeyore.jpeg" class="glightbox">
-                                        <img src="./eeyore.jpeg" alt="image" />
-                                        <div class="delete-btn"><i class="fa-solid fa-circle-xmark"></i></div>
-                                    </a>
+                        <form id="user-album-form" action="/album-formidable" method="POST"
+                            enctype="multipart/form-data">
+                            <div class="input-file">
+                                <input type="file" name="image" multiple>
+                            </div>
+                            <div class="memo-submit">
+                                <input type="submit" value="Submit" />
+                            </div>
+                        </form>
+                        <div class="gallery-Container">
+                            <div class="photo-conatiner">
+                                <img class="photo" src="../uploads/Cls-0.664049814197821.jpeg" alt="image" />
+                                <div class="delete-btn" data_index="${index}">
+                                    <i class="fa-solid fa-trash" data_index="${index}"></i>
                                 </div>
-                            </li>
-                        </ul>
-                        <ul class="box-container three-cols">
-                            <li class="box">
-                                <div class="inner">
-                                    <a href="./eeyore.jpeg" class="glightbox">
-                                        <img src="./eeyore.jpeg" alt="image" />
-                                        <div class="delete-btn"><i class="fa-solid fa-circle-xmark"></i></div>
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <form id="user-album-form" action="/album-formidable" method="POST" enctype="multipart/form-data">
-            <div class="input-file">
-                <input type="file" name="image" multiple>
-            </div>
-            <div class="memo-submit">
-                <input type="submit" value="Submit" />
-            </div>
-        </form>
-
 
     </div>
 
-    <script type="module" src="./upload.js"></script>
     <script src="glightbox.min.js"></script>
     <script src="https://kit.fontawesome.com/dda97d4095.js" crossorigin="anonymous"></script>
     <script src="glightbox.js"></script>

@@ -151,6 +151,7 @@ li a {
     cursor: pointer;
 }
 
+<<<<<<< HEAD
 /* ======================================= Album ======================================= */
 
 
@@ -172,4 +173,56 @@ li a {
     color: rgba(61, 84, 112, 0.8);
     font-size: 22px;
 
+=======
+/* ======================================= Gallery ======================================= */
+
+.gallery-Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.photo {
+
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    /* padding: 20px 20px; */
+}
+
+.photo-conatiner {
+    position: relative;
+}
+
+.delete-btn {
+    position: absolute;
+    right: 2px;
+    top: 0px;
+    background-color: black;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    /* display: none; */
+}
+
+.delete-btn:hover {
+    display: block;
+    position: absolute;
+    right: 2px;
+    top: 0px;
+    background-color: red;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+>>>>>>> 900dc99ad66f2c7091a9f08982a1d4850d81675c
 }
