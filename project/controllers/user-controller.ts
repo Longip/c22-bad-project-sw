@@ -77,7 +77,7 @@ export class UserController {
             return
         }
         await this.userService.createUser(username, password, email)
-        delete dbUser['password']
+        // delete dbUser['password']
         req.session['user'] = dbUser
 
         res.redirect('/homepage.html')
