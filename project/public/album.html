@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" /> -->
     <link rel="stylesheet" href="glightbox.css" />
     <link rel="stylesheet" href="album.css">
     <title>Your Album</title>
@@ -40,38 +40,32 @@
 
             </div>
         </section>
+
         <section class="album-container">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <h3>
                             <i class="fa fa-camera-retro heading-icon" aria-hidden="true"></i>
-                            Simple Image Gallery
+                            Your Photo Gallery
                         </h3>
-
-                        <ul class="box-container three-cols">
-                            <li class="box">
-                                <div class="inner">
-                                    <a href="./eeyore.jpeg" class="glightbox">
-                                        <img src="./eeyore.jpeg" alt="image" />
-                                    </a>
+                        <form id="user-album-form" action="/album-formidable" method="POST"
+                            enctype="multipart/form-data">
+                            <div class="input-file">
+                                <input type="file" name="image" multiple>
+                            </div>
+                            <div class="memo-submit">
+                                <input type="submit" value="Submit" />
+                            </div>
+                        </form>
+                        <div class="gallery-Container">
+                            <div class="photo-conatiner">
+                                <img class="photo" src="../uploads/Cls-0.664049814197821.jpeg" alt="image" />
+                                <div class="delete-btn" data_index="${index}">
+                                    <i class="fa-solid fa-trash" data_index="${index}"></i>
                                 </div>
-                            </li>
-                            <li class="box">
-                                <div class="inner">
-                                    <a href="./eeyore.jpeg" class="glightbox">
-                                        <img src="./eeyore.jpeg" alt="image" />
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="box">
-                                <div class="inner">
-                                    <a href="./eeyore.jpeg" class="glightbox">
-                                        <img src="./eeyore.jpeg" alt="image" />
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -79,10 +73,22 @@
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="glightbox.min.js"></script>
     <script src="https://kit.fontawesome.com/dda97d4095.js" crossorigin="anonymous"></script>
     <script src="glightbox.js"></script>
     <script src="album.js"></script>
+
+    <script>
+        const lightbox = GLightbox({
+            touchNavigation: true,
+            keyboardNavigation: true,
+            closeButton: true,
+            closeOnOutsideClick: true,
+            loop: true,
+
+        });
+
+    </script>
 </body>
 
 </html>

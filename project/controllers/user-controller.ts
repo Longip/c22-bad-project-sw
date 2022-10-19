@@ -34,11 +34,12 @@ export class UserController {
         }
 
         // If such username exists, and the password matches with the hashedPassword
-        let isValid = await checkPassword(password, dbUser["password"])
+        let isValid = await checkPassword(password, dbUser["password"]!)
 
         if (isValid) {
             console.log('login successfully')
-            req.session.name = dbUser.username
+            delete dbUser['password']
+            req.session['user'] = dbUser
             res.status(200).redirect('/homepage.html')
         }
         else {
@@ -76,8 +77,8 @@ export class UserController {
             return
         }
         await this.userService.createUser(username, password, email)
-
-        req.session.name = dbUser["username"]
+        delete dbUser['password']
+        req.session['user'] = dbUser
 
         res.redirect('/homepage.html')
 
