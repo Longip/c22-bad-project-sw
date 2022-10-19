@@ -69,20 +69,41 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
+/* li a:hover {
     cursor: pointer;
     background-color: gray;
-}
+} */
 
 .bi-list {
     font-size: 34px;
     padding-right: 10px;
 }
 
+
 .bi-list:hover {
     cursor: pointer;
     background-color: gray;
     padding-right: 10px;
+}
+
+.navbar-content>ul>li>a:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+.info-btn :hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+.album-btn :hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+.logout-btn :hover {
+    cursor: pointer;
+    background-color: gray;
 }
 
 
@@ -128,4 +149,27 @@ li a:hover {
 .display-btn {
     font-size: 30px;
     cursor: pointer;
+}
+
+/* ======================================= Album ======================================= */
+
+
+.inner>a>img {
+    width: 300px;
+    height: 300px;
+    border-radius: 7px;
+}
+
+.glightbox :hover {
+    background-color: none;
+}
+
+.glightbox {
+    position: relative;
+}
+
+.fa-circle-xmark {
+    color: rgba(61, 84, 112, 0.8);
+    font-size: 22px;
+
 }
