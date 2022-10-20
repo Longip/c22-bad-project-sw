@@ -1,19 +1,25 @@
 import express from "express"
-import { RestaurantsService } from "../services/restaurants-service"
+import { RestaurantService } from "../services/restaurants-service"
 // import fetch from "cross-fetch"
 
 
 
-export class RestuarantController {
-    constructor(private restaurantsService: RestaurantsService) { }
+export class RestaurantController {
+    constructor(private restaurantService: RestaurantService) { }
 
 
     getByCategory = async (req: express.Request, res: express.Response) => {
-        //add logic to change userCategory
-        let userCategory = 14
-        let cardResults = await this.restaurantsService.getRestaurantInfo(userCategory)
+        //add logic to change user category
+        let userCategory = 1
+        let cardResults = await this.restaurantService.getRestaurantInfoByCategory(userCategory)
         let result = cardResults.rows
         res.json({ result })
     }
-
+    getByLocation = async (req: express.Request, res: express.Response) => {
+        //add logic to change user location
+        let district_id = 20
+        let cardResults = await this.restaurantService.getRestaurantInfoByLocation(district_id)
+        let result = cardResults.rows
+        res.json({ result })
+    }
 }
