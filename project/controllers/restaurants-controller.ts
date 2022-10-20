@@ -16,9 +16,24 @@ export class RestaurantController {
         res.json({ result })
     }
     getByLocation = async (req: express.Request, res: express.Response) => {
-        //add logic to change user location
-        let district_id = 20
-        let cardResults = await this.restaurantService.getRestaurantInfoByLocation(district_id)
+        let locationResults = await this.restaurantService.getOneLocationForEachDistrict()
+        //get user location
+        let userLocaiton = { x: 22.3195844803184, y: 114.208513498306 }
+        let userDistrict: any
+
+        for (let row of locationResults.rows) {
+            console.log(row.id)
+            if (row.id == 1) {
+                userDistrict = row.id
+            } else {
+                if ((locationResults.rows[userDistrict - 1].coordinates.x - userLocaiton.x)**2 > (row.coordinates.x - userLocaiton.x)**2 && (locationResults.rows[userDistrict - 1].coordinates.y - userLocaiton.y)**2 > (row.coordinates.y - userLocaiton.y)**2) {
+                    userDistrict = row.id
+                }
+            }
+
+
+        }
+        let cardResults = await this.restaurantService.getRestaurantInfoByLocation(userDistrict)
         let result = cardResults.rows
         res.json({ result })
     }

@@ -25,4 +25,18 @@ export class RestaurantService {
             ))
         return cardResults
     }
+
+    async getOneLocationForEachDistrict(): Promise<any> {
+        let locationResults = (
+            await this.knex.raw(/*sql*/`
+            with 
+            distinct_district as (
+	        select 
+	        distinct (district_id)as  district_id
+	        from restaurants r order by district_id )
+            SELECT coordinates, id, address FROM distinct_district dd join restaurants on dd.district_id = restaurants.id
+        `,
+            ))
+        return locationResults
+    }
 }    
