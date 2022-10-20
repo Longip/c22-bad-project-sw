@@ -20,9 +20,6 @@ body {
     background-image: url(./header4.png);
     background-size: cover;
     background-attachment: scroll;
-    /* background-repeat: no-repeat; */
-    /* background-attachment: fixed;
-    background-position: center; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -48,8 +45,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
 }
 
+.ourlogo {
+    transform:
+        scale(0.7) translate(-90px, -50px);
+}
+
+/* 
 ul {
     list-style-type: none;
     margin: 0;
@@ -83,12 +87,12 @@ li a:hover {
     cursor: pointer;
     background-color: gray;
     padding-right: 10px;
-}
+} */
 
 
 /* ======================================= Dropdown ======================================= */
 
-.dropdown {
+/* .dropdown {
     position: relative;
     display: inline-block;
 }
@@ -128,7 +132,7 @@ li a:hover {
 .display-btn {
     font-size: 30px;
     cursor: pointer;
-}
+} */
 
 /* ======================================= Profile-bar ======================================= */
 
@@ -144,18 +148,23 @@ li a:hover {
     flex-grow: 2;
     max-width: 150px;
     padding: 10px;
-    /* border-right: 1px solid white; */
     position: relative;
     transition: all 0.5s;
     box-shadow: 2px 0px 3px gray;
     background-color: rgba(61, 84, 112, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.318);
+    height: 100vh;
+}
 
+.left-profile-bar {
+    /* max-width: 230px; */
+    height: 100vh;
 }
 
 .inner {
     display: flex;
     flex-direction: column;
+
     height: 100%;
 }
 
@@ -183,15 +192,11 @@ li a:hover {
     transition: all 0.5s;
 }
 
-.user-image>img {
-    width: 120px;
+.user-image>.image-src>img {
+    width: 150px;
     border-radius: 50%;
     border: 4px solid rgba(255, 255, 255, 0.1);
     transition: all 0.5s;
-}
-
-.user-info {
-    text-align: center;
 }
 
 .user-name {
@@ -204,9 +209,9 @@ li a:hover {
     margin: 25px 0;
 }
 
-.user-image>img {
+/* .user-image>img {
     width: 75px;
-}
+} */
 
 
 .user-info {
@@ -261,6 +266,40 @@ li a:hover {
     transform: rotate(180deg);
 }
 
+.bar-function {
+
+    color: snow;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.bar-function>div {
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.bar-function>a {
+    margin-top: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.bar-function>div:hover {
+    background-color: gray;
+}
+
+.bar-function>a:hover {
+    background-color: gray;
+}
+
+.fa-solid {
+    font-size: 30px;
+}
 
 /* ======================================= Circular-progress-bar ======================================= */
 
@@ -325,12 +364,12 @@ li a:hover {
 
 /* ======================================= Profile ======================================= */
 
-.profile-container {
+/* .profile-container {
     margin-left: 50px;
     margin-top: 30px;
-}
+} */
 
-.liked-count-box {
+/* .liked-count-box {
     width: 50vw;
     height: 250px;
     border: solid 2px rgba(61, 84, 112, 0.8);
@@ -381,3 +420,25 @@ li a:hover {
     font-size: 35px;
     color: darkseagreen;
 }
+
+
+
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 100px;
+}
+
+.box1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.box2 {
+    grid-column-start: 1;
+    grid-row-start: 3;
+    grid-row-end: 5;
+} */
