@@ -90,7 +90,7 @@ app.post("/predict", async (req, res) => {
         console.log(error)
         res.status(400).json({ "message": "Invalid" })
     }
-
+})
 
 
 
