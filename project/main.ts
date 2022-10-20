@@ -6,16 +6,13 @@ import dotenv from 'dotenv';
 import { Client } from 'pg';
 import grant from 'grant';
 import { restaurantsRoute } from "./routes/restaurantsRoute";
-<<<<<<< Updated upstream
 import { albumRoute } from "./routes/albumRoute";
 // import formidable from 'formidable'
 // import jsonfile from 'jsonfile';
 // import path from 'path';
 
 
-=======
 import fetch from 'cross-fetch';
->>>>>>> Stashed changes
 export const app = express();
 const PORT = 8080;
 
@@ -74,7 +71,6 @@ app.use(grantExpress as express.RequestHandler);
 
 app.use('/user', userRoutes)
 app.use('/restaurants', restaurantsRoute);
-<<<<<<< Updated upstream
 app.use('/album', albumRoute)
 
 
@@ -83,50 +79,10 @@ app.post("/predict", async (req, res) => {
         console.log('Calling AI server :', process.env.AI_SERVER_URL)
         console.log("start calling python", req.body)
         let results = await fetch(`${process.env.AI_SERVER_URL}/get-food-identity`, {
-=======
-
-app.use((req,res,next)=>{
-console.log(req.method, req.path)
-next()
-})
-app.post('/testai',async (req, res)=>{
- try {
-        console.log("start calling python")
-        let results = await fetch("https://ai.eatwat7.today/get-food-identity", {
-            method: "POST",
-            body: req.body.image_base64
-        })
-        let food_identity = await results.json();
-                  console.log(food_identity)
-    console.log("Connecting to Sanic Server..")
-    res.status(200).json(food_identity)
-    console.log("Responded result from Sanic Se/predict_serverrver")
-    } catch (error) {
-        console.log(error)
-        res.status(400).json({"message": "Invalid"})
-    }
-})
-
-app.post("/predict",  async (req, res) => {
-    try {
-        console.log("start calling python", req.body)
-        let results = await fetch("https://ai.eatwat7.today/get-food-identity", {
->>>>>>> Stashed changes
             method: "POST",
             body: req.body.image
         })
         let food_identity = await results.json();
-<<<<<<< Updated upstream
-        console.log(food_identity)
-        console.log("Connecting to Sanic Server..")
-        res.status(200).json(food_identity)
-        console.log("Responded result from Sanic predict_server")
-    } catch (error) {
-        console.log(error)
-        res.status(400).json({ "message": "Invalid" })
-    }
-})
-=======
                   console.log(food_identity)
     console.log("Connecting to Sanic Server..")
     res.status(200).json(food_identity)
@@ -141,7 +97,6 @@ app.post("/predict",  async (req, res) => {
 
 
 
->>>>>>> Stashed changes
 
 
 
