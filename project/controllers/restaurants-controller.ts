@@ -8,8 +8,10 @@ export class RestuarantController {
     constructor(private restaurantsService: RestaurantsService) { }
 
 
-    displayCard = async (req: express.Request, res: express.Response) => {
-        let cardResults = await this.restaurantsService.getRestaurantInfo(1)
+    getByCategory = async (req: express.Request, res: express.Response) => {
+        //add logic to change userCategory
+        let userCategory = 14
+        let cardResults = await this.restaurantsService.getRestaurantInfo(userCategory)
         let result = cardResults.rows
         res.json({ result })
     }

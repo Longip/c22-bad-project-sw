@@ -10,4 +10,4 @@ let restaurantsService = new RestaurantsService(knex)
 let restaurantsController = new RestuarantController(restaurantsService)
 
 
-restaurantsRoute.get('/card', restaurantsController.displayCard);
+restaurantsRoute.get('/category', restaurantsController.getByCategory);
