@@ -74,6 +74,7 @@ memowallFormElement.addEventListener("submit", async (e) => {
         body: formData
     })
 
+
     if (res.status === 200) {
         loadAlbum()
     }
