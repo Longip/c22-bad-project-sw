@@ -573,8 +573,6 @@ export async function seed(knex: Knex): Promise<void> {
                     coordinates: `${searchResult.paginationResult.results[i].mapLatitude},${searchResult.paginationResult.results[i].mapLongitude}`
                 },
             ]).into('restaurants');
-
-
         }
 
     }
@@ -725,4 +723,19 @@ export async function seed(knex: Knex): Promise<void> {
         }
 
     }
+    await knex.insert([
+        {
+            name: "棟記飯店",
+            address: "皇后大道中345號上環市政大廈2樓熟食中心CF9號舖",
+            district_id: 29,
+            //change
+            category_id: 11,
+            shop_photo: "https://static6.orstatic.com/userphoto/photo/1/10C/0076H95E8E73096E864344lv.jpg",
+            like_count: 29,
+            dislike_count: 3,
+            phone: "25454939",
+            price_range_id: 2,
+            coordinates: `${22.286193},${114.14976049999996}`
+        },
+    ]).into('restaurants');
 };

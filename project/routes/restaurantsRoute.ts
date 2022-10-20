@@ -1,13 +1,14 @@
 import express from 'express'
-import { RestuarantController } from "../controllers/restaurants-controller"
-import { RestaurantsService } from "../services/restaurants-service"
+import { RestaurantController } from "../controllers/restaurants-controller"
+import { RestaurantService } from "../services/restaurants-service"
 import { knex } from '../utils/db';
 
 
 export const restaurantsRoute = express.Router();
 
-let restaurantsService = new RestaurantsService(knex)
-let restaurantsController = new RestuarantController(restaurantsService)
+let restaurantsService = new RestaurantService(knex)
+let restaurantsController = new RestaurantController(restaurantsService)
 
 
-restaurantsRoute.get('/card', restaurantsController.displayCard);
+restaurantsRoute.get('/category', restaurantsController.getByCategory);
+restaurantsRoute.get('/location', restaurantsController.getByLocation);

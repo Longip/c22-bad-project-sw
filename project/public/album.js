@@ -5,6 +5,7 @@ window.onload = async () => {
 async function loadAlbum() {
     const res = await fetch('/album')
     const datas = await res.json()
+    console.log(datas)
     if (res.ok) {
         let html = ''
         let index = 0
@@ -72,6 +73,7 @@ memowallFormElement.addEventListener("submit", async (e) => {
         method: "POST",
         body: formData
     })
+
 
     if (res.status === 200) {
         loadAlbum()

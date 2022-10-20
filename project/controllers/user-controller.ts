@@ -72,14 +72,12 @@ export class UserController {
 
         let userResult = await this.userService.getUserByUsername(username)
         let dbUser: User = userResult.rows[0]
+        req.session['user'] = dbUser
         if (dbUser) {
             res.redirect('/homepage.html')
             return
         }
         await this.userService.createUser(username, password, email)
-        delete dbUser['password']
-        req.session['user'] = dbUser
-
         res.redirect('/homepage.html')
 
     }

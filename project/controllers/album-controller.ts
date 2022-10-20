@@ -1,8 +1,7 @@
 import { Request, Response } from "express"
+import fs from "fs"
 import { AlbumService } from "../services/album-service"
 import { formParse } from "../utils/upload"
-
-
 
 export class AlbumController {
     constructor(private albumService: AlbumService) { }
@@ -20,10 +19,22 @@ export class AlbumController {
         try {
             let currentUser = req.session['user']
             let { files } = await formParse(req)
+            let albumJSONArray = []
             for (let fieldName in files) {
                 await this.albumService.uploadToAlbum((files[fieldName] as any).newFilename, currentUser.id)
-                //轉base 64俾python
             }
+            const albumResult = await this.albumService.getAlbum(currentUser.id);
+            for (let fieldName of albumResult) {
+                // console.log(fieldName.image_source)
+                let notYet64 = `uploads/${fieldName.image_source}`
+                let buff = fs.readFileSync(`${notYet64}`)
+                let base64data = buff.toString('base64')
+                // console.log(base64data)
+                albumJSONArray.push({
+                    file: base64data
+                })
+            }
+            console.log(albumJSONArray)
             res.status(200).send("Upload successful")
             return
         } catch (e) {
@@ -34,12 +45,23 @@ export class AlbumController {
         }
     }
 
+    // async function identityClassifier(image){
+    //     // identity="Zeus"
+    //     let image_base64 = image.toDataURL('image/jpeg').replace(/^data:image\/jpeg;base64,/, "");
+    //     let results=await fetch("http://localhost:8080/login", {
+    //       method: "POST",
+    //       headers: {
+    //         'Content-Type': 'application/json'
+    //       },
+    //       body: JSON.stringify({"image_base64":image_base64})
+    //     });
+
     getAlbum = async (req: Request, res: Response) => {
         let currentUser = req.session['user']
         const albumResult = await this.albumService.getAlbum(currentUser.id);
-        
+
         res.json(albumResult)
-        
+
         return
     }
 
@@ -47,10 +69,10 @@ export class AlbumController {
         try {
             const photoName = req.body.index
             console.log(photoName)
-    
-            
+
+
             await this.albumService.deletePhoto(photoName)
-            
+
             res.json({
                 message: 'del success'
             })

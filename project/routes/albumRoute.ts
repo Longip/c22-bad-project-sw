@@ -12,7 +12,7 @@ let albumController = new AlbumController(albumService)
 
 albumRoute.post('/upload', isLoggedIn, albumController.uploadToAlbum);
 albumRoute.post('/me', albumController.me);
-albumRoute.get('/', isLoggedIn, albumController.getAlbum);
+albumRoute.get('/', albumController.getAlbum);
 albumRoute.delete('/', isLoggedIn, albumController.deletePhotoFromAlbum);
 
 
