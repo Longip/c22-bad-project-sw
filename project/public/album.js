@@ -5,6 +5,7 @@ window.onload = async () => {
 async function loadAlbum() {
     const res = await fetch('/album')
     const datas = await res.json()
+    console.log(datas)
     if (res.ok) {
         let html = ''
         let index = 0
