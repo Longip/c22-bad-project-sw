@@ -1,22 +1,48 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: white;
     font-family: 'Domine', serif;
     font-size: 18px;
-}
+} */
 
-.page-container {
+/* .page-container {
+    margin: 0;
+    padding: 0;
+} */
+
+.container {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+.row {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+.col {
+    background-color: white;
+    height: 100vh;
+    max-width: 230px;
+    margin: 0;
+    padding: 0;
+}
+
+.col-10 {
+    background-color: white;
+    height: 100vh;
+    overflow: hidden;
+
+}
 
 /* ======================================= TOP BANNER ======================================= */
 
 
-.banner-container {
+.top-banner {
     background-image: url(./header4.png);
     background-size: cover;
     background-attachment: scroll;
@@ -26,7 +52,6 @@ body {
     align-items: center;
     height: 12vh;
     opacity: 0.8;
-
 }
 
 /* ======================================= NAVBAR ======================================= */
@@ -50,89 +75,14 @@ body {
 
 .ourlogo {
     transform:
-        scale(0.7) translate(-90px, -50px);
-}
+        scale(0.7) translate(-110px, -50px);
 
-/* 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
 }
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    cursor: pointer;
-    background-color: gray;
-}
-
-.bi-list {
-    font-size: 34px;
-    padding-right: 10px;
-}
-
-.bi-list:hover {
-    cursor: pointer;
-    background-color: gray;
-    padding-right: 10px;
-} */
 
 
 /* ======================================= Dropdown ======================================= */
 
-/* .dropdown {
-    position: relative;
-    display: inline-block;
-}
 
-.dropdown-btn {
-    background-color: transparent;
-    border: none;
-
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: rgba(61, 84, 112, 0.8);
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    border-bottom: solid 1px white;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.bi-list {
-    color: white;
-}
-
-.display-btn {
-    font-size: 30px;
-    cursor: pointer;
-} */
 
 /* ======================================= Profile-bar ======================================= */
 
@@ -146,9 +96,9 @@ li a:hover {
 
 .left-sidebar {
     flex-grow: 2;
-    max-width: 150px;
+    max-width: 230px;
     padding: 10px;
-    position: relative;
+    position: absolute;
     transition: all 0.5s;
     box-shadow: 2px 0px 3px gray;
     background-color: rgba(61, 84, 112, 0.8);
@@ -177,7 +127,6 @@ li a:hover {
     transition: all 0.5s;
     border: white;
     position: relative;
-    /* background-color: rgba(61, 84, 112, 0.8); */
     color: white;
 }
 
@@ -197,12 +146,6 @@ li a:hover {
     border-radius: 50%;
     border: 4px solid rgba(255, 255, 255, 0.1);
     transition: all 0.5s;
-}
-
-.user-name {
-    font-family: 'Oswald';
-    font-weight: 400;
-    text-transform: uppercase;
 }
 
 .user-image {
@@ -317,17 +260,6 @@ li a:hover {
 }
 
 .circular-container {
-    /* height: 150px;
-    width: 150px;
-    background-color: #ffffff;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    border-radius: 8px;
-    box-shadow: 20px 20px 40px rgba(60, 60, 150, 0.25);
-    display: grid;
-    place-items: center; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -350,7 +282,6 @@ li a:hover {
     position: absolute;
     height: 84%;
     width: 84%;
-    /* background-color: #ffffff; */
     background-color: #4d5b79;
     border-radius: 50%;
 }
@@ -363,82 +294,3 @@ li a:hover {
 }
 
 /* ======================================= Profile ======================================= */
-
-/* .profile-container {
-    margin-left: 50px;
-    margin-top: 30px;
-} */
-
-/* .liked-count-box {
-    width: 50vw;
-    height: 250px;
-    border: solid 2px rgba(61, 84, 112, 0.8);
-    border-radius: 7px;
-    margin-top: 30px;
-    color: rgba(61, 84, 112, 0.8);
-
-}
-
-.liked-count-box>div {
-    margin-left: 15px;
-    margin: 10px;
-}
-
-
-.misc-count-box {
-    width: 50vw;
-    height: 250px;
-    border: solid 2px rgba(61, 84, 112, 0.8);
-    border-radius: 7px;
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.inner-box {
-    height: 150px;
-    width: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.inner-box>div {
-    margin: 10px;
-}
-
-.bi-balloon-heart-fill {
-    font-size: 35px;
-    color: hotpink;
-}
-
-.bi-images {
-    font-size: 35px;
-    color: darkseagreen;
-}
-
-
-
-
-.wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 100px;
-}
-
-.box1 {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-
-.box2 {
-    grid-column-start: 1;
-    grid-row-start: 3;
-    grid-row-end: 5;
-} */
