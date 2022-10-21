@@ -15,6 +15,8 @@ export class AlbumController {
         })
     }
 
+
+    //uploadToAlbum + pass photo to model
     uploadToAlbum = async (req: Request, res: Response) => {
         try {
             let currentUser = req.session['user']
@@ -34,7 +36,30 @@ export class AlbumController {
                     file: base64data
                 })
             }
-            console.log(albumJSONArray)
+            // console.log(albumJSONArray)
+
+
+
+            console.log("start calling python")
+            for (let i = 0; i < albumJSONArray.length; i++) {
+                // console.log(albumJSONArray[0].file)
+                let results = await fetch("https://ai.eatwat7.today/get-food-identity", {
+                    method: "POST",
+                    body: JSON.stringify(albumJSONArray[i].file)
+                })
+                let finalResult = (await results.json())
+                console.log(finalResult)
+            }
+
+
+            // let food_identity = await results.json();
+            // console.log(food_identity)
+            // console.log("Connecting to Sanic Server..")
+            // res.status(200).json(food_identity)
+            // console.log("Responded result from Sanic Server")
+
+
+
             res.status(200).send("Upload successful")
             return
         } catch (e) {

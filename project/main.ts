@@ -76,7 +76,7 @@ app.use('/album', albumRoute)
 app.post("/predict_server",  async (req, res) => {
     try {
         console.log("start calling python")
-        let results = await fetch("http://localhost:8000/get-food-identity", {
+        let results = await fetch("192.168.59.1/get-food-identity", {
             method: "POST",
             // body: req.body.image_base64
         })
