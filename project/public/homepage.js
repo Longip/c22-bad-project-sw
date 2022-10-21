@@ -27,7 +27,7 @@ logoutInit();
 async function displayCard() {
 
     let res = await fetch('/restaurants/category')
-    cardDatas = (await res.json()).result
+    let cardDatas = (await res.json()).result
 
     let html = ''
     for (let cardData of cardDatas) {
@@ -59,7 +59,7 @@ async function initMap() {
     const tourStops = [];
 
     let res = await fetch('/restaurants/category')
-    cardDatas = (await res.json()).result
+    let cardDatas = (await res.json()).result
     for (let cardData of cardDatas) {
         let tempData = []
         tempData.push({ lat: cardData['coordinates']['x'], lng: cardData['coordinates']['y'] })
@@ -102,12 +102,12 @@ async function initMap() {
 window.initMap = initMap;
 
 //make two display "block" and "none"
-displayCardElem.addEventListener('click', function() {
+displayCardElem.addEventListener('click', function () {
     if (mapContainer.style.display === 'block') {
         mapContainer.style.display = 'none';
         cardContainer.style.display = 'block';
-      } else {
+    } else {
         mapContainer.style.display = 'block';
         cardContainer.style.display = 'none';
-      }
+    }
 })

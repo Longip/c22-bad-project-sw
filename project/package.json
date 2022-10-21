@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@capacitor/camera": "^4.1.2",
     "@types/bcryptjs": "^2.4.2",
     "@types/dotenv": "^8.2.0",
     "@types/node": "^18.8.4",
