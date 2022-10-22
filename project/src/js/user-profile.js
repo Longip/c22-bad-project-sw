@@ -36,7 +36,7 @@ let imageElem = document.querySelector(".image-src > img");
 function leftSideBar() {
     button = document.querySelector(".toggle-button");
     button.addEventListener("click", (e) => {
-        leftSideBarElem.style["max-width"] = '70px';
+        leftSideBarElem.style["max-width"] = '90px';
         imageElem.style["width"] = '75px'
         button.className = "new-toggle-button";
         textElem.style.display = "none"
