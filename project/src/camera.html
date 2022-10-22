@@ -9,12 +9,23 @@
 </head>
 
 <body>
+
     <button class="button" id="take-photo">Take a Photo</button>
+
+    <form id="profile-pic-form" action="/profile-pic-formidable" method="POST" enctype="multipart/form-data">
+        <div class="profile-pic-submit">
+            <input type="submit" value="Update Profile Picture" />
+        </div>
+    </form>
+
+
     <p>
         <img id="image" style="max-width: 100%">
     </p>
     <script type="module"
         src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"></script>
+    <script nomodule
+        src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"></script>
     <script src="./js/camera.js" type="module"></script>
 </body>
 

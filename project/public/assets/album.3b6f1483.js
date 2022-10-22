@@ -4170,6 +4170,7 @@ memowallFormElement.addEventListener("submit", async (e) => {
   const formData = new FormData();
   for (let i = 0; i < form.image.files.length; i++) {
     let file = form.image.files[i];
+    console.log("file:", file);
     formData.append("image_" + i, file);
   }
   const res = await fetch("/album/upload", {

@@ -14,3 +14,4 @@ userRoutes.post('/login', userController.login);
 userRoutes.get('/login/google', userController.loginGoogle);
 userRoutes.post('/register', userController.register);
 userRoutes.post('/logout', userController.logout);
+userRoutes.post('/profilePicture', userController.changeProfilePicture);
