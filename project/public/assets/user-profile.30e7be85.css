@@ -1,11 +1,11 @@
-/* body {
-    margin: 0;
+body {
+    /* margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: white;
-    font-family: 'Domine', serif;
+    background-color: white; */
+    font-family: 'Yeseva One', cursive;
     font-size: 18px;
-} */
+}
 
 /* .page-container {
     margin: 0;
@@ -244,6 +244,22 @@
     font-size: 30px;
 }
 
+.fa-location-dot {
+    font-size: 15px;
+}
+
+.fa-signature {
+    font-size: 15px;
+}
+
+.edit-btn {
+    font-size: 12px;
+}
+
+.fa-pen-to-square {
+    font-size: 12px;
+}
+
 /* ======================================= Circular-progress-bar ======================================= */
 
 
@@ -294,3 +310,98 @@
 }
 
 /* ======================================= Profile ======================================= */
+
+
+.basic-profile-container {
+    height: auto;
+    background-color: white;
+    margin: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 16px;
+    border-bottom: solid 1px gray;
+    /* can delete */
+    width: 100vw;
+}
+
+.profile-content {
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+/* ======================================= Album ======================================= */
+
+
+.inner>a>img {
+    width: 300px;
+    height: 300px;
+    border-radius: 7px;
+}
+
+.glightbox :hover {
+    background-color: none;
+}
+
+.glightbox {
+    position: relative;
+}
+
+.fa-circle-xmark {
+    color: rgba(61, 84, 112, 0.8);
+    font-size: 22px;
+}
+
+/* ======================================= Gallery ======================================= */
+
+.gallery-Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.photo {
+
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    /* padding: 20px 20px; */
+}
+
+.photo-conatiner {
+    position: relative;
+}
+
+.delete-btn {
+    position: absolute;
+    right: 2px;
+    top: 0px;
+    background-color: black;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    /* display: none; */
+}
+
+.delete-btn:hover {
+    display: block;
+    position: absolute;
+    right: 2px;
+    top: 0px;
+    background-color: red;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
