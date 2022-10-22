@@ -252,6 +252,14 @@ body {
     font-size: 15px;
 }
 
+.edit-btn {
+    font-size: 12px;
+}
+
+.fa-pen-to-square {
+    font-size: 12px;
+}
+
 /* ======================================= Circular-progress-bar ======================================= */
 
 
