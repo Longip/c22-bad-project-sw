@@ -18,7 +18,7 @@ var CameraResultType;
   CameraResultType2["DataUrl"] = "dataUrl";
 })(CameraResultType || (CameraResultType = {}));
 const Camera = registerPlugin("Camera", {
-  web: () => __vitePreload(() => import("./web.3f19aaa4.js"), true ? ["assets/web.3f19aaa4.js","assets/index.bd991f68.js","assets/modulepreload-polyfill.b7f2da20.js"] : void 0).then((m) => new m.CameraWeb())
+  web: () => __vitePreload(() => import("./web.3b710fd5.js"), true ? ["assets/web.3b710fd5.js","assets/index.bd991f68.js","assets/modulepreload-polyfill.b7f2da20.js"] : void 0).then((m) => new m.CameraWeb())
 });
 const takePhotoBtn = document.querySelector("#take-photo");
 const profilePicFormElem = document.querySelector("#profile-pic-form");
@@ -31,11 +31,11 @@ takePhotoBtn.addEventListener("click", async () => {
     if (!imageElem) {
       return;
     }
-    imageElem.src = photo.webPath;
+    let photoUrl = photo.webPath;
+    imageElem.src = photoUrl;
     console.log("imageElem.src: ", imageElem.src);
-    let newProfilePic = await fetch(photo.webPath);
-    console.log("hello");
-    console.log("newProfilePic: ", newProfilePic);
+    const fetchAsBlob = (photoUrl2) => fetch(photoUrl2).then((response) => response.blob());
+    console.log("fetchAsBlob: ", fetchAsBlob);
     profilePicFormElem.addEventListener("submit", async (e) => {
       e.preventDefault();
       const form = e.target;

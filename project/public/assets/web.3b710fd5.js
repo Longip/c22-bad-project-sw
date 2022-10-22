@@ -1,5 +1,5 @@
 import { W as WebPlugin, C as CapacitorException } from "./index.bd991f68.js";
-import { C as CameraSource, a as CameraDirection } from "./camera.66ccf19d.js";
+import { C as CameraSource, a as CameraDirection } from "./camera.72cae436.js";
 import "./modulepreload-polyfill.b7f2da20.js";
 class CameraWeb extends WebPlugin {
   async getPhoto(options) {

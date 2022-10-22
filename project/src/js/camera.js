@@ -15,13 +15,32 @@ takePhotoBtn.addEventListener('click', async () => {
         if (!imageElem) {
             return;
         }
-        imageElem.src = photo.webPath;
+        let photoUrl = photo.webPath;
+
+        imageElem.src = photoUrl
         console.log("imageElem.src: ", imageElem.src)
 
 
-        let newProfilePic = await fetch(photo.webPath)
-        console.log("hello")
-        console.log("newProfilePic: ", newProfilePic)
+        // let newProfilePic = await fetch(photoUrl)
+        // console.log("hello")
+        // console.log("newProfilePic: ", newProfilePic)
+
+
+        const fetchAsBlob = photoUrl => fetch(photoUrl)
+            .then(response => response.blob());
+
+        console.log("fetchAsBlob: ", fetchAsBlob)
+
+        // const convertBlobToBase64 = blob => new Promise((resolve, reject) => {
+        //     const reader = new FileReader;
+        //     reader.onerror = reject;
+        //     reader.onload = () => {
+        //         resolve(reader.result);
+        //     };
+        //     reader.readAsDataURL(blob);
+        // });
+
+
 
 
         // send the new profile picture to the server
