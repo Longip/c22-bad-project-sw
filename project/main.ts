@@ -32,7 +32,8 @@ declare module 'express-session' {
     interface SessionData {
         name?: string,
         user: any,
-        grant: any
+        grant: any,
+        location?: any
     }
 }
 

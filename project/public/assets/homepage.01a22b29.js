@@ -13,9 +13,26 @@ window.addEventListener("load", async () => {
   console.log("page is fully loaded");
   try {
     const coordinates = await Geolocation.getCurrentPosition();
-    console.log("Current geolocation:", coordinates);
+    const latitude = coordinates.coords.latitude;
+    const longitude = coordinates.coords.longitude;
+    console.log(latitude);
+    console.log(longitude);
+    const res = await fetch("/user/location", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        latitude,
+        longitude
+      })
+    });
+    console.log("CP1");
+    if (res.ok) {
+      console.log("post location successfully");
+    }
   } catch (error) {
-    console.log("Error: ", error);
+    console.log("Error: ", "please enable the location feature");
   }
 });
 async function logoutInit() {
