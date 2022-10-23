@@ -18,7 +18,7 @@ var CameraResultType;
   CameraResultType2["DataUrl"] = "dataUrl";
 })(CameraResultType || (CameraResultType = {}));
 const Camera = registerPlugin("Camera", {
-  web: () => __vitePreload(() => import("./web.3b710fd5.js"), true ? ["assets/web.3b710fd5.js","assets/index.bd991f68.js","assets/modulepreload-polyfill.b7f2da20.js"] : void 0).then((m) => new m.CameraWeb())
+  web: () => __vitePreload(() => import("./web.0b736342.js"), true ? ["assets/web.0b736342.js","assets/index.bd991f68.js","assets/modulepreload-polyfill.b7f2da20.js"] : void 0).then((m) => new m.CameraWeb())
 });
 const takePhotoBtn = document.querySelector("#take-photo");
 const profilePicFormElem = document.querySelector("#profile-pic-form");
@@ -34,19 +34,25 @@ takePhotoBtn.addEventListener("click", async () => {
     let photoUrl = photo.webPath;
     imageElem.src = photoUrl;
     console.log("imageElem.src: ", imageElem.src);
-    const fetchAsBlob = (photoUrl2) => fetch(photoUrl2).then((response) => response.blob());
-    console.log("fetchAsBlob: ", fetchAsBlob);
     profilePicFormElem.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const form = e.target;
-      const formData = new FormData();
-      formData.append("image", newProfilePic);
-      console.log("formData: ", formData);
+      let reqObj = {
+        url: `${photoUrl}`
+      };
+      console.log(reqObj);
       const res = await fetch("/user/profilePicture", {
         method: "POST",
-        body: formData
+        header: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(reqObj)
       });
       console.log("submitted profile pic sucessfully");
+      if (res.ok) {
+        console.log("server has received the profile picture URL");
+      } else {
+        console.log("server failed to get the profile picture URL");
+      }
     });
   } catch (e) {
     console.warn("User cancelled", e);

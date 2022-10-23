@@ -11,6 +11,7 @@ takePhotoBtn.addEventListener('click', async () => {
             resultType: 'uri',
         });
 
+        // display only
         const imageElem = document.querySelector('#image');
         if (!imageElem) {
             return;
@@ -20,43 +21,28 @@ takePhotoBtn.addEventListener('click', async () => {
         imageElem.src = photoUrl
         console.log("imageElem.src: ", imageElem.src)
 
-
-        // let newProfilePic = await fetch(photoUrl)
-        // console.log("hello")
-        // console.log("newProfilePic: ", newProfilePic)
-
-
-        const fetchAsBlob = photoUrl => fetch(photoUrl)
-            .then(response => response.blob());
-
-        console.log("fetchAsBlob: ", fetchAsBlob)
-
-        // const convertBlobToBase64 = blob => new Promise((resolve, reject) => {
-        //     const reader = new FileReader;
-        //     reader.onerror = reject;
-        //     reader.onload = () => {
-        //         resolve(reader.result);
-        //     };
-        //     reader.readAsDataURL(blob);
-        // });
-
-
-
-
         // send the new profile picture to the server
         profilePicFormElem.addEventListener("submit", async (e) => {
             e.preventDefault()
-            const form = e.target
-            const formData = new FormData()
+            let reqObj = {
+                url: `${photoUrl}`
+            }
+            console.log(reqObj)
 
-            formData.append("image", newProfilePic)
-            console.log("formData: ", formData)
             const res = await fetch('/user/profilePicture', {
                 method: "POST",
-                body: formData
+                header: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(reqObj)
             })
             console.log("submitted profile pic sucessfully")
 
+            if (res.ok) {
+                console.log("server has received the profile picture URL")
+            } else {
+                console.log("server failed to get the profile picture URL")
+            }
         })
 
 

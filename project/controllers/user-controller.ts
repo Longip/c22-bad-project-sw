@@ -5,6 +5,8 @@ import fetch from "cross-fetch"
 import crypto from "crypto"
 import { User } from "../model/User"
 
+// export const app = express();
+// app.use(express.json());
 
 export class UserController {
     constructor(private userService: UserService) { }
@@ -125,7 +127,11 @@ export class UserController {
     // Update profile picture
     changeProfilePicture = async (req: express.Request, res: express.Response) => {
 
-        console.log(req.body)
+        console.log("request body: ", req.body)
+        console.log("hello")
+        let url = req.body.url
+
+        console.log("Server receive this: ", url)
 
         res.status(200).json({
             message: "received profile picture"
