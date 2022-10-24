@@ -1,5 +1,5 @@
 import formidable, { Files } from "formidable"
-export const uploadDir = '../src/assets/uploads'
+export const uploadDir = 'uploads'
 import express from 'express';
 
 const form = formidable({
