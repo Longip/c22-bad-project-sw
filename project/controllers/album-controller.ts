@@ -75,7 +75,7 @@ export class AlbumController {
                     resultArray.seafood.qty = resultArray.seafood.qty + 1
                 } else if (finalResult.classname == "Noodles") {
                     resultArray.noodles.qty = resultArray.noodles.qty + 1
-                } else if (finalResult.classname == "Beverage") {
+                } else if (finalResult.classname == "Bervage") {
                     resultArray.beverage.qty = resultArray.beverage.qty + 1
                 } else if (finalResult.classname == "Fast_food") {
                     resultArray.fast_food.qty = resultArray.fast_food.qty + 1
