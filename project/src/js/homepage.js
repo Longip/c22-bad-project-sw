@@ -107,6 +107,7 @@ logoutInit();
 
 // display card
 async function displayCard() {
+    console.log("testCard");
 
     let res = await fetch('/restaurants/category')
     let cardDatas = (await res.json()).result
@@ -152,6 +153,7 @@ async function displayCard() {
 displayCard();
 
 async function initMap() {
+    console.log("testMap");
     const tourStops = [];
 
     let res = await fetch('/restaurants/category')
@@ -172,7 +174,6 @@ async function initMap() {
     });
 
     const infoWindow = new google.maps.InfoWindow();
-
     // Create markers
     tourStops.forEach(([position, name, photo, address], i) => {
         const marker = new google.maps.Marker({
@@ -196,6 +197,7 @@ async function initMap() {
     });
 }
 window.initMap = initMap;
+
 
 //make two display "block" and "none"
 displayCardElem.addEventListener('click', function () {
