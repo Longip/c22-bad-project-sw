@@ -1,6 +1,6 @@
 import "./modulepreload-polyfill.b7f2da20.js";
-import "./album.94051bcf.js";
-var userProfile = "";
+import "./glightbox.6c869fc1.js";
+/* empty css                       */import "./album.c0fb399a.js";
 let button = document.querySelector(".toggle-button");
 let leftSideBarElem = document.querySelector(".left-sidebar");
 let newButton = document.querySelector(".new-toggle-button");
