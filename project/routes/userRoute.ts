@@ -10,6 +10,7 @@ let userService = new UserService(knex)
 let userController = new UserController(userService)
 
 
+userRoutes.get('/me', userController.me);
 userRoutes.post('/login', userController.login);
 userRoutes.post('/location', userController.location);
 userRoutes.get('/login/google', userController.loginGoogle);
