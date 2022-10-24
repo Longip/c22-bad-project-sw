@@ -39,4 +39,13 @@ export class RestaurantService {
             ))
         return locationResults
     }
+
+    async getUserCategory(user_id: any): Promise<any> {
+        let result = (
+            await this.knex.raw(`
+            select * from user_food_category where user_id = ${user_id};
+        `
+            ))
+        return result
+    }
 }    

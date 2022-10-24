@@ -33,7 +33,8 @@ declare module 'express-session' {
         name?: string,
         user: any,
         grant: any,
-        location?: any
+        location?: any,
+        food_category: any
     }
 }
 

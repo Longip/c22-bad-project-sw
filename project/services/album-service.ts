@@ -19,4 +19,18 @@ export class AlbumService {
     async deletePhoto(image_source:string){   
         await this.knex.raw('delete from user_album_images where image_source = ?', [image_source])
     }
+
+    async updateCategory(user_id: number, category_id: number): Promise<any> {
+
+        await this.knex.raw(`
+        DELETE from user_food_category where user_id = ${user_id}
+        `)
+
+        await this.knex.raw(`
+            INSERT INTO user_food_category 
+            (user_id, category_id) 
+            VALUES (?,?)
+        `,
+            [user_id, category_id])
+    }
 }    
