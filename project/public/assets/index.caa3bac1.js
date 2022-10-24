@@ -29,7 +29,7 @@ async function signupInit() {
       username: signupFormElem.username.value,
       password: signupFormElem.password.value
     };
-    console.log(signupFormObj);
+    console.log(signupFormElem.username.value, signupFormElem.password.value);
     console.log("successfully submitted the form");
     const res = await fetch("/user/register", {
       method: "POST",
@@ -40,7 +40,7 @@ async function signupInit() {
     });
     if (res.ok) {
       setTimeout(() => {
-        window.location.replace("/index.html");
+        window.location.replace("/album.html");
       }, 2e3);
       console.log("sign up successfully");
     } else {

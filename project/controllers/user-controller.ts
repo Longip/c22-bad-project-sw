@@ -128,7 +128,10 @@ export class UserController {
             })
             return
         }
-        await this.userService.createUser(username, password, null)
+        let result = await this.userService.createUser(username, password, null)
+        let newDBuser: User = result[0]
+
+        req.session['user'] = newDBuser
 
         res.json({ message: 'Create successfully' })
     }

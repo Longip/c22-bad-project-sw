@@ -118,6 +118,7 @@ export class AlbumController {
 
     getAlbum = async (req: Request, res: Response) => {
         let currentUser = req.session['user']
+        console.log("currentUser" + currentUser)
         const albumResult = await this.albumService.getAlbum(currentUser.id);
 
         res.json(albumResult)
