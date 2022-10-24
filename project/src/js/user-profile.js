@@ -32,6 +32,7 @@ let text2Elem = document.querySelector(".text2");
 let text3Elem = document.querySelector(".text3");
 let text4Elem = document.querySelector(".text4");
 let imageElem = document.querySelector(".image-src > img");
+let editProfilePicBtn = document.querySelector(".edit-profile-pic-btn")
 
 function leftSideBar() {
     button = document.querySelector(".toggle-button");
@@ -87,6 +88,27 @@ async function logoutInit() {
 
 logoutInit();
 
+<<<<<<< HEAD
+=======
+
+// Load Profile Picture
+function loadProfilePic() {
+    let profilePicPath = `./assets/winnie-the-pooh.jpeg`
+    document.querySelector(".user-image").innerHTML = `<img src="${profilePicPath}">`
+}
+
+
+// Change Profile Picture
+editProfilePicBtn.addEventListener("click", async () => {
+
+})
+
+
+
+// window.onload = async () => {
+//     await loadAlbum()
+// }
+>>>>>>> dea89091311eb3ad4ecce708a18d15f7fc05137a
 window.onload = async () => {
     await loadAlbum()
     console.log("reload")
@@ -142,6 +164,7 @@ async function loadAlbum() {
 }
 
 
+<<<<<<< HEAD
 
 
 
@@ -151,6 +174,12 @@ async function loadAlbum() {
 const memowallFormElement = document.querySelector("#user-album-form")
 
 memowallFormElement.addEventListener("submit", async (e) => {
+=======
+const memowallFormElement = document.querySelector("#user-album-form")
+
+memowallFormElement.addEventListener("submit", async (e) => {
+    console.log("CP1")
+>>>>>>> dea89091311eb3ad4ecce708a18d15f7fc05137a
     e.preventDefault()
     const form = e.target
     const formData = new FormData()
@@ -159,13 +188,24 @@ memowallFormElement.addEventListener("submit", async (e) => {
         console.log("file:", file)
         formData.append("image_" + i, file)
     }
+<<<<<<< HEAD
+=======
+    console.log("CP2")
+>>>>>>> dea89091311eb3ad4ecce708a18d15f7fc05137a
     const res = await fetch('/album/upload', {
         method: "POST",
         body: formData
     })
+<<<<<<< HEAD
 
 
     if (res.status === 200) {
+=======
+    console.log("CP3")
+
+    if (res.status === 200) {
+        console.log("reload the page")
+>>>>>>> dea89091311eb3ad4ecce708a18d15f7fc05137a
         loadAlbum()
     }
 })

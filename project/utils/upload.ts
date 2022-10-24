@@ -1,5 +1,5 @@
 import formidable, { Files } from "formidable"
-export const uploadDir = 'uploads'
+export const uploadDir = 'src/assets/user-profile-pictures'
 import express from 'express';
 
 const form = formidable({
@@ -15,7 +15,7 @@ const form = formidable({
                 return true
             }
         }
-        
+
         return false
     },
     filename: (originalName, originalExt, part, form) => {
@@ -25,7 +25,7 @@ const form = formidable({
     }
 })
 
-export const formParse = (req: express.Request) : Promise<{
+export const formParse = (req: express.Request): Promise<{
     fields: any,
     files: Files
 }> => {
@@ -33,6 +33,7 @@ export const formParse = (req: express.Request) : Promise<{
         form.parse(req, (err, fields, files: Files) => {
             try {
                 if (err) {
+                    console.log(err)
                     reject(err)
                     return
                 }
@@ -43,9 +44,9 @@ export const formParse = (req: express.Request) : Promise<{
             } catch (error) {
                 console.log('form parse error', error);
                 reject(error)
-                
+
             }
-          
+
         })
     })
 }
