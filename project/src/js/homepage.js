@@ -113,6 +113,20 @@ async function displayCard() {
 
     let html = ''
     for (let cardData of cardDatas) {
+        let priceRange
+        if (cardData.price_range_id == 1) {
+            priceRange = "below $50"
+        } else if (cardData.price_range_id == 2) {
+            priceRange = "$51-100"
+        } else if (cardData.price_range_id == 3) {
+            priceRange = "$101-200"
+        } else if (cardData.price_range_id == 4) {
+            priceRange = "$201-400"
+        } else if (cardData.price_range_id == 5) {
+            priceRange = "$401-800"
+        } else if (cardData.price_range_id == 6) {
+            priceRange = "$801 above"
+        }
         html += `
         <div class="column">
             <div class="card">
@@ -123,7 +137,7 @@ async function displayCard() {
                     <div class="rest-name">Name: ${cardData.name}</div>
                     <div class="rest-address">Address: ${cardData.address}</div>
                     <div class="rest-phone">Phone: ${cardData.phone}</div>
-                    <div class="rest-price">Price: ${cardData.price_range_id}</div>
+                    <div class="rest-price">Price: ${priceRange}</div>
                 </div>
             </div>
         </div>
