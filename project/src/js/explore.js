@@ -109,11 +109,14 @@ logoutInit();
 async function displayCard() {
     console.log("testCard");
 
-    let res = await fetch('/restaurants/category')
-    let cardDatas = (await res.json()).result
+    let res = await fetch('/restaurants/location')
+    let cardDatas = (await res.json())
+    console.log(cardDatas)
+    console.log(cardDatas[0])
 
     let html = ''
-    for (let cardData of cardDatas) {
+    for (let cardData of cardDatas[0]) {
+        console.log(cardData)
         let priceRange
         if (cardData.price_range_id == 1) {
             priceRange = "below $50"
@@ -156,8 +159,9 @@ async function initMap() {
     console.log("testMap");
     const tourStops = [];
 
-    let res = await fetch('/restaurants/category')
-    let cardDatas = (await res.json()).result
+    let res = await fetch('/restaurants/location')
+    let cardDatas = (await res.json())
+    // console.log(cardDatas)
     for (let cardData of cardDatas) {
         let tempData = []
         tempData.push({ lat: cardData['coordinates']['x'], lng: cardData['coordinates']['y'] })

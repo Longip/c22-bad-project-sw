@@ -26,18 +26,25 @@ export class RestaurantService {
         return cardResults
     }
 
-    async getOneLocationForEachDistrict(): Promise<any> {
-        let locationResults = (
+    async getTheNearestDistrict(x: any, y: any): Promise<any> {
+        let locationResult = (
             await this.knex.raw(/*sql*/`
             with 
             distinct_district as (
-	        select 
-	        distinct (district_id)as  district_id
-	        from restaurants r order by district_id )
-            SELECT coordinates, id, address FROM distinct_district dd join restaurants on dd.district_id = restaurants.id
+                select 
+                distinct (district_id)as  district_id
+                from restaurants r order by district_id 
+            ),
+            distriect_rand_resto as (
+              select district_id, 
+              (select id from restaurants where restaurants.district_id  = distinct_district.district_id limit 1 ) as restaurant_id  
+              from distinct_district
+            )
+            select * from distriect_rand_resto join restaurants r on r.id = distriect_rand_resto.restaurant_id
+            ORDER BY coordinates <-> point '(${x}, ${y})' LIMIT 1
         `,
             ))
-        return locationResults
+        return locationResult
     }
 
     async getUserCategory(user_id: any): Promise<any> {

@@ -66,10 +66,11 @@ export class UserController {
     location = async (req: express.Request, res: express.Response) => {
         const latitude = req.body.latitude
         const longitude = req.body.longitude
+        console.log(latitude)
+        console.log(longitude)
         const location = { x: latitude, y: longitude }
         req.session['location'] = location
-        // console.log(req.session['location'].latitude)
-        // console.log(req.session['location'].longitude)
+        res.json({message: "end"})
     }
 
     loginGoogle = async (req: express.Request, res: express.Response) => {
