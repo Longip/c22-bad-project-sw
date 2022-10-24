@@ -1,7 +1,21 @@
 let cardContainer = document.querySelector('.row1');
 let mapContainer = document.querySelector('#map');
 let displayCardElem = document.querySelector('.switchMap');
+let userProfilePicElem = document.querySelector(".user-profile-pic")
 import { Geolocation } from '@capacitor/geolocation';
+
+async function loadProfilePic() {
+    let result = await fetch('/user/username')
+    let currentUser = await result.json()
+    console.log("currentUsername: ", currentUser)
+    let currentUsername = currentUser["username"]
+
+    userProfilePicElem.outerHTML = /*html*/`
+    <div class="image-src user-profile-pic"><img src="./uploads/${currentUsername + ".png" || currentUsername + ".jpg"}"></div>
+
+    `
+}
+loadProfilePic()
 
 mapContainer.style.display = 'none';
 // Get the Geolocation of the user when window onload

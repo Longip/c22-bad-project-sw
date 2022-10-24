@@ -10,6 +10,20 @@ import fs from 'fs'
 
 const takePhotoBtn = document.querySelector('#take-photo')
 const profilePicFormElem = document.querySelector("#profile-pic-form")
+const userProfilePicElem = document.querySelector(".user-profile-pic")
+
+async function loadProfilePic() {
+    let result = await fetch('/user/username')
+    let currentUser = await result.json()
+    console.log("currentUsername: ", currentUser)
+    let currentUsername = currentUser["username"]
+
+    userProfilePicElem.outerHTML = /*html*/`
+    <div class="image-src user-profile-pic"><img src="./uploads/${currentUsername + ".png" || currentUsername + ".jpg"}"></div>
+
+    `
+}
+loadProfilePic()
 
 const IMAGE_DIR = "assets/user-profile-pictures"
 

@@ -33,6 +33,20 @@ let text3Elem = document.querySelector(".text3");
 let text4Elem = document.querySelector(".text4");
 let imageElem = document.querySelector(".image-src > img");
 let editProfilePicBtn = document.querySelector(".edit-profile-pic-btn")
+let userProfilePicElem = document.querySelector(".user-profile-pic")
+
+async function loadProfilePic() {
+    let result = await fetch('/user/username')
+    let currentUser = await result.json()
+    console.log("currentUsername: ", currentUser)
+    let currentUsername = currentUser["username"]
+
+    userProfilePicElem.outerHTML = /*html*/`
+    <div class="image-src user-profile-pic"><img src="./uploads/${currentUsername + ".png" || currentUsername + ".jpg"}"></div>
+
+    `
+}
+loadProfilePic()
 
 function leftSideBar() {
     button = document.querySelector(".toggle-button");
@@ -88,12 +102,6 @@ async function logoutInit() {
 
 logoutInit();
 
-
-// Load Profile Picture
-function loadProfilePic() {
-    let profilePicPath = `./assets/winnie-the-pooh.jpeg`
-    document.querySelector(".user-image").innerHTML = `<img src="${profilePicPath}">`
-}
 
 
 // Change Profile Picture
@@ -185,3 +193,4 @@ memowallFormElement.addEventListener("submit", async (e) => {
         loadAlbum()
     }
 })
+

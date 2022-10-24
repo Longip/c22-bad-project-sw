@@ -21,6 +21,13 @@ export class UserController {
         })
     }
 
+    username = async (req: express.Request, res: express.Response) => {
+        let currentUsername = req.session['user']['username']
+        res.json({
+            username: currentUsername
+        })
+    }
+
     login = async (req: express.Request, res: express.Response) => {
         const username = req.body.username
         const password = req.body.password

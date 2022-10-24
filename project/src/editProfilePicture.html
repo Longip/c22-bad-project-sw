@@ -9,13 +9,11 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/glightbox.css" />
-    <link rel="stylesheet" href="./css/homepage.css">
-    <link rel="stylesheet" href="./css/map.css">
-    <title>EAT WAT 7</title>
+    <link rel="stylesheet" href="./css/editProfilePicture.css">
+    <title>Edit your Profile Picture</title>
 </head>
 
 <body>
-
     <div class="container">
         <div class="row top-banner">
             <div class="banner-container">
@@ -25,7 +23,7 @@
             <section class="navbar-container">
                 <div class="navbar">
                     <div class="navbar-content">
-                        <div class="ourlogo"><img src="./assets/site-images/eatwat7.png"></div>
+                        <div class="ourlogo"><img src="./assets/site-images/logo3.png"></div>
                     </div>
                 </div>
             </section>
@@ -76,29 +74,19 @@
             </div>
             <div class="col-10">
                 <section class="content-container">
-                    <!-- <div class="display-btn"><i class="bi bi-arrow-clockwise"></i></div> -->
-                    <div class="form-check form-switch">
-                        <div>Switch Map</div>
-                        <input class="switchMap form-check-input" type="checkbox" role="switch"
-                            id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-                    </div>
-                    <div class="row1">
-                        <!-- <div class="column">
-                        <div class="card">
-                            <div class="restaurant-image-area">
-                                <div class="restaurant-image"></div>
-                            </div>
-                            <div class="restaurant-info">
-                                <div class="rest-name">Name: </div>
-                                <div class="rest-address">Address: </div>
-                                <div class="rest-phone">Phone: </div>
-                                <div class="rest-price">Price: </div>
-                            </div>
+                    <button class="button" id="take-photo">Take a Photo</button>
+
+                    <form id="profile-pic-form" action="/profile-pic-formidable" method="POST"
+                        enctype="multipart/form-data">
+                        <div class="profile-pic-submit">
+                            <input type="submit" value="Update Profile Picture" />
                         </div>
-                    </div> -->
-                    </div>
-                    <div id="map">this is a map</div>
+                    </form>
+
+
+                    <p>
+                        <img id="image" style="max-width: 100%">
+                    </p>
                 </section>
             </div>
         </div>
@@ -106,9 +94,12 @@
 
 
 
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-        defer></script>
+
+
+    <script type="module"
+        src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"></script>
+    <script nomodule
+        src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -119,24 +110,10 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/dda97d4095.js" crossorigin="anonymous"></script>
-    <!-- <script src="./js/user-profile.js" type="module"></script> -->
     <script src="./js/glightbox.min.js" type="module"></script>
     <script src="./js/glightbox.js" type="module"></script>
-    <script src="./js/homepage.js" type="module"></script>
-    <!-- <script src="./js/album.js" type="module"></script> -->
 
-
-    <script>
-        const lightbox = GLightbox({
-            touchNavigation: true,
-            keyboardNavigation: true,
-            closeButton: true,
-            closeOnOutsideClick: true,
-            loop: true,
-
-        });
-
-    </script>
+    <script src="./js/editProfilePicture.js" type="module"></script>
 </body>
 
 </html>
