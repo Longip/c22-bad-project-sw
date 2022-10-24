@@ -46,10 +46,12 @@ export class AlbumController {
 
             console.log("start calling python")
             for (let i = 0; i < albumJSONArray.length; i++) {
+                console.log("1")
                 let results = await fetch("https://ai.eatwat7.today/get-food-identity", {
                     method: "POST",
                     body: JSON.stringify(albumJSONArray[i].file)
                 })
+                console.log("2")
                 let finalResult = (await results.json())
                 if (finalResult.classname == "Japanese") {
                     resultArray.japanese_food.qty = resultArray.japanese_food.qty + 1
@@ -82,6 +84,7 @@ export class AlbumController {
                 }
 
             }
+            console.log("3")
             let temp_num = 0
             let top1
             for (let result in resultArray) {
@@ -92,9 +95,11 @@ export class AlbumController {
                     top1 = { category_id: resultArray[result].category_id, qty: resultArray[result].qty }
                 }
             }
+            console.log("4")
             console.log("Top 1 Category: ");
             console.log(top1);
             await this.albumService.updateCategory(req.session['user'].id, top1?.category_id)
+            res.status(200).send("Success!");
 
             return
         } catch (e) {
