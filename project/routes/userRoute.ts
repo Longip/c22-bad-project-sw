@@ -12,6 +12,7 @@ let userController = new UserController(userService)
 
 userRoutes.get('/me', userController.me);
 userRoutes.post('/login', userController.login);
+userRoutes.post('/location', userController.location);
 userRoutes.get('/login/google', userController.loginGoogle);
 userRoutes.post('/register', userController.register);
 userRoutes.post('/logout', userController.logout);

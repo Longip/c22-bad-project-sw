@@ -1,5 +1,6 @@
 window.onload = async () => {
     await loadAlbum()
+    console.log("reload")
 }
 
 async function loadAlbum() {
@@ -34,7 +35,6 @@ async function loadAlbum() {
             // Call Delete API
             const element = e.target
             const data_index = element.getAttribute('data_index')
-            console.log(data_index)
             const res = await fetch('/album', {
                 method: "DELETE",
                 body: JSON.stringify({

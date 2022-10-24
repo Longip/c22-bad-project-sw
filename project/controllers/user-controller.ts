@@ -50,6 +50,7 @@ export class UserController {
             console.log('login successfully')
             delete dbUser['password']
             req.session['user'] = dbUser
+
             res.status(200).redirect('/homepage.html')
         }
         else {
@@ -59,6 +60,15 @@ export class UserController {
         }
 
 
+    }
+
+    location = async (req: express.Request, res: express.Response) => {
+        const latitude = req.body.latitude
+        const longitude = req.body.longitude
+        const location = {x: latitude, y: longitude}
+        req.session['location'] = location
+        // console.log(req.session['location'].latitude)
+        // console.log(req.session['location'].longitude)
     }
 
     loginGoogle = async (req: express.Request, res: express.Response) => {

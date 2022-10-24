@@ -9,6 +9,8 @@ export class RestaurantController {
 
 
     getByCategory = async (req: express.Request, res: express.Response) => {
+        console.log("getting rest by category")
+
         //add logic to change user category
         let userCategory = 1
         let cardResults = await this.restaurantService.getRestaurantInfoByCategory(userCategory)
@@ -16,17 +18,19 @@ export class RestaurantController {
         res.json({ result })
     }
     getByLocation = async (req: express.Request, res: express.Response) => {
+        console.log("getting rest by location")
         let locationResults = await this.restaurantService.getOneLocationForEachDistrict()
         //get user location
-        let userLocaiton = { x: 22.3195844803184, y: 114.208513498306 }
+        let userLocation = req.session['location']
+        console.log("user's location is : " + userLocation)
+        // let userLocation = { x: 22.3195844803184, y: 114.208513498306 }
         let userDistrict: any
 
         for (let row of locationResults.rows) {
-            console.log(row.id)
             if (row.id == 1) {
                 userDistrict = row.id
             } else {
-                if ((locationResults.rows[userDistrict - 1].coordinates.x - userLocaiton.x)**2 > (row.coordinates.x - userLocaiton.x)**2 && (locationResults.rows[userDistrict - 1].coordinates.y - userLocaiton.y)**2 > (row.coordinates.y - userLocaiton.y)**2) {
+                if ((locationResults.rows[userDistrict - 1].coordinates.x - userLocation.x)**2 > (row.coordinates.x - userLocation.x)**2 && (locationResults.rows[userDistrict - 1].coordinates.y - userLocation.y)**2 > (row.coordinates.y - userLocation.y)**2) {
                     userDistrict = row.id
                 }
             }

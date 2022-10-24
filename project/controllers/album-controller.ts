@@ -42,7 +42,6 @@ export class AlbumController {
 
             console.log("start calling python")
             for (let i = 0; i < albumJSONArray.length; i++) {
-                // console.log(albumJSONArray[0].file)
                 let results = await fetch("https://ai.eatwat7.today/get-food-identity", {
                     method: "POST",
                     body: JSON.stringify(albumJSONArray[i].file)
