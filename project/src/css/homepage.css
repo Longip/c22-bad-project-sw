@@ -52,12 +52,14 @@ body {
     align-items: center;
     height: 12vh;
     opacity: 0.8;
+    width: 100vw;
 }
 
 /* ======================================= NAVBAR ======================================= */
 
 .navbar-container {
     display: flex;
+    width: 100vw;
 }
 
 .navbar {
