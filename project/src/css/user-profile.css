@@ -118,6 +118,10 @@ body {
     height: 100%;
 }
 
+.camera-btn {
+    color: white !important;
+}
+
 .user-profile {
     flex-grow: 2;
     max-height: 345px;

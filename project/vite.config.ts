@@ -13,10 +13,10 @@ export default defineConfig({
         homepage: resolve(__dirname, "./src/homepage.html"),
         album: resolve(__dirname, "./src/album.html"),
         "user-profile": resolve(__dirname, "./src/user-profile.html"),
-        camera: resolve(__dirname, "./src/camera.html"),
+        // camera: resolve(__dirname, "./src/camera.html"),
         404: resolve(__dirname, "./src/404.html"),
         explore: resolve(__dirname, "./src/explore.html"),
-
+        editProfilePicture: resolve(__dirname, "./src/editProfilePicture.html"),
       },
     },
   },
