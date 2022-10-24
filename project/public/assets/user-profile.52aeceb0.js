@@ -11,6 +11,7 @@ let text2Elem = document.querySelector(".text2");
 let text3Elem = document.querySelector(".text3");
 let text4Elem = document.querySelector(".text4");
 let imageElem = document.querySelector(".image-src > img");
+let editProfilePicBtn = document.querySelector(".edit-profile-pic-btn");
 function leftSideBar() {
   button = document.querySelector(".toggle-button");
   button.addEventListener("click", (e) => {
@@ -54,3 +55,5 @@ async function logoutInit() {
   });
 }
 logoutInit();
+editProfilePicBtn.addEventListener("click", async () => {
+});

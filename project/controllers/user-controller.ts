@@ -4,9 +4,9 @@ import { checkPassword } from "../utils/hash"
 import fetch from "cross-fetch"
 import crypto from "crypto"
 import { User } from "../model/User"
+import { formParse } from "../utils/upload"
+// import fs from "fs"
 
-// export const app = express();
-// app.use(express.json());
 
 export class UserController {
     constructor(private userService: UserService) { }
@@ -65,7 +65,7 @@ export class UserController {
     location = async (req: express.Request, res: express.Response) => {
         const latitude = req.body.latitude
         const longitude = req.body.longitude
-        const location = {x: latitude, y: longitude}
+        const location = { x: latitude, y: longitude }
         req.session['location'] = location
         // console.log(req.session['location'].latitude)
         // console.log(req.session['location'].longitude)
@@ -134,7 +134,6 @@ export class UserController {
     }
 
     //logout
-
     logout = async (req: express.Request, res: express.Response) => {
         req.session.destroy(() => {
             console.log('user logged out')
@@ -145,11 +144,23 @@ export class UserController {
     // Update profile picture
     changeProfilePicture = async (req: express.Request, res: express.Response) => {
 
-        console.log("request body: ", req.body)
-        console.log("hello")
-        let url = req.body.url
+        let { files } = await formParse(req)
+        console.log("files: ", files)
 
-        console.log("Server receive this: ", url)
+
+
+        // get username to use it as filename
+        // const OLD_FILE_NAME = files["image"]["newFilename"]
+
+        const NEW_FILE_NAME = req.session['user']['username'] + ".png"
+        console.log("NEW_FILE_NAME: ", NEW_FILE_NAME)
+
+
+        // fs.rename(`../src/assets/user-profile-pictures/${OLD_FILE_NAME}`, `../src/assets/user-profile-pictures/${NEW_FILE_NAME}`, function (err) {
+        //     if (err) throw err;
+        //     console.log('File Renamed.');
+        // })
+
 
         res.status(200).json({
             message: "received profile picture"

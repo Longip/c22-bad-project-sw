@@ -32,6 +32,7 @@ let text2Elem = document.querySelector(".text2");
 let text3Elem = document.querySelector(".text3");
 let text4Elem = document.querySelector(".text4");
 let imageElem = document.querySelector(".image-src > img");
+let editProfilePicBtn = document.querySelector(".edit-profile-pic-btn")
 
 function leftSideBar() {
     button = document.querySelector(".toggle-button");
@@ -86,6 +87,21 @@ async function logoutInit() {
 }
 
 logoutInit();
+
+
+// Load Profile Picture
+function loadProfilePic() {
+    let profilePicPath = `./assets/winnie-the-pooh.jpeg`
+    document.querySelector(".user-image").innerHTML = `<img src="${profilePicPath}">`
+}
+
+
+// Change Profile Picture
+editProfilePicBtn.addEventListener("click", async () => {
+
+})
+
+
 
 // window.onload = async () => {
 //     await loadAlbum()
