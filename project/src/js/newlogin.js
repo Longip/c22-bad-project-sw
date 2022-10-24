@@ -51,7 +51,7 @@ async function signupInit() {
 
         if (res.ok) {
             setTimeout(() => {
-                window.location.replace('/album.html')
+                window.location.replace('/user-profile.html')
             }, 2000)
             console.log("sign up successfully")
 
