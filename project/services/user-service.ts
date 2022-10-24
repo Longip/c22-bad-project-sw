@@ -22,14 +22,13 @@ export class UserService {
 
         let hashedPassword = await hashPassword(password)
 
-        let userResult = await this.knex.raw(/*sql*/`
-            INSERT INTO users 
-            (username, password, email, created_at) 
-            VALUES (?,?,?, NOW())
-        `,
-            [username, hashedPassword, email])
 
-        return userResult
+        let result = await this.knex.insert({
+            username: username,
+            password: hashedPassword
+        }).into("users").returning('*');
+
+        return result;
     }
 
 

@@ -38,7 +38,7 @@ async function signupInit() {
             password: signupFormElem.password.value,
         }
 
-        console.log(signupFormObj)
+        console.log(signupFormElem.username.value, signupFormElem.password.value)
         console.log("successfully submitted the form")
 
         const res = await fetch('/user/register', {
@@ -51,7 +51,7 @@ async function signupInit() {
 
         if (res.ok) {
             setTimeout(() => {
-                window.location.replace('/index.html')
+                window.location.replace('/album.html')
             }, 2000)
             console.log("sign up successfully")
 

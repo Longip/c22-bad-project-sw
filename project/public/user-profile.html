@@ -11,11 +11,24 @@
     
     
     <title>User Profile</title>
+<<<<<<< HEAD
   <script type="module" crossorigin src="/assets/user-profile.52aeceb0.js"></script>
+=======
+<<<<<<< HEAD
+  <script type="module" crossorigin src="/assets/user-profile.865baa8e.js"></script>
+>>>>>>> fe2ea19719ad8bd6ea22e4357260da8cdcc6bb80
   <link rel="modulepreload" href="/assets/modulepreload-polyfill.b7f2da20.js">
-  <link rel="modulepreload" href="/assets/album.94051bcf.js">
-  <link rel="stylesheet" href="/assets/album.d82387af.css">
-  <link rel="stylesheet" href="/assets/user-profile.9f81c5bb.css">
+  <link rel="modulepreload" href="/assets/glightbox.6c869fc1.js">
+  <link rel="stylesheet" href="/assets/glightbox.56b4e65e.css">
+  <link rel="stylesheet" href="/assets/user-profile.24cf55b8.css">
+=======
+  <script type="module" crossorigin src="/assets/user-profile.e5af6158.js"></script>
+  <link rel="modulepreload" href="/assets/modulepreload-polyfill.b7f2da20.js">
+  <link rel="modulepreload" href="/assets/glightbox.6c869fc1.js">
+  <link rel="modulepreload" href="/assets/album.c0fb399a.js">
+  <link rel="stylesheet" href="/assets/glightbox.56b4e65e.css">
+  <link rel="stylesheet" href="/assets/user-profile.1b7ddeff.css">
+>>>>>>> c3200f657ef889d5a486f155a25e0d349f0a1687
 </head>
 
 <body>
@@ -90,58 +103,55 @@
                         </div>
                     </div>
                 </div>
+
+
+                <div class="right-container">
+                    <div class="right-sidebar">
+                        <div class="circular-container">
+                            <h3>Our prediction: </h3>
+                            <div class="circular-progress">
+                                <div class="value-container">70%</div>
+                            </div>
+                            <div class="cuisine-result">
+                                <h4> Your favorite cuisine is : </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- ================================================ ALBUM ================================================= -->
-                <!-- <section class="album-container">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3>
-                                    <i class="fa fa-camera-retro heading-icon" aria-hidden="true"></i>
-                                    Your Photo Gallery
-                                </h3>
-                                <form id="user-album-form" action="/album-formidable" method="POST"
-                                    enctype="multipart/form-data">
-                                    <div class="input-file">
-                                        <input type="file" name="image" multiple>
-                                    </div>
-                                    <div class="memo-submit">
-                                        <input type="submit" value="Submit" />
-                                    </div>
-                                </form>
-                                <div class="gallery-Container">
-                                    <div class="photo-conatiner">
-                                        <img class="photo" src="../uploads/Cls-0.8989422531171536.jpeg" alt="image" />
-                                        <div class="delete-btn" data_index="${index}">
-                                            <i class="fa-solid fa-trash" data_index="${index}"></i>
-                                        </div>
-                                    </div>
+                <section class="album-container">
+                    <div class="row">
+                        <h3>
+                            <i class="fa fa-camera-retro heading-icon" aria-hidden="true"></i>
+                            Your Photo Gallery
+                        </h3>
+                        <form id="user-album-form" action="/album-formidable" method="POST"
+                            enctype="multipart/form-data">
+                            <div class="input-file">
+                                <input type="file" name="image" multiple>
+                            </div>
+                            <div class="memo-submit">
+                                <input type="submit" value="Submit" />
+                            </div>
+                        </form>
+                        <div class="gallery-Container">
+                            <div class="photo-conatiner">
+                                <img class="photo" src="../uploads/Cls-0.8989422531171536.jpeg" alt="image" />
+                                <div class="delete-btn" data_index="${index}">
+                                    <i class="fa-solid fa-trash" data_index="${index}"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
-        </div> -->
-            </div>
-
         </div>
     </div>
 
-    <!-- <div class="right-container">
-            <div class="right-sidebar">
-                <div class="circular-container">
-                    <h3>Our prediction: </h3>
-                    <div class="circular-progress">
-                        <div class="value-container">70%</div>
-                    </div>
-                    <h4> Your favorite cuisine is : </h4>
-                </div>
-            </div>
-        </div> -->
 
 
 
-    <!-- </div> -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -155,7 +165,7 @@
     
     
     
-    
+    <!-- <script src="./js/album.js" type="module"></script> -->
 
     <script>
         const lightbox = GLightbox({

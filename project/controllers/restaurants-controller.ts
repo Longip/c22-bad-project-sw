@@ -9,11 +9,12 @@ export class RestaurantController {
 
 
     getByCategory = async (req: express.Request, res: express.Response) => {
-        console.log("getting rest by category")
+        let userCategory = await this.restaurantService.getUserCategory(req.session['user'].id)
+        let category_idtemp = userCategory.rows[0].category_id
+        console.log(`getting rest by category_id = ${category_idtemp}`)
 
         //add logic to change user category
-        let userCategory = 1
-        let cardResults = await this.restaurantService.getRestaurantInfoByCategory(userCategory)
+        let cardResults = await this.restaurantService.getRestaurantInfoByCategory(category_idtemp)
         let result = cardResults.rows
         res.json({ result })
     }

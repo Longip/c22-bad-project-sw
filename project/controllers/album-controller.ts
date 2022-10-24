@@ -2,7 +2,7 @@ import { Request, Response } from "express"
 import fs from "fs"
 import { AlbumService } from "../services/album-service"
 import { formParse } from "../utils/upload"
-
+import fetch from "cross-fetch"
 export class AlbumController {
     constructor(private albumService: AlbumService) { }
 
@@ -38,7 +38,11 @@ export class AlbumController {
             }
             // console.log(albumJSONArray)
 
-
+            let resultArray = {
+                japanese_food: { category_id: 1, qty: 0 }, dim_sum: { category_id: 2, qty: 0 }, curry: { category_id: 3, qty: 0 }, hot_pot: { category_id: 4, qty: 0 },
+                dessert: { category_id: 5, qty: 0 }, bakery: { category_id: 6, qty: 0 }, pizza: { category_id: 7, qty: 0 }, steak: { category_id: 8, qty: 0 }, bbq: { category_id: 9, qty: 0 },
+                seafood: { category_id: 10, qty: 0 }, noodles: { category_id: 11, qty: 0 }, beverage: { category_id: 12, qty: 0 }, fast_food: { category_id: 13, qty: 0 }, burger: { category_id: 14, qty: 0 }
+            }
 
             console.log("start calling python")
             for (let i = 0; i < albumJSONArray.length; i++) {
@@ -47,19 +51,52 @@ export class AlbumController {
                     body: JSON.stringify(albumJSONArray[i].file)
                 })
                 let finalResult = (await results.json())
-                console.log(finalResult)
+                if (finalResult.classname == "Japanese") {
+                    resultArray.japanese_food.qty = resultArray.japanese_food.qty + 1
+                } else if (finalResult.classname == "Dim_sum") {
+                    resultArray.dim_sum.qty = resultArray.dim_sum.qty + 1
+                } else if (finalResult.classname == "Curry") {
+                    resultArray.curry.qty = resultArray.curry.qty + 1
+                } else if (finalResult.classname == "Hot_pot") {
+                    resultArray.hot_pot.qty = resultArray.hot_pot.qty + 1
+                } else if (finalResult.classname == "Dessert") {
+                    resultArray.dessert.qty = resultArray.dessert.qty + 1
+                } else if (finalResult.classname == "Bakery") {
+                    resultArray.bakery.qty = resultArray.bakery.qty + 1
+                } else if (finalResult.classname == "Pizza") {
+                    resultArray.pizza.qty = resultArray.pizza.qty + 1
+                } else if (finalResult.classname == "Steak") {
+                    resultArray.steak.qty = resultArray.steak.qty + 1
+                } else if (finalResult.classname == "BBQ") {
+                    resultArray.bbq.qty = resultArray.bbq.qty + 1
+                } else if (finalResult.classname == "Seafood") {
+                    resultArray.seafood.qty = resultArray.seafood.qty + 1
+                } else if (finalResult.classname == "Noodles") {
+                    resultArray.noodles.qty = resultArray.noodles.qty + 1
+                } else if (finalResult.classname == "Beverage") {
+                    resultArray.beverage.qty = resultArray.beverage.qty + 1
+                } else if (finalResult.classname == "Fast_food") {
+                    resultArray.fast_food.qty = resultArray.fast_food.qty + 1
+                } else if (finalResult.classname == "Burger") {
+                    resultArray.burger.qty = resultArray.burger.qty + 1
+                }
+
             }
+            let temp_num = 0
+            let top1
+            for (let result in resultArray) {
+    
+                console.log(`${result}: ${resultArray[result].qty}`)
+                if (resultArray[result].qty > temp_num) {
+                    temp_num = resultArray[result].qty
+                    top1 = { category_id: resultArray[result].category_id, qty: resultArray[result].qty }
+                }
+            }
+            console.log("Top 1 Category: ");
+            console.log(top1);
+            await this.albumService.updateCategory(req.session['user'].id, top1?.category_id)
+            res.status(200).send("Upload Success")
 
-
-            // let food_identity = await results.json();
-            // console.log(food_identity)
-            // console.log("Connecting to Sanic Server..")
-            // res.status(200).json(food_identity)
-            // console.log("Responded result from Sanic Server")
-
-
-
-            res.status(200).send("Upload successful")
             return
         } catch (e) {
             console.log(e);
@@ -82,6 +119,7 @@ export class AlbumController {
 
     getAlbum = async (req: Request, res: Response) => {
         let currentUser = req.session['user']
+        console.log("currentUser" + currentUser)
         const albumResult = await this.albumService.getAlbum(currentUser.id);
 
         res.json(albumResult)
