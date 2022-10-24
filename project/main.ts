@@ -18,6 +18,9 @@ const PORT = 8080;
 
 app.use(express.json());
 
+let bodyParser = require('body-parser')
+app.use(bodyParser.text({ limit: '50mb' }));
+app.use(bodyParser.json({ limit: '50mb' }));
 
 app.use(
     expressSession({
