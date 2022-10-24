@@ -1,3 +1,5 @@
+let userProfilePicElem = document.querySelector(".user-profile-pic")
+
 window.onload = async () => {
     await loadAlbum()
     console.log("reload")
@@ -80,3 +82,17 @@ memowallFormElement.addEventListener("submit", async (e) => {
         loadAlbum()
     }
 })
+
+
+async function loadProfilePic() {
+    let result = await fetch('/user/username')
+    let currentUser = await result.json()
+    console.log("currentUsername: ", currentUser)
+    let currentUsername = currentUser["username"]
+
+    userProfilePicElem.outerHTML = /*html*/`
+    <div class="image-src user-profile-pic"><img src="./uploads/${currentUsername + ".png" || currentUsername + ".jpg"}"></div>
+
+    `
+}
+loadProfilePic()
