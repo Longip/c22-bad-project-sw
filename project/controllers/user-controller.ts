@@ -6,6 +6,7 @@ import crypto from "crypto"
 import { User } from "../model/User"
 import { formParse } from "../utils/upload"
 import fs from "fs"
+import path from "path"
 
 
 export class UserController {
@@ -154,12 +155,14 @@ export class UserController {
 
         // get username to use it as filename
         const OLD_FILE_NAME = files["image"]["newFilename"]
-
         const NEW_FILE_NAME = req.session['user']['username'] + ".png"
-        console.log("NEW_FILE_NAME: ", NEW_FILE_NAME)
 
+        let oldFilePath = path.join(__dirname, `../uploads/${OLD_FILE_NAME}`)
+        console.log({ oldFilePath });
+        let newFilePath = path.join(__dirname, `../uploads/${NEW_FILE_NAME}`)
+        console.log({ newFilePath });
 
-        fs.rename(`../src/assets/user-profile-pictures/${OLD_FILE_NAME}`, `../src/assets/user-profile-pictures/${NEW_FILE_NAME}`, function (err) {
+        fs.rename(oldFilePath, newFilePath, function (err) {
             if (err) throw err;
             console.log('File Renamed.');
         })
