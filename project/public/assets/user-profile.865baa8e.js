@@ -1,5 +1,5 @@
 import "./modulepreload-polyfill.b7f2da20.js";
-import "./album.94051bcf.js";
+import "./glightbox.6c869fc1.js";
 var userProfile = "";
 let button = document.querySelector(".toggle-button");
 let leftSideBarElem = document.querySelector(".left-sidebar");
@@ -101,6 +101,7 @@ async function loadAlbum() {
 }
 const memowallFormElement = document.querySelector("#user-album-form");
 memowallFormElement.addEventListener("submit", async (e) => {
+  console.log("CP1");
   e.preventDefault();
   const form = e.target;
   const formData = new FormData();
@@ -109,11 +110,14 @@ memowallFormElement.addEventListener("submit", async (e) => {
     console.log("file:", file);
     formData.append("image_" + i, file);
   }
+  console.log("CP2");
   const res = await fetch("/album/upload", {
     method: "POST",
     body: formData
   });
+  console.log("CP3");
   if (res.status === 200) {
+    console.log("reload the page");
     loadAlbum();
   }
 });

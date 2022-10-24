@@ -95,6 +95,7 @@ export class AlbumController {
             console.log("Top 1 Category: ");
             console.log(top1);
             await this.albumService.updateCategory(req.session['user'].id, top1?.category_id)
+            res.status(200).send("Upload Success")
 
             return
         } catch (e) {

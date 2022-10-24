@@ -356,25 +356,4 @@ body {
     background-color: #CEEBF7;
     font-size: 30px;
 
-} */#map {
-    height: 100%;
-    width: 100%;
-}
-
-.mapInfoName {
-    font-size: 22px;
-    font-weight: bold;
-    color: black;
-}
-
-.mapInfoAddress {
-    font-size: 17px;
-    color: black;
-}
-
-.portrait-crop{
-    object-position: 0;
-    height: 300px;
-    width: 300px;
-    object-fit: cover;
-}
+} */
