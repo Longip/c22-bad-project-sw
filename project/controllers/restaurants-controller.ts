@@ -26,7 +26,6 @@ export class RestaurantController {
 
         let cardResults = await this.restaurantService.getRestaurantInfoByLocation(userDistrict)
         let finalResult = cardResults.rows
-        console.log(finalResult)
         res.json( [finalResult] )
     }
 }

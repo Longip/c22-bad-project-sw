@@ -125,8 +125,6 @@ async function displayCard() {
 
     let res = await fetch('/restaurants/location')
     let cardDatas = (await res.json())
-    console.log(cardDatas)
-    console.log(cardDatas[0])
 
     let html = ''
     for (let cardData of cardDatas[0]) {
