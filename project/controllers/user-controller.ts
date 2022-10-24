@@ -11,6 +11,14 @@ import { User } from "../model/User"
 export class UserController {
     constructor(private userService: UserService) { }
 
+    me = async (req: express.Request, res: express.Response) => {
+        res.json({
+            message: 'Success retrieve user',
+            data: {
+                user: req.session['user'] ? req.session['user'] : null
+            }
+        })
+    }
 
     login = async (req: express.Request, res: express.Response) => {
         const username = req.body.username
