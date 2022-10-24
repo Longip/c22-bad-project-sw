@@ -33,11 +33,12 @@ app.use(
 
 declare module 'express-session' {
     interface SessionData {
-        name?: string,
+        name?: String,
         user: any,
         grant: any,
         location?: any,
-        food_category: any
+        food_category: any,
+        profile_pic?: String
     }
 }
 
