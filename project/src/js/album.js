@@ -2,7 +2,7 @@ window.onload = async () => {
     await loadAlbum()
     console.log("reload")
 }
-
+//
 async function loadAlbum() {
     const res = await fetch('/album')
     const datas = await res.json()
