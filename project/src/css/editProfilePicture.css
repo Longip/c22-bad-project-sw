@@ -148,6 +148,7 @@ body {
 .user-image>.image-src>img {
     width: 150px;
     height: 150px;
+    object-fit: cover;
     border-radius: 50%;
     border: 4px solid rgba(255, 255, 255, 0.1);
     transition: all 0.5s;
