@@ -77,7 +77,8 @@ async function loginInit() {
         console.log(username)
         console.log(password)
 
-        const res = await fetch('/user/login', {
+        let domain = "https://eatwat7.today"
+        const res = await fetch(`${domain}/user/login`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -88,9 +89,10 @@ async function loginInit() {
             })
         })
         console.log("sent login request")
+        console.log("response login: ", JSON.stringify(res))
         if (res.ok) {
-            console.log("login successfully")
-            location.replace('/homepage.html')
+            alert("login successfully")
+            // location.replace('/homepage.html')
         }
     })
 }
