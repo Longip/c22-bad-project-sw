@@ -46,12 +46,11 @@ export class AlbumController {
 
             console.log("start calling python")
             for (let i = 0; i < albumJSONArray.length; i++) {
-                console.log("1")
+                console.log("loading..")
                 let results = await fetch("https://ai.eatwat7.today/get-food-identity", {
                     method: "POST",
                     body: JSON.stringify(albumJSONArray[i].file)
                 })
-                console.log("2")
                 let finalResult = (await results.json())
                 if (finalResult.classname == "Japanese") {
                     resultArray.japanese_food.qty = resultArray.japanese_food.qty + 1
@@ -84,9 +83,10 @@ export class AlbumController {
                 }
 
             }
-            console.log("3")
             let temp_num = 0
             let top1
+            console.log(" ")
+            console.log("Result:")
             for (let result in resultArray) {
     
                 console.log(`${result}: ${resultArray[result].qty}`)
@@ -95,11 +95,25 @@ export class AlbumController {
                     top1 = { category_id: resultArray[result].category_id, qty: resultArray[result].qty }
                 }
             }
-            console.log("4")
+            console.log(" ")
             console.log("Top 1 Category: ");
             console.log(top1);
+            console.log(req.session['user'].id)
+            console.log(top1?.category_id)
             await this.albumService.updateCategory(req.session['user'].id, top1?.category_id)
-            res.status(200).send("Upload Success")
+
+            console.log("length: " + albumResult.length)
+            console.log("top1.qty: " + top1?.qty);
+            let number = top1?.qty/albumResult.length*100
+            let rounded = Math.round(number)
+            console.log("rounded" + rounded)
+            req.session['percentage'] = rounded
+            console.log("testing" + req.session['percentage'])
+            
+
+
+
+            res.json(rounded)
 
             return
         } catch (e) {
@@ -123,10 +137,9 @@ export class AlbumController {
 
     getAlbum = async (req: Request, res: Response) => {
         let currentUser = req.session['user']
-        console.log("currentUser" + currentUser)
         const albumResult = await this.albumService.getAlbum(currentUser.id);
 
-        res.json(albumResult)
+        res.json([albumResult, currentUser])
 
         return
     }

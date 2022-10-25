@@ -94,7 +94,7 @@ body {
 }
 
 .left-sidebar {
-    display: block;
+    display: none;
     flex-grow: 2;
     max-width: 200px;
     padding: 10px;
@@ -241,15 +241,11 @@ body {
 }
 
 .bar-function>div:hover {
-    transform: translateY(-5px) scale(1.1) translateZ(0);
-    cursor: pointer;
-    transition-duration: 0.4s;
+    background-color: gray;
 }
 
 .bar-function>a:hover {
-    transform: translateY(-5px) scale(1.1) translateZ(0);
-    cursor: pointer;
-    transition-duration: 0.4s;
+    background-color: gray;
 }
 
 .fa-solid {
@@ -284,17 +280,6 @@ body {
     cursor: pointer;
     text-align: end;
 }
-
-.edit-profile-pic-btn {
-    color: white;
-}
-
-.edit-profile-pic-btn:hover {
-    transform: translateY(-5px) scale(1.1) translateZ(0);
-    cursor: pointer;
-    transition-duration: 0.4s;
-}
-
 
 /* ======================================= CONTENT ======================================= */
 

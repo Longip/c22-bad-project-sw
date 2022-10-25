@@ -351,6 +351,19 @@ body {
     margin-top: 30px;
 }
 
+.choose-photo-btn {
+    /* background-image: url(../assets/site-images/icon_upload.png); */
+}
+
+.form-submit-btn {
+    transition-duration: 0.4s;
+}
+
+.form-btn:hover {
+    scale: 1.1;
+}
+
+
 .inner>a>img {
     width: 300px;
     height: 300px;

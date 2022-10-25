@@ -81,10 +81,10 @@
                 <div class="basic-profile-container">
                     <div class="profile-content">
                         <div class="profile-content-name">
-                            <i class="fa-solid fa-signature"> Name : </i>
+                            <i class="fa-solid fa-signature nameText"> Name : </i>
                         </div>
                         <div class="profile-content-location">
-                            <i class="fa-solid fa-location-dot"> Location : </i>
+                            <i class="fa-solid fa-location-dot locationText"> Location : </i>
                         </div>
                     </div>
                 </div>
@@ -95,10 +95,11 @@
                         <div class="circular-container">
                             <h3>Our prediction: </h3>
                             <div class="circular-progress">
-                                <div class="value-container">70%</div>
+                                <div class="value-container"></div>
                             </div>
                             <div class="cuisine-result">
                                 <h4> Your favorite cuisine is : </h4>
+                                <h3 class="foodCat">testing</h3>
                             </div>
                         </div>
                     </div>
@@ -114,11 +115,12 @@
                         <form id="user-album-form" action="/album-formidable" method="POST"
                             enctype="multipart/form-data">
                             <div class="input-file">
-                                <input type="file" name="image" multiple>
+                                <input type="file" name="image" class="choose-photo-btn" multiple>
                             </div>
                             <div class="memo-submit">
-                                <input type="submit" value="Submit" />
+                                <input type="submit" class="form-submit-btn" />
                             </div>
+
                         </form>
                         <div class="gallery-Container">
                             <div class="photo-conatiner">

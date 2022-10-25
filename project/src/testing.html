@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Domine&family=Dosis&family=League+Gothic&family=Yeseva+One&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/glightbox.css" />
-    <link rel="stylesheet" href="./css/homepage.css">
-    <link rel="stylesheet" href="./css/map.css">
-    <title>EAT WAT 7</title>
+    <link rel="stylesheet" href="./css/testing.css">
+    <title>User Profile</title>
 </head>
 
 <body>
@@ -77,40 +81,20 @@
                 </section>
             </div>
             <div class="col-10">
-                <section class="content-container">
-                    <!-- <div class="display-btn"><i class="bi bi-arrow-clockwise"></i></div> -->
-                    <div class="form-check form-switch">
-                        <div>Switch Map</div>
-                        <input class="switchMap form-check-input" type="checkbox" role="switch"
-                            id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-                    </div>
-                    <div class="row1">
-                        <!-- <div class="column">
-                        <div class="card">
-                            <div class="restaurant-image-area">
-                                <div class="restaurant-image"></div>
-                            </div>
-                            <div class="restaurant-info">
-                                <div class="rest-name">Name: </div>
-                                <div class="rest-address">Address: </div>
-                                <div class="rest-phone">Phone: </div>
-                                <div class="rest-price">Price: </div>
-                            </div>
+                <div class="basic-profile-container">
+                    <div class="profile-content">
+                        <div class="profile-content-name">
+                            <i class="fa-solid fa-signature"> Name : </i>
                         </div>
-                    </div> -->
+                        <div class="profile-content-location">
+                            <i class="fa-solid fa-location-dot"> Location : </i>
+                        </div>
                     </div>
-                    <div id="map">this is a map</div>
-                </section>
+                </div>
             </div>
+
         </div>
     </div>
-
-
-
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-        defer></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -121,24 +105,7 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/dda97d4095.js" crossorigin="anonymous"></script>
-    <!-- <script src="./js/user-profile.js" type="module"></script> -->
-    <script src="./js/glightbox.min.js" type="module"></script>
-    <script src="./js/glightbox.js" type="module"></script>
-    <script src="./js/homepage.js" type="module"></script>
-    <!-- <script src="./js/album.js" type="module"></script> -->
-
-
-    <script>
-        const lightbox = GLightbox({
-            touchNavigation: true,
-            keyboardNavigation: true,
-            closeButton: true,
-            closeOnOutsideClick: true,
-            loop: true,
-
-        });
-
-    </script>
+    <script src="./js/testing.js" type="module"></script>
 </body>
 
 </html>

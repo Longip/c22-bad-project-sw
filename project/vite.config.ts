@@ -17,6 +17,7 @@ export default defineConfig({
         404: resolve(__dirname, "./src/404.html"),
         explore: resolve(__dirname, "./src/explore.html"),
         editProfilePicture: resolve(__dirname, "./src/editProfilePicture.html"),
+        test: resolve(__dirname, "./src/testing.html"),
       },
     },
   },
