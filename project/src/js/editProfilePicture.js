@@ -12,6 +12,20 @@ import { existsSync } from 'node:fs';
 const takePhotoBtn = document.querySelector('#take-photo')
 const profilePicFormElem = document.querySelector("#profile-pic-form")
 const userProfilePicElem = document.querySelector(".user-profile-pic")
+let closeBtnElem = document.querySelector(".close-btn");
+let menuBtnElem = document.querySelector(".menu-btn");
+let leftBarElem = document.querySelector(".left-sidebar");
+
+
+
+menuBtnElem.addEventListener("click", () => {
+    leftBarElem.style.display = "block";
+})
+
+closeBtnElem.addEventListener("click", () => {
+    leftBarElem.style.display = "none";
+})
+
 
 async function loadProfilePic() {
     let result = await fetch('/user/username')
