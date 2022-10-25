@@ -80,6 +80,17 @@ export class UserController {
         res.json({message: "end"})
     }
 
+    getDistrict = async (req: express.Request, res: express.Response) => {
+        if (req.session['location']?.x == undefined) {
+            res.json("N/A")
+            return
+        }
+        let result = await this.userService.getDistrict(req.session['location'].x, req.session['location'].y)
+        let userDistrict = result.rows[0].district_id
+        let districtName = await this.userService.getDistrictName(userDistrict)
+        res.json(districtName.rows[0].name)
+    }
+
     loginGoogle = async (req: express.Request, res: express.Response) => {
         const accessToken = req.session?.['grant'].response.access_token;
         console.log("accessToken: ", accessToken)
@@ -179,6 +190,19 @@ export class UserController {
         res.status(200).json({
             message: "received profile picture"
         })
+    }
+    getFavouriteCat = async (req: express.Request, res: express.Response) => {
+
+
+        let result = await this.userService.getFavouriteCatID(req.session['user'].id)
+        console.log("here")
+        if (result.rows[0]?.category_id == undefined) {
+            res.json("N/A")
+            return
+        }
+        console.log(result.rows[0].category_id)
+        let getFoodCat = await this.userService.getFoodCat(result.rows[0].category_id)
+        res.json(getFoodCat.rows[0].name)
     }
 
 

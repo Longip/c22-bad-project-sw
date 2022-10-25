@@ -21,6 +21,7 @@ export class AlbumService {
     }
 
     async updateCategory(user_id: number, category_id: number): Promise<any> {
+        console.log("into service")
 
         await this.knex.raw(`
         DELETE from user_food_category where user_id = ${user_id}
