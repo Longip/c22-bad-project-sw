@@ -21,6 +21,11 @@ export class UserController {
         })
     }
 
+    percentage = async (req: express.Request, res: express.Response) => {
+        console.log("percentage: " + req.session['percentage'])
+        res.json(req.session['percentage'])
+    }
+
     username = async (req: express.Request, res: express.Response) => {
         let currentUsername = req.session['user']['username']
         res.json({

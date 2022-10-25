@@ -40,7 +40,8 @@ declare module 'express-session' {
         grant: any,
         location?: any,
         food_category: any,
-        profile_pic?: String
+        profile_pic?: String,
+        percentage?: any
     }
 }
 

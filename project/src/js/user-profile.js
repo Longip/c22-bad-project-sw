@@ -133,6 +133,31 @@ editProfilePicBtn.addEventListener("click", async () => {
 window.onload = async () => {
     await loadAlbum()
     console.log("reload")
+    // circular-progress bar
+
+    let progressBar = document.querySelector(".circular-progress");
+    let valueContainer = document.querySelector(".value-container");
+
+    const res = await fetch('/user/percentage')
+    console.log(res)
+    let percentage = await res.json()
+
+
+    let progressValue = 0;
+    let progressEndValue = percentage;  // wait for the training model value
+    let speed = 20;
+
+    let progress = setInterval(() => {
+        progressValue++;
+        valueContainer.textContent = `${progressValue}%`;
+        progressBar.style.background = `conic-gradient(
+              #4d5bf9 ${progressValue * 3.6}deg,
+              #cadcff ${progressValue * 3.6}deg
+          )`;
+        if (progressValue == progressEndValue) {
+            clearInterval(progress);
+        }
+    }, speed);
 }
 
 async function loadAlbum() {
@@ -225,13 +250,10 @@ memowallFormElement.addEventListener("submit", async (e) => {
 
     document.querySelector('.value-container').innerHTML = `${num}%`
 
-
-
     // circular-progress bar
 
     let progressBar = document.querySelector(".circular-progress");
     let valueContainer = document.querySelector(".value-container");
-
 
     let progressValue = 0;
     let progressEndValue = num;  // wait for the training model value
@@ -241,9 +263,9 @@ memowallFormElement.addEventListener("submit", async (e) => {
         progressValue++;
         valueContainer.textContent = `${progressValue}%`;
         progressBar.style.background = `conic-gradient(
-          #4d5bf9 ${progressValue * 3.6}deg,
-          #cadcff ${progressValue * 3.6}deg
-      )`;
+                  #4d5bf9 ${progressValue * 3.6}deg,
+                  #cadcff ${progressValue * 3.6}deg
+              )`;
         if (progressValue == progressEndValue) {
             clearInterval(progress);
         }

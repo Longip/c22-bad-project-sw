@@ -20,3 +20,4 @@ userRoutes.post('/profilePicture', userController.changeProfilePicture);
 userRoutes.get('/username', userController.username);
 userRoutes.get('/location', userController.getDistrict);
 userRoutes.get('/favouriteCat', userController.getFavouriteCat);
+userRoutes.get('/percentage', userController.percentage);
