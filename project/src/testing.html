@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="ig-layout.css">
+    <link rel="stylesheet" href="./css/testing.css">
     <title>User Profile</title>
 </head>
 
@@ -41,8 +41,11 @@
                 <section class="left-profile-bar">
                     <div class="left-sidebar">
                         <div class="inner">
+                            <div class="close-btn"><i class="fa-solid fa-xmark"></i></div>
                             <div class="user-profile">
+
                                 <div class="user-image">
+
                                     <div class="image-src user-profile-pic"><img src="./assets/site-images/loading.png">
                                     </div>
                                     <a href="./editProfilePicture.html">
@@ -73,7 +76,6 @@
                                     <div class="text4">Logout</div>
                                 </div>
                             </div>
-                            <div class="toggle-button"><i class="bi bi-caret-right"></i></div>
                         </div>
                     </div>
                 </section>
@@ -89,66 +91,21 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- ================================================ ALBUM ================================================= -->
-                <!-- <section class="album-container">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3>
-                                    <i class="fa fa-camera-retro heading-icon" aria-hidden="true"></i>
-                                    Your Photo Gallery
-                                </h3>
-                                <form id="user-album-form" action="/album-formidable" method="POST"
-                                    enctype="multipart/form-data">
-                                    <div class="input-file">
-                                        <input type="file" name="image" multiple>
-                                    </div>
-                                    <div class="memo-submit">
-                                        <input type="submit" value="Submit" />
-                                    </div>
-                                </form>
-                                <div class="gallery-Container">
-                                    <div class="photo-conatiner">
-                                        <img class="photo" src="../uploads/Cls-0.8989422531171536.jpeg" alt="image" />
-                                        <div class="delete-btn" data_index="${index}">
-                                            <i class="fa-solid fa-trash" data_index="${index}"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </div>
-        </div> -->
 
-                <!-- <div class="right-container">
-            <div class="right-sidebar">
-                <div class="circular-container">
-                    <h3>Our prediction: </h3>
-                    <div class="circular-progress">
-                        <div class="value-container">70%</div>
-                    </div>
-                    <h4> Your favorite cuisine is : </h4>
-                </div>
-            </div>
-        </div> -->
-
-
-
-                <!-- </div> -->
-                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                    crossorigin="anonymous"></script>
-                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                    crossorigin="anonymous"></script>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-                    crossorigin="anonymous"></script>
-                <script src="https://kit.fontawesome.com/dda97d4095.js" crossorigin="anonymous"></script>
-                <script src="./user-profile.js"></script>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/dda97d4095.js" crossorigin="anonymous"></script>
+    <script src="./js/testing.js" type="module"></script>
 </body>
 
 </html>

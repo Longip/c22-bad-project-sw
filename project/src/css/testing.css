@@ -78,10 +78,10 @@ body {
 
 }
 
-
-/* ======================================= Dropdown ======================================= */
-
-
+.menu-btn {
+    cursor: pointer;
+    color: white;
+}
 
 /* ======================================= Profile-bar ======================================= */
 
@@ -94,8 +94,9 @@ body {
 }
 
 .left-sidebar {
+    display: none;
     flex-grow: 2;
-    max-width: 230px;
+    max-width: 200px;
     padding: 10px;
     position: absolute;
     transition: all 0.5s;
@@ -170,7 +171,7 @@ body {
     animation: animate-sidebar-text 0.5s;
 }
 
-.toggle-button {
+/* .toggle-button {
     position: absolute;
     top: 50%;
     left: 100%;
@@ -214,7 +215,7 @@ body {
 
 .toggle-button i::before {
     transform: rotate(180deg);
-}
+} */
 
 .bar-function {
 
@@ -248,7 +249,7 @@ body {
 }
 
 .fa-solid {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .fa-location-dot {
@@ -264,8 +265,20 @@ body {
     cursor: pointer;
 }
 
+.close-btn {
+    font-size: 12px;
+    cursor: pointer;
+    color: white;
+}
+
 .fa-pen-to-square {
     font-size: 12px;
+}
+
+.fa-xmark {
+    font-size: 12px;
+    cursor: pointer;
+    text-align: end;
 }
 
 /* ======================================= CONTENT ======================================= */
