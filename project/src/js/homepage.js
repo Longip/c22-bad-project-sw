@@ -252,3 +252,15 @@ displayCardElem.addEventListener('click', function () {
         cardContainer.style.display = 'none';
     }
 })
+
+async function loadCat() {
+    //get user favourites category
+    const favouritesCategory = await fetch('/user/favouriteCat')
+    const favouritesCategoryResult = await favouritesCategory.json()
+    console.log("HAHAHAH");
+    console.log(favouritesCategoryResult)
+    const banner2 = document.querySelector('.banner2')
+    banner2.innerHTML = `${favouritesCategoryResult}`
+}
+loadCat()
+

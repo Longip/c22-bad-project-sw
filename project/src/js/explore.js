@@ -239,3 +239,11 @@ displayCardElem.addEventListener('click', function () {
         cardContainer.style.display = 'none';
     }
 })
+async function getLocation() {
+    // get location
+    const location = await fetch('/user/location')
+    const locationResult = await location.json()
+    const banner2 = document.querySelector('.banner2')
+    banner2.innerHTML = `${locationResult}`
+}
+getLocation()
