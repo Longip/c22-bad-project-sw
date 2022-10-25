@@ -97,6 +97,7 @@ body {
 }
 
 .left-sidebar {
+    display: block;
     flex-grow: 2;
     max-width: 230px;
     padding: 10px;
