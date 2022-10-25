@@ -3,6 +3,9 @@ let mapContainer = document.querySelector('#map');
 let displayCardElem = document.querySelector('.switchMap');
 let userProfilePicElem = document.querySelector(".user-profile-pic")
 import { Geolocation } from '@capacitor/geolocation';
+import fs from 'fs'
+import { existsSync } from 'node:fs';
+
 
 async function loadProfilePic() {
     let result = await fetch('/user/username')
@@ -10,9 +13,12 @@ async function loadProfilePic() {
     console.log("currentUsername: ", currentUser)
     let currentUsername = currentUser["username"]
 
-    userProfilePicElem.outerHTML = /*html*/`
-    <div class="image-src user-profile-pic"><img src="./uploads/${currentUsername + ".png" || currentUsername + ".jpg"}"></div>
+    // if (fs.existsSync(`/upload/${currentUsername}.jpg`) || fs.existsSync(`/upload/${currentUsername}.png`) || fs.existsSync(`/upload/${currentUsername}.webp`) || fs.existsSync(`/upload/${currentUsername}.jpeg`)) {
+    //     return
+    // }
 
+    userProfilePicElem.outerHTML = /*html*/`
+    <div class="image-src user-profile-pic"><img src="../uploads/${(currentUsername + ".png") || (currentUsername + ".jpg") || (currentUsername + ".jpeg") || (currentUsername + ".webp")}"></div>
     `
 }
 loadProfilePic()
