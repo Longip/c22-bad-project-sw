@@ -360,3 +360,14 @@ body {
     font-size: 30px;
 
 } */
+
+.switchMap {
+    font-size: 30px;
+    color: rgba(255, 111, 33);
+}
+
+.switchMap:hover {
+    font-size: 30px;
+    color: rgb(253, 25, 0);
+    cursor: pointer;
+}

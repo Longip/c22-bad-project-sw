@@ -1,4 +1,7 @@
 let userProfilePicElem = document.querySelector(".user-profile-pic")
+import fs from 'fs'
+import { existsSync } from 'node:fs';
+
 
 window.onload = async () => {
     await loadAlbum()
@@ -90,9 +93,12 @@ async function loadProfilePic() {
     console.log("currentUsername: ", currentUser)
     let currentUsername = currentUser["username"]
 
-    userProfilePicElem.outerHTML = /*html*/`
-    <div class="image-src user-profile-pic"><img src="./uploads/${currentUsername + ".png" || currentUsername + ".jpg"}"></div>
+    // if (fs.existsSync(`/upload/${currentUsername}.jpg`) || fs.existsSync(`/upload/${currentUsername}.png`) || fs.existsSync(`/upload/${currentUsername}.webp`) || fs.existsSync(`/upload/${currentUsername}.jpeg`)) {
+    //     return
+    // }
 
+    userProfilePicElem.outerHTML = /*html*/`
+    <div class="image-src user-profile-pic"><img src="../uploads/${(currentUsername + ".png") || (currentUsername + ".jpg") || (currentUsername + ".jpeg") || (currentUsername + ".webp")}"></div>
     `
 }
 loadProfilePic()

@@ -2,6 +2,7 @@ import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera
 import { Filesystem, Directory } from '@capacitor/filesystem'
 import { FilesystemDirectory } from '@capacitor/core'
 import fs from 'fs'
+import { existsSync } from 'node:fs';
 
 
 
@@ -18,12 +19,18 @@ async function loadProfilePic() {
     console.log("currentUsername: ", currentUser)
     let currentUsername = currentUser["username"]
 
-    userProfilePicElem.outerHTML = /*html*/`
-    <div class="image-src user-profile-pic"><img src="./uploads/${currentUsername + ".png" || currentUsername + ".jpg"}"></div>
+    // if (fs.existsSync(`/upload/${currentUsername}.jpg`) || fs.existsSync(`/upload/${currentUsername}.png`) || fs.existsSync(`/upload/${currentUsername}.webp`) || fs.existsSync(`/upload/${currentUsername}.jpeg`)) {
+    //     return
+    // }
 
+    userProfilePicElem.outerHTML = /*html*/`
+    <div class="image-src user-profile-pic"><img src="../uploads/${(currentUsername + ".png") || (currentUsername + ".jpg") || (currentUsername + ".jpeg") || (currentUsername + ".webp")}"></div>
     `
 }
+
+
 loadProfilePic()
+
 
 const IMAGE_DIR = "assets/user-profile-pictures"
 
