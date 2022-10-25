@@ -106,7 +106,9 @@ export class AlbumController {
             console.log("top1.qty: " + top1?.qty);
             let number = top1?.qty/albumResult.length*100
             let rounded = Math.round(number)
-            console.log(rounded)
+            console.log("rounded" + rounded)
+            req.session['percentage'] = rounded
+            console.log("testing" + req.session['percentage'])
             
 
 
