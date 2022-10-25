@@ -1,0 +1,362 @@
+body {
+    /* margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white; */
+    font-family: 'Yeseva One', cursive;
+    font-size: 18px;
+}
+
+/* .page-container {
+    margin: 0;
+    padding: 0;
+} */
+
+.container {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+.col {
+    background-color: white;
+    height: 100vh;
+    max-width: 230px;
+    margin: 0;
+    padding: 0;
+}
+
+.col-10 {
+    background-color: white;
+    height: 100vh;
+    /* overflow: hidden; */
+
+}
+
+/* ======================================= TOP BANNER ======================================= */
+
+
+.top-banner {
+    background-image: url(../assets/site-images/header4.png);
+    background-size: cover;
+    background-attachment: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+    opacity: 0.8;
+    width: 100vw;
+}
+
+/* ======================================= NAVBAR ======================================= */
+
+.navbar-container {
+    display: flex;
+    width: 100vw;
+}
+
+.navbar {
+    width: 100vw;
+    height: 6vh;
+    background-color: rgba(61, 84, 112, 0.8);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.ourlogo {
+    transform:
+        scale(0.7) translate(-110px, -50px);
+
+}
+
+
+/* ======================================= Dropdown ======================================= */
+
+
+
+/* ======================================= Profile-bar ======================================= */
+
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.left-sidebar {
+    flex-grow: 2;
+    max-width: 230px;
+    padding: 10px;
+    position: absolute;
+    transition: all 0.5s;
+    box-shadow: 2px 0px 3px gray;
+    background-color: rgba(61, 84, 112, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.318);
+    height: 100vh;
+    z-index: 30;
+}
+
+.left-profile-bar {
+    /* max-width: 230px; */
+    height: 100vh;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+}
+
+.user-profile {
+    flex-grow: 2;
+    max-height: 345px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s;
+    border: white;
+    position: relative;
+    color: white;
+}
+
+.user-profile {
+    border-bottom: 1px solid white;
+    max-height: 200px;
+}
+
+.user-image {
+    margin: 50px 0 25px 0;
+    border-color: #1a233d;
+    transition: all 0.5s;
+}
+
+.user-image>.image-src>img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.5s;
+}
+
+.user-image {
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* .user-image>img {
+    width: 75px;
+} */
+
+
+.user-info {
+    height: 0px;
+    transition-delay: 0s;
+    animation: animate-sidebar-text 0.5s;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    border: 1px solid #1a233d;
+    width: 20px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 0 50% 50% 0;
+    cursor: pointer;
+    transform: translate(0, -50%);
+    box-shadow: 2px 0px 5px gray;
+    background: rgba(61, 84, 112, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.318);
+    color: white;
+    z-index: 1;
+}
+
+.new-toggle-button {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    border: 1px solid #1a233d;
+    width: 20px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 0 50% 50% 0;
+    cursor: pointer;
+    transform: translate(0, -50%);
+    box-shadow: 2px 0px 5px gray;
+    background: rgba(61, 84, 112, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.318);
+    color: white;
+    z-index: 1;
+}
+
+.new-toggle-button>i {
+    transform: rotate(180deg);
+}
+
+.toggle-button i::before {
+    transform: rotate(180deg);
+}
+
+.bar-function {
+
+    color: snow;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.bar-function>div {
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.bar-function>a {
+    margin-top: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.bar-function>div:hover {
+    background-color: gray;
+}
+
+.bar-function>a:hover {
+    background-color: gray;
+}
+
+/* .fa-solid {
+    font-size: 30px;
+} */
+
+.fa-location-dot {
+    font-size: 15px;
+}
+
+.fa-signature {
+    font-size: 15px;
+}
+
+.edit-btn {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.fa-pen-to-square {
+    font-size: 12px;
+}
+
+/* ======================================= CONTENT ======================================= */
+
+/* restaurants display cards */
+.switchMap {
+    font-size: 20px;
+}
+
+.content-container {
+    position: relative;
+    height: 100vh;
+    background-color: white;
+    padding: 20px;
+    font-size: 15px;
+}
+
+.column {
+    float: left;
+    width: 20%;
+    padding: 0 10px;
+}
+
+.row1 {
+    margin: 0 -5px;
+
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: white;
+    border: solid 2px rgba(61, 84, 112, 0.8);
+    border-radius: 7px;
+    /* max-height: 420px; */
+    min-height: 320px
+}
+
+.card>ul {
+    list-style-type: none;
+}
+
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+/* .portrait-crop {
+    object-position: 0;
+    width: 250px;
+    height: 250px;f
+    object-fit: fill;
+} */
+
+/* .restaurant-image-area {
+    width: 250px;
+    height: 250px;
+} */
+
+.restaurant-image>img {
+    width: 100%;
+    /* height: 100%; */
+    height: 100px;
+}
+
+
+
+/* ======================================= FOOTER ======================================= */
+
+/* .footer-container {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background-color: #CEEBF7;
+    font-size: 30px;
+
+} */

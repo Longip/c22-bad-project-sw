@@ -1,0 +1,381 @@
+body {
+
+    box-sizing: border-box;
+    background-color: #f7f6f6;
+    font-family: 'Yeseva One', cursive;
+    font-size: 18px;
+}
+
+
+.container {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+.col {
+    background-color: #f7f6f6;
+    height: 100vh;
+    max-width: 230px;
+    margin: 0;
+    padding: 0;
+}
+
+.col-10 {
+    background-color: #f7f6f6;
+    height: 100vh;
+    /* overflow: hidden; */
+
+}
+
+/* ======================================= TOP BANNER ======================================= */
+
+
+.top-banner {
+    background-image: url(../assets/site-images/header4.png);
+    background-size: cover;
+    background-attachment: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+    opacity: 0.8;
+    width: 100vw;
+}
+
+/* ======================================= NAVBAR ======================================= */
+
+.navbar-container {
+    display: flex;
+    width: 100vw;
+}
+
+.navbar {
+    width: 100vw;
+    height: 6vh;
+    /* background-color: rgba(61, 84, 112, 0.8); */
+    /* background-color: #C6DB9F; */
+    background-color: #E45C54;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.ourlogo {
+    transform:
+        scale(0.7) translate(-110px, -50px);
+
+}
+
+.menu-btn {
+    cursor: pointer;
+    color: white;
+}
+
+/* ======================================= Profile-bar ======================================= */
+
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.left-sidebar {
+    display: block;
+    flex-grow: 2;
+    max-width: 200px;
+    padding: 10px;
+    position: absolute;
+    transition: all 0.5s;
+    box-shadow: 2px 0px 3px gray;
+    /* background-color: rgba(61, 84, 112, 0.8); */
+    background-color: #E45C54;
+    /* background-color: #C6DB9F;   */
+    border: 1px solid rgba(255, 255, 255, 0.318);
+    height: 100vh;
+    z-index: 20;
+}
+
+.left-profile-bar {
+    /* max-width: 230px; */
+    height: 100vh;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+}
+
+.user-profile {
+    flex-grow: 2;
+    max-height: 345px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s;
+    border: white;
+    position: relative;
+    color: white;
+}
+
+.user-profile {
+    border-bottom: 1px solid white;
+    max-height: 200px;
+}
+
+.user-image {
+    margin: 50px 0 25px 0;
+    border-color: #1a233d;
+    transition: all 0.5s;
+}
+
+.user-image>.image-src>img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.5s;
+}
+
+.user-image {
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* .user-image>img {
+    width: 75px;
+} */
+
+
+.user-info {
+    height: 0px;
+    transition-delay: 0s;
+    animation: animate-sidebar-text 0.5s;
+}
+
+/* .toggle-button {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    border: 1px solid #1a233d;
+    width: 20px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 0 50% 50% 0;
+    cursor: pointer;
+    transform: translate(0, -50%);
+    box-shadow: 2px 0px 5px gray;
+    background: rgba(61, 84, 112, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.318);
+    color: white;
+    z-index: 1;
+}
+
+.new-toggle-button {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    border: 1px solid #1a233d;
+    width: 20px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 0 50% 50% 0;
+    cursor: pointer;
+    transform: translate(0, -50%);
+    box-shadow: 2px 0px 5px gray;
+    background: rgba(61, 84, 112, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.318);
+    color: white;
+    z-index: 1;
+}
+
+.new-toggle-button>i {
+    transform: rotate(180deg);
+}
+
+.toggle-button i::before {
+    transform: rotate(180deg);
+} */
+
+.bar-function {
+
+    color: snow;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.bar-function>div {
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.bar-function>a {
+    margin-top: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.bar-function>div:hover {
+    transform: translateY(-5px) scale(1.1) translateZ(0);
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.bar-function>a:hover {
+    transform: translateY(-5px) scale(1.1) translateZ(0);
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.fa-solid {
+    font-size: 25px;
+}
+
+.fa-location-dot {
+    font-size: 15px;
+}
+
+.fa-signature {
+    font-size: 15px;
+}
+
+.edit-btn {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.close-btn {
+    font-size: 12px;
+    cursor: pointer;
+    color: white;
+}
+
+.fa-pen-to-square {
+    font-size: 12px;
+}
+
+.fa-xmark {
+    font-size: 12px;
+    cursor: pointer;
+    text-align: end;
+}
+
+.edit-profile-pic-btn {
+    color: white;
+}
+
+.edit-profile-pic-btn:hover {
+    transform: translateY(-5px) scale(1.1) translateZ(0);
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+
+/* ======================================= CONTENT ======================================= */
+
+/* restaurants display cards */
+.switchMap {
+    font-size: 20px;
+}
+
+.content-container {
+    position: relative;
+    height: 100vh;
+    background-color: #f7f6f6;
+    padding: 20px;
+    font-size: 15px;
+}
+
+.column {
+    /* float: left; */
+    width: 20%;
+    padding: 0 10px;
+}
+
+.row1 {
+    margin: 0 -5px;
+
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(126, 125, 125, 0.346);
+    padding: 16px;
+    text-align: start;
+    background-color: white;
+    border: solid 2px #E45C54;
+    border-radius: 7px;
+    /* max-height: 420px; */
+    max-width: 380px;
+    min-width: 380px;
+    min-height: 260px;
+    margin: 0px 0px 30px -10px;
+}
+
+.card>ul {
+    list-style-type: none;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.1) translateZ(0);
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+/* .card:hover .portrait-crop {
+    transform: scale(1.25) rotate(2deg);
+}
+
+.portrait-crop {
+    transition: all ease-in-out .4s;
+} */
+
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+.restaurant-info {
+    margin-top: 15px;
+}
+
+
+.restaurant-image>img {
+    width: 100%;
+    /* height: 100%; */
+    height: 100px;
+}
