@@ -173,6 +173,51 @@ body {
     width: 75px;
 } */
 
+.form-submit-btn {
+    margin-top: 15px;
+    width: 100px;
+    background-color: rgba(255, 111, 33);
+    border: 5px solid rgba(255, 111, 33);
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    margin-left: 15px;
+}
+
+.choose-photo-btn {
+    margin-top: 15px;
+    width: 100px;
+    background-color: rgba(255, 111, 33);
+    border: 5px solid rgba(255, 111, 33);
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    margin-left: 15px;
+    opacity: 0;
+}
+
+.upload-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#choose-photo-btn-label {
+    margin-top: 15px;
+    width: 100px;
+    background-color: rgba(255, 111, 33);
+    border: 5px solid rgba(255, 111, 33);
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    margin-left: 15px;
+}
+
 
 .user-info {
     height: 0px;
@@ -381,6 +426,7 @@ body {
 }
 
 .gallery-title {
+    margin-top: 20px;
     margin-left: 35px;
     color: rgba(255, 111, 33);
     font-size: 25px;
