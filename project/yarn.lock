@@ -2,8 +2,6 @@
 # yarn lockfile v1
 
 
-<<<<<<< HEAD
-=======
 "@capacitor/android@^4.3.0":
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-4.4.0.tgz#780421ecc88522aa692452a205d1587eab7a4f81"
@@ -59,7 +57,6 @@
   resolved "https://registry.yarnpkg.com/@capacitor/splash-screen/-/splash-screen-4.1.1.tgz#7e7935991d9bacc9ec5508c07168cfba65b0904b"
   integrity sha512-cOwp9aAdTOknfISSZcQBVPbKkG57v85HQZdbtl86FfEPFXOs9aJF2OQYBYl1UA03qByEnRQvDNYSn4gFf6THrg==
 
->>>>>>> feature
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@cspotcode/source-map-support/-/source-map-support-0.8.1.tgz#00629c35a688e05a88b1cda684fb9d5e73f000a1"
@@ -67,8 +64,6 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-<<<<<<< HEAD
-=======
 "@esbuild/linux-loong64@0.14.54":
   version "0.14.54"
   resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.14.54.tgz#de2a4be678bd4d0d1ffbb86e6de779cde5999028"
@@ -158,7 +153,6 @@
     untildify "^4.0.0"
     wrap-ansi "^7.0.0"
 
->>>>>>> feature
 "@jridgewell/resolve-uri@^3.0.3":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@jridgewell/resolve-uri/-/resolve-uri-3.1.0.tgz#2203b118c157721addfe69d47b70465463066d78"

@@ -1,10 +1,6 @@
 node_modules
-<<<<<<< HEAD
-venv_*
-=======
 .env
 temp
 uploads
 public
 .DS_Store
->>>>>>> feature
