@@ -38,6 +38,19 @@ window.addEventListener('load', async () => {
             })
         })
         console.log("CP1")
+
+        // get location
+        const location = await fetch('/user/location')
+        const locationResult = await location.json()
+        document.querySelector('.locationText').innerHTML = `Location : ${locationResult}`
+
+        //get user favourites category
+        const favouritesCategory = await fetch('/user/favouriteCat')
+        const favouritesCategoryResult = await favouritesCategory.json()
+        console.log("HAHAHAH");
+        console.log(favouritesCategoryResult)
+        document.querySelector('.foodCat').innerHTML = `${favouritesCategoryResult}`
+
         if (res.ok) {
             console.log("post location successfully")
         }
