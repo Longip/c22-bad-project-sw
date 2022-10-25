@@ -92,10 +92,15 @@ async function loginInit() {
             })
         })
         console.log("sent login request")
-        console.log("response login: ", JSON.stringify(res))
+        console.log("response login: ", (res))
         if (res.ok) {
-            console.log("login successfully")
+            alert("login successfully")
+            console.log("login success")
             location.replace('/homepage.html')
+        }
+        else {
+            alert("login fail")
+
         }
     })
 }

@@ -4,3 +4,4 @@ temp
 uploads
 public
 .DS_Store
+yarn.lock
