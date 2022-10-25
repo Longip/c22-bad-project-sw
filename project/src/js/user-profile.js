@@ -1,3 +1,4 @@
+import { Geolocation } from '@capacitor/geolocation';
 // profile bar 
 
 let button = document.querySelector(".toggle-button");
@@ -12,6 +13,43 @@ let text4Elem = document.querySelector(".text4");
 let imageElem = document.querySelector(".image-src > img");
 let editProfilePicBtn = document.querySelector(".edit-profile-pic-btn")
 let userProfilePicElem = document.querySelector(".user-profile-pic")
+
+
+// Get the Geolocation of the user when window onload
+window.addEventListener('load', async () => {
+    console.log('page is fully loaded');
+    try {
+        const coordinates = await Geolocation.getCurrentPosition();
+
+        const latitude = coordinates.coords.latitude
+        const longitude = coordinates.coords.longitude
+
+        console.log(latitude)
+        console.log(longitude)
+
+        const res = await fetch('/user/location', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                latitude,
+                longitude
+            })
+        })
+        console.log("CP1")
+        if (res.ok) {
+            console.log("post location successfully")
+        }
+
+
+
+    } catch (error) {
+        console.log("Error: ", "please enable the location feature")
+    }
+});
+
+
 
 async function loadProfilePic() {
     let result = await fetch('/user/username')
