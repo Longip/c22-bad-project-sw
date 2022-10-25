@@ -1,8 +1,8 @@
+import fetch from 'cors-fetch'
 // without account, switch to signup
 
 const wrapperContent = document.querySelector('.login-wrapper')
 const swapToSignupBtn = document.querySelector('.signup-refer')
-
 swapToSignupBtn.addEventListener('click', () => {
     wrapperContent.innerHTML = /*html*/`
 
@@ -68,6 +68,9 @@ async function signupInit() {
 async function loginInit() {
     const loginFormElem = document.querySelector('.login-form')
 
+    let dummyRES = fetch("https://eatwat7.today/user/login")
+    let data = await dummyRES.json()
+    console.log("dummy = ", data)
     loginFormElem.addEventListener('submit', async function (e) {
         e.preventDefault();
 
