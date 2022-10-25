@@ -173,8 +173,9 @@ async function initMap() {
 
     let res = await fetch('/restaurants/location')
     let cardDatas = (await res.json())
-    // console.log(cardDatas)
-    for (let cardData of cardDatas) {
+    console.log(cardDatas)
+    for (let cardData of cardDatas[0]) {
+        console.log(cardData)
         let tempData = []
         tempData.push({ lat: cardData['coordinates']['x'], lng: cardData['coordinates']['y'] })
         tempData.push(cardData['name'])
