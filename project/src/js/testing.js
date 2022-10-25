@@ -6,6 +6,6 @@ menuBtnElem.addEventListener("click", () => {
     leftBarElem.style.display = "block";
 })
 
-// closeBtnElem.addEventListener("click", () => {
-//     leftBarElem.style.display = "none";
-// })
+closeBtnElem.addEventListener("click", () => {
+    leftBarElem.style.display = "none";
+})

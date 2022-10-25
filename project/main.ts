@@ -9,6 +9,8 @@ import { restaurantsRoute } from "./routes/restaurantsRoute";
 import { albumRoute } from "./routes/albumRoute";
 import fs from "fs";
 import { uploadDir } from './utils/upload'
+import cors from "cors";
+
 // import formidable from 'formidable'
 // import jsonfile from 'jsonfile';
 // import path from 'path';
@@ -23,7 +25,7 @@ app.use(express.json());
 let bodyParser = require('body-parser')
 app.use(bodyParser.text({ limit: '50mb' }));
 app.use(bodyParser.json({ limit: '50mb' }));
-
+app.use(cors())
 app.use(
     expressSession({
         secret: 'what to eat',
