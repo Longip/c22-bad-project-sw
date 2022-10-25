@@ -180,52 +180,6 @@ body {
     animation: animate-sidebar-text 0.5s;
 }
 
-/* .toggle-button {
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    border: 1px solid #1a233d;
-    width: 20px;
-    height: 100px;
-    text-align: center;
-    line-height: 100px;
-    border-radius: 0 50% 50% 0;
-    cursor: pointer;
-    transform: translate(0, -50%);
-    box-shadow: 2px 0px 5px gray;
-    background: rgba(61, 84, 112, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.318);
-    color: white;
-    z-index: 1;
-}
-
-.new-toggle-button {
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    border: 1px solid #1a233d;
-    width: 20px;
-    height: 100px;
-    text-align: center;
-    line-height: 100px;
-    border-radius: 0 50% 50% 0;
-    cursor: pointer;
-    transform: translate(0, -50%);
-    box-shadow: 2px 0px 5px gray;
-    background: rgba(61, 84, 112, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.318);
-    color: white;
-    z-index: 1;
-}
-
-.new-toggle-button>i {
-    transform: rotate(180deg);
-}
-
-.toggle-button i::before {
-    transform: rotate(180deg);
-} */
-
 .bar-function {
 
     color: snow;
