@@ -64,7 +64,9 @@ export class UserController {
             delete dbUser['password']
             req.session['user'] = dbUser
 
-            res.status(200).redirect('/homepage.html')
+            res.status(200).json({
+                message: 'login successfully'
+            })
         }
         else {
             res.status(401).json({
@@ -82,7 +84,7 @@ export class UserController {
         console.log(longitude)
         const location = { x: latitude, y: longitude }
         req.session['location'] = location
-        res.json({message: "end"})
+        res.json({ message: "end" })
     }
 
     getDistrict = async (req: express.Request, res: express.Response) => {

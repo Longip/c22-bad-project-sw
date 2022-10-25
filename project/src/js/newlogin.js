@@ -1,4 +1,4 @@
-import fetch from 'cors-fetch'
+import fetch from 'cross-fetch'
 // without account, switch to signup
 
 const wrapperContent = document.querySelector('.login-wrapper')
@@ -68,9 +68,9 @@ async function signupInit() {
 async function loginInit() {
     const loginFormElem = document.querySelector('.login-form')
 
-    let dummyRES = fetch("https://eatwat7.today/user/login")
+    let dummyRES = await fetch("https://eatwat7.today/user/me")
     let data = await dummyRES.json()
-    console.log("dummy = ", data)
+    console.log("dummy = ", data.message)
     loginFormElem.addEventListener('submit', async function (e) {
         e.preventDefault();
 
@@ -92,10 +92,15 @@ async function loginInit() {
             })
         })
         console.log("sent login request")
-        console.log("response login: ", JSON.stringify(res))
+        console.log("response login: ", (res))
         if (res.ok) {
             alert("login successfully")
-            // location.replace('/homepage.html')
+            console.log("login success")
+            location.replace('/homepage.html')
+        }
+        else {
+            alert("login fail")
+
         }
     })
 }
