@@ -7,6 +7,8 @@ import { Client } from 'pg';
 import grant from 'grant';
 import { restaurantsRoute } from "./routes/restaurantsRoute";
 import { albumRoute } from "./routes/albumRoute";
+import fs from "fs";
+import { uploadDir } from './utils/upload'
 // import formidable from 'formidable'
 // import jsonfile from 'jsonfile';
 // import path from 'path';
@@ -74,6 +76,7 @@ const grantExpress = grant.express({
 app.use(grantExpress as express.RequestHandler);
 
 
+fs.mkdirSync(uploadDir, { recursive: true })
 
 
 app.use('/user', userRoutes)
