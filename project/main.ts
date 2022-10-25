@@ -16,6 +16,7 @@ import cors from "cors";
 // import path from 'path';
 
 
+import fetch from 'cross-fetch';
 export const app = express();
 const PORT = 8080;
 
@@ -86,24 +87,28 @@ app.use('/user', userRoutes)
 app.use('/restaurants', restaurantsRoute);
 app.use('/album', albumRoute)
 
-//connect to Python server
-app.post("/predict_server", async (req, res) => {
+
+app.post("/predict", async (req, res) => {
     try {
-        console.log("start calling python")
-        let results = await fetch("192.168.59.1/get-food-identity", {
+        console.log('Calling AI server :', process.env.AI_SERVER_URL)
+        console.log("start calling python", req.body)
+        let results = await fetch(`${process.env.AI_SERVER_URL}/get-food-identity`, {
             method: "POST",
-            // body: req.body.image_base64
+            body: req.body.image
         })
         let food_identity = await results.json();
-        //          console.log(food_identity)
+        console.log(food_identity)
         console.log("Connecting to Sanic Server..")
         res.status(200).json(food_identity)
-        console.log("Responded result from Sanic Server")
+        console.log("Responded result from Sanic Se/predict_serverrver")
     } catch (error) {
         console.log(error)
         res.status(400).json({ "message": "Invalid" })
     }
+
 })
+
+
 
 
 
