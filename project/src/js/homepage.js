@@ -99,6 +99,22 @@ function leftSideBar2() {
 leftSideBar()
 
 
+
+// let menuBtn = document.querySelector(".menu-btn")
+// let leftSideBarElem = document.querySelector(".left-sidebar");
+// let contentContainerElem = document.querySelector(".content-container")
+
+// menuBtn.addEventListener("click", () => {
+//     leftSideBarElem.style.display = 'block'
+// })
+
+// contentContainerElem = document.addEventListener("click", () => {
+//     leftSideBarElem.style.display = 'none';
+// })
+
+
+
+
 // logout 
 
 async function logoutInit() {
