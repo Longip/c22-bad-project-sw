@@ -2,6 +2,7 @@ import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera
 import { Filesystem, Directory } from '@capacitor/filesystem'
 import { FilesystemDirectory } from '@capacitor/core'
 import fs from 'fs'
+import { existsSync } from 'node:fs';
 
 
 
@@ -11,6 +12,20 @@ import fs from 'fs'
 const takePhotoBtn = document.querySelector('#take-photo')
 const profilePicFormElem = document.querySelector("#profile-pic-form")
 const userProfilePicElem = document.querySelector(".user-profile-pic")
+let closeBtnElem = document.querySelector(".close-btn");
+let menuBtnElem = document.querySelector(".menu-btn");
+let leftBarElem = document.querySelector(".left-sidebar");
+
+
+
+menuBtnElem.addEventListener("click", () => {
+    leftBarElem.style.display = "block";
+})
+
+closeBtnElem.addEventListener("click", () => {
+    leftBarElem.style.display = "none";
+})
+
 
 async function loadProfilePic() {
     let result = await fetch('/user/username')
@@ -18,12 +33,18 @@ async function loadProfilePic() {
     console.log("currentUsername: ", currentUser)
     let currentUsername = currentUser["username"]
 
-    userProfilePicElem.outerHTML = /*html*/`
-    <div class="image-src user-profile-pic"><img src="./uploads/${currentUsername + ".png" || currentUsername + ".jpg"}"></div>
+    // if (fs.existsSync(`/upload/${currentUsername}.jpg`) || fs.existsSync(`/upload/${currentUsername}.png`) || fs.existsSync(`/upload/${currentUsername}.webp`) || fs.existsSync(`/upload/${currentUsername}.jpeg`)) {
+    //     return
+    // }
 
+    userProfilePicElem.outerHTML = /*html*/`
+    <div class="image-src user-profile-pic"><img src="../uploads/${(currentUsername + ".png") || (currentUsername + ".jpg") || (currentUsername + ".jpeg") || (currentUsername + ".webp")}"></div>
     `
 }
+
+
 loadProfilePic()
+
 
 const IMAGE_DIR = "assets/user-profile-pictures"
 

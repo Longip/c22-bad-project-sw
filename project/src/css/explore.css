@@ -1,9 +1,8 @@
 body {
-    /* margin: 0;
-    padding: 0;
+    user-select: none;
     box-sizing: border-box;
-    background-color: white; */
-    font-family: 'Yeseva One', cursive;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
 }
 
@@ -97,6 +96,7 @@ body {
 }
 
 .left-sidebar {
+    display: block;
     flex-grow: 2;
     max-width: 230px;
     padding: 10px;
@@ -360,3 +360,14 @@ body {
     font-size: 30px;
 
 } */
+
+.switchMap {
+    font-size: 30px;
+    color: rgba(255, 111, 33);
+}
+
+.switchMap:hover {
+    font-size: 30px;
+    color: rgb(253, 25, 0);
+    cursor: pointer;
+}

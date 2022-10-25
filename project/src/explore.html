@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Noto+Sans+TC:wght@100&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/glightbox.css" />
-    <link rel="stylesheet" href="./css/explore.css">
+    <!-- <link rel="stylesheet" href="./css/explore.css"> -->
+    <link rel="stylesheet" href="./css/homepage.css">
     <link rel="stylesheet" href="./css/map.css">
     <title>Explore</title>
 </head>
@@ -19,13 +25,16 @@
     <div class="container">
         <div class="row top-banner">
             <div class="banner-container">
+                <a href="./homepage.html">
+                    <div class="banner-logo"><img src="./assets/imgs/mainlogo.png"></div>
+                </a>
             </div>
         </div>
         <div class="row">
             <section class="navbar-container">
                 <div class="navbar">
                     <div class="navbar-content">
-                        <div class="ourlogo"><img src="./assets/site-images/logo3.png"></div>
+                        <div class="menu-btn"><i class="fa-solid fa-bars"></i></div>
                     </div>
                 </div>
             </section>
@@ -36,10 +45,17 @@
                 <section class="left-profile-bar">
                     <div class="left-sidebar">
                         <div class="inner">
+                            <div class="close-btn"><i class="fa-solid fa-xmark"></i></div>
                             <div class="user-profile">
+
                                 <div class="user-image">
+
                                     <div class="image-src user-profile-pic"><img src="./assets/site-images/loading.png">
                                     </div>
+                                    <a href="./editProfilePicture.html">
+                                        <div class="edit-profile-pic-btn"><i class="fa-solid fa-pen-to-square">Edit</i>
+                                        </div>
+                                    </a>
                                 </div>
 
                             </div>
@@ -60,29 +76,25 @@
                                         <div class="text2">Profile</div>
                                     </div>
                                 </a>
-                                <!-- <a href="./camera.html">
-                                    <div class="camera-btn"><i class="fa-solid fa-camera"></i>
-                                        <div class="text3">Camera</div>
-                                    </div>
-                                </a> -->
                                 <div class="logout-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i>
                                     <div class="text4">Logout</div>
                                 </div>
                             </div>
-                            <div class="toggle-button"><i class="bi bi-caret-right"></i></div>
                         </div>
                     </div>
                 </section>
             </div>
             <div class="col-10">
+                <div class="banner1">Restaurants in your neighborhood</div>
+                <div class="banner2"></div>
+                <div class="switchMap"><i class="fa-solid fa-map-location-dot"></i></div>
                 <section class="content-container">
                     <!-- <div class="display-btn"><i class="bi bi-arrow-clockwise"></i></div> -->
-                    <div class="form-check form-switch">
-                        <div>Switch Map</div>
+                    <!-- <div class="form-check form-switch">
                         <input class="switchMap form-check-input" type="checkbox" role="switch"
                             id="flexSwitchCheckDefault">
                         <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-                    </div>
+                    </div> -->
                     <div class="row1">
                         <!-- <div class="column">
                         <div class="card">

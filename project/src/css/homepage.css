@@ -1,8 +1,8 @@
 body {
-
+    user-select: none;
     box-sizing: border-box;
     background-color: #f7f6f6;
-    font-family: 'Yeseva One', cursive;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
 }
 
@@ -38,9 +38,9 @@ body {
 
 
 .top-banner {
-    background-image: url(../assets/site-images/header4.png);
+    /* background-image: url(../assets/site-images/header4.png);
     background-size: cover;
-    background-attachment: scroll;
+    background-attachment: scroll; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -48,7 +48,15 @@ body {
     height: 12vh;
     opacity: 0.8;
     width: 100vw;
+    background-color: white;
+
 }
+
+.banner-logo>img {
+    transform: scale(0.8) translate(-150px, -160px);
+}
+
+
 
 /* ======================================= NAVBAR ======================================= */
 
@@ -59,10 +67,11 @@ body {
 
 .navbar {
     width: 100vw;
-    height: 6vh;
+    height: 4vh;
+    background-color: rgba(255, 111, 33);
     /* background-color: rgba(61, 84, 112, 0.8); */
     /* background-color: #C6DB9F; */
-    background-color: #E45C54;
+    /* background-color: #E45C54; */
 }
 
 .navbar-content {
@@ -102,11 +111,12 @@ body {
     transition: all 0.5s;
     box-shadow: 2px 0px 3px gray;
     /* background-color: rgba(61, 84, 112, 0.8); */
-    background-color: #E45C54;
-    /* background-color: #C6DB9F;   */
+    background-color: rgba(255, 111, 33);
+    /* background-color: #E45C54; */
     border: 1px solid rgba(255, 255, 255, 0.318);
     height: 100vh;
     z-index: 20;
+    transition-duration: 0.4s;
 }
 
 .left-profile-bar {
@@ -170,52 +180,6 @@ body {
     transition-delay: 0s;
     animation: animate-sidebar-text 0.5s;
 }
-
-/* .toggle-button {
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    border: 1px solid #1a233d;
-    width: 20px;
-    height: 100px;
-    text-align: center;
-    line-height: 100px;
-    border-radius: 0 50% 50% 0;
-    cursor: pointer;
-    transform: translate(0, -50%);
-    box-shadow: 2px 0px 5px gray;
-    background: rgba(61, 84, 112, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.318);
-    color: white;
-    z-index: 1;
-}
-
-.new-toggle-button {
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    border: 1px solid #1a233d;
-    width: 20px;
-    height: 100px;
-    text-align: center;
-    line-height: 100px;
-    border-radius: 0 50% 50% 0;
-    cursor: pointer;
-    transform: translate(0, -50%);
-    box-shadow: 2px 0px 5px gray;
-    background: rgba(61, 84, 112, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.318);
-    color: white;
-    z-index: 1;
-}
-
-.new-toggle-button>i {
-    transform: rotate(180deg);
-}
-
-.toggle-button i::before {
-    transform: rotate(180deg);
-} */
 
 .bar-function {
 
@@ -340,6 +304,11 @@ body {
     min-width: 380px;
     min-height: 260px;
     margin: 0px 0px 30px -10px;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.rest-name {
+    font-weight: bold;
 }
 
 .card>ul {
@@ -378,4 +347,26 @@ body {
     width: 100%;
     /* height: 100%; */
     height: 100px;
+}
+
+.banner2 {
+    font-weight: bold;
+    font-size: 40px;
+    color: rgba(255, 111, 33);
+}
+
+.banner1 {
+    font-size: 20px;
+    color: rgba(255, 111, 33);
+}
+
+.switchMap {
+    font-size: 30px;
+    color: rgba(255, 111, 33);
+}
+
+.switchMap:hover {
+    font-size: 30px;
+    color: rgb(253, 25, 0);
+    cursor: pointer;
 }
