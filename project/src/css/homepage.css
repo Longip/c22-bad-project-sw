@@ -1,5 +1,5 @@
 body {
-
+    user-select: none;
     box-sizing: border-box;
     background-color: #f7f6f6;
     font-family: 'Yeseva One', cursive;

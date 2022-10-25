@@ -1,8 +1,7 @@
 body {
-    /* margin: 0;
-    padding: 0;
+    user-select: none;
     box-sizing: border-box;
-    background-color: white; */
+    background-color: white;
     font-family: 'Yeseva One', cursive;
     font-size: 18px;
 }

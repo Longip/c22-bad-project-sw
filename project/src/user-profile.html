@@ -81,7 +81,7 @@
                 <div class="basic-profile-container">
                     <div class="profile-content">
                         <div class="profile-content-name">
-                            <i class="fa-solid fa-signature nameText"> Name : </i>
+                            <i class="fa-solid fa-user-pen"> Name : </i>
                         </div>
                         <div class="profile-content-location">
                             <i class="fa-solid fa-location-dot locationText"> Location : </i>
@@ -108,26 +108,28 @@
                 <!-- ================================================ ALBUM ================================================= -->
                 <section class="album-container">
                     <div class="row">
-                        <h3>
-                            <i class="fa fa-camera-retro heading-icon" aria-hidden="true"></i>
-                            Your Photo Gallery
-                        </h3>
+
                         <form id="user-album-form" action="/album-formidable" method="POST"
                             enctype="multipart/form-data">
                             <div class="input-file">
-                                <input type="file" name="image" class="choose-photo-btn" multiple>
+                                <input type="file" name="image" class="choose-photo-btn" value="Choose your file"
+                                    multiple>
                             </div>
                             <div class="memo-submit">
-                                <input type="submit" class="form-submit-btn" />
+                                <input type="submit" class="form-submit-btn" value="upload" />
                             </div>
 
                         </form>
-                        <div class="gallery-Container">
-                            <div class="photo-conatiner">
-                                <img class="photo" src="../uploads/Cls-0.8989422531171536.jpeg" alt="image" />
-                                <div class="delete-btn" data_index="${index}">
-                                    <i class="fa-solid fa-trash" data_index="${index}"></i>
-                                </div>
+                    </div>
+                    <div class="gallery-title">
+                        <i class="fa fa-camera-retro heading-icon" aria-hidden="true"></i>
+                        Your Photo Gallery
+                    </div>
+                    <div class="gallery-Container">
+                        <div class="photo-conatiner">
+                            <img class="photo" src="../uploads/Cls-0.8989422531171536.jpeg" alt="image" />
+                            <div class="delete-btn" data_index="${index}">
+                                <i class="fa-solid fa-trash" data_index="${index}"></i>
                             </div>
                         </div>
                     </div>

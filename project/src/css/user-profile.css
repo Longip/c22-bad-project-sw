@@ -1,5 +1,5 @@
 body {
-
+    user-select: none;
     box-sizing: border-box;
     background-color: #f7f6f6;
     font-family: 'Yeseva One', cursive;
@@ -264,13 +264,14 @@ body {
 .right-container {
     width: 300px;
     height: 350px;
-    border: solid 2px rgba(61, 84, 112, 0.8);
+    border: solid 2px rgba(255, 111, 33);
     border-radius: 7px;
     margin-top: 60px;
     margin-left: 30px;
     display: flex;
     justify-content: center;
     align-items: stretch;
+    color: rgba(255, 111, 33);
 }
 
 .circular-container {
@@ -279,6 +280,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    color: rgba(255, 111, 33);
 }
 
 
@@ -308,7 +310,13 @@ body {
 }
 
 .cuisine-result {
-    margin-top: 10px;
+    margin-top: 15px;
+    text-align: center;
+
+}
+
+.foodCat {
+    font-size: 80px;
 }
 
 /* ======================================= Profile ======================================= */
@@ -316,20 +324,22 @@ body {
 
 .basic-profile-container {
     height: auto;
-    background-color: white;
+    background-color: #f7f6f6;
     margin: 20px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: 16px;
+    font-size: 30px;
     border-bottom: solid 1px gray;
     /* can delete */
     width: 100vw;
+    color: rgba(255, 111, 33);
 }
 
 .profile-content {
     margin-top: 15px;
     text-align: center;
+    font-size: 60px;
 }
 
 
@@ -370,6 +380,13 @@ body {
     font-size: 22px;
 }
 
+.gallery-title {
+    margin-left: 35px;
+    color: rgba(255, 111, 33);
+    font-size: 25px;
+    text-align: center;
+}
+
 /* ======================================= Gallery ======================================= */
 
 .gallery-Container {
@@ -377,11 +394,11 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-
+    margin-top: 25px;
 }
 
 .photo {
-
+    margin: 10px;
     width: 300px;
     height: 300px;
     object-fit: cover;
