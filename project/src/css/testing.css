@@ -78,6 +78,11 @@ body {
 
 }
 
+.menu-btn {
+    cursor: pointer;
+    color: white;
+}
+
 
 /* ======================================= Dropdown ======================================= */
 
@@ -94,6 +99,7 @@ body {
 }
 
 .left-sidebar {
+    display: none;
     flex-grow: 2;
     max-width: 230px;
     padding: 10px;
@@ -266,6 +272,12 @@ body {
 
 .fa-pen-to-square {
     font-size: 12px;
+}
+
+.fa-xmark {
+    font-size: 12px;
+    cursor: pointer;
+    text-align: end;
 }
 
 /* ======================================= CONTENT ======================================= */
