@@ -111,9 +111,13 @@
 
                         <form id="user-album-form" action="/album-formidable" method="POST"
                             enctype="multipart/form-data">
+
                             <div class="input-file">
-                                <input type="file" name="image" class="choose-photo-btn" value="Choose your file"
-                                    multiple>
+                                <div class="upload-container">
+                                    <input type="file" name="image" class="choose-photo-btn" value="Choose your file"
+                                        multiple>
+                                    <label id="choose-photo-btn-label" for="choose-photo-btn">Choose file</label>
+                                </div>
                             </div>
                             <div class="memo-submit">
                                 <input type="submit" class="form-submit-btn" value="upload" />
