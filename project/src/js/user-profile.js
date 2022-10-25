@@ -1,25 +1,3 @@
-// circular-progress bar
-
-// let progressBar = document.querySelector(".circular-progress");
-// let valueContainer = document.querySelector(".value-container");
-
-
-// let progressValue = 0;
-// let progressEndValue = 67;  // wait for the training model value
-// let speed = 20;
-
-// let progress = setInterval(() => {
-//     progressValue++;
-//     valueContainer.textContent = `${progressValue}%`;
-//     progressBar.style.background = `conic-gradient(
-//       #4d5bf9 ${progressValue * 3.6}deg,
-//       #cadcff ${progressValue * 3.6}deg
-//   )`;
-//     if (progressValue == progressEndValue) {
-//         clearInterval(progress);
-//     }
-// }, speed);
-
 // profile bar 
 
 let button = document.querySelector(".toggle-button");
@@ -123,10 +101,12 @@ async function loadAlbum() {
     const res = await fetch('/album')
     const datas = await res.json()
     console.log(datas)
+    console.log(datas[0])
+    console.log(datas[1])
     if (res.ok) {
         let html = ''
         let index = 0
-        for (let data of datas) {
+        for (let data of datas[0]) {
             // console.log(data.image_source)
             html += `
             <div class="photo-conatiner">
@@ -165,6 +145,22 @@ async function loadAlbum() {
             }
         })
     }
+    document.querySelector('.nameText').innerHTML = `Name : ${datas[1].username}`
+
+    // get location
+    const location = await fetch('/user/location')
+    const locationResult = await location.json()
+    document.querySelector('.locationText').innerHTML = `Location : ${locationResult}`
+
+    //get user favourites category
+    const favouritesCategory = await fetch('/user/favouriteCat')
+    const favouritesCategoryResult = await favouritesCategory.json()
+    console.log("HAHAHAH");
+    console.log(favouritesCategoryResult)
+    document.querySelector('.foodCat').innerHTML = `${favouritesCategoryResult}`
+
+
+
     console.log("Albums loaded successfully")
 }
 
@@ -186,7 +182,34 @@ memowallFormElement.addEventListener("submit", async (e) => {
         method: "POST",
         body: formData
     })
-    console.log("CP3")
+    let num = await res.json()
+    console.log(num)
+
+    document.querySelector('.value-container').innerHTML = `${num}%`
+
+
+
+    // circular-progress bar
+
+    let progressBar = document.querySelector(".circular-progress");
+    let valueContainer = document.querySelector(".value-container");
+
+
+    let progressValue = 0;
+    let progressEndValue = num;  // wait for the training model value
+    let speed = 20;
+
+    let progress = setInterval(() => {
+        progressValue++;
+        valueContainer.textContent = `${progressValue}%`;
+        progressBar.style.background = `conic-gradient(
+          #4d5bf9 ${progressValue * 3.6}deg,
+          #cadcff ${progressValue * 3.6}deg
+      )`;
+        if (progressValue == progressEndValue) {
+            clearInterval(progress);
+        }
+    }, speed);
 
     if (res.status === 200) {
         console.log("reload the page")

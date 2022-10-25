@@ -18,3 +18,5 @@ userRoutes.post('/register', userController.register);
 userRoutes.post('/logout', userController.logout);
 userRoutes.post('/profilePicture', userController.changeProfilePicture);
 userRoutes.get('/username', userController.username);
+userRoutes.get('/location', userController.getDistrict);
+userRoutes.get('/favouriteCat', userController.getFavouriteCat);
