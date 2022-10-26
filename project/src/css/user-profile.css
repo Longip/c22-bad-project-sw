@@ -2,8 +2,9 @@ body {
     user-select: none;
     box-sizing: border-box;
     background-color: #f7f6f6;
-    font-family: 'Yeseva One', cursive;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
+
 }
 
 
@@ -16,7 +17,7 @@ body {
 .row {
     margin: 0;
     padding: 0;
-    width: 100vw;
+    /* width: 100vw; */
 }
 
 .col {
@@ -183,6 +184,7 @@ body {
     color: white;
     text-align: center;
     margin-left: 15px;
+    transform: translateY(-50px);
 }
 
 .choose-photo-btn {
@@ -216,6 +218,7 @@ body {
     color: white;
     text-align: center;
     margin-left: 15px;
+    transform: translateY(-50px);
 }
 
 
@@ -377,7 +380,7 @@ body {
     font-size: 30px;
     border-bottom: solid 1px gray;
     /* can delete */
-    width: 100vw;
+    /* width: 100vw; */
     color: rgba(255, 111, 33);
 }
 
@@ -385,6 +388,7 @@ body {
     margin-top: 15px;
     text-align: center;
     font-size: 60px;
+    font-family: 'Poppins', sans-serif;
 }
 
 

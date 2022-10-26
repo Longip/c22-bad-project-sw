@@ -2,7 +2,7 @@ body {
     user-select: none;
     box-sizing: border-box;
     background-color: #f7f6f6;
-    font-family: 'Yeseva One', cursive;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
 }
 
@@ -304,6 +304,7 @@ body {
     min-width: 380px;
     min-height: 260px;
     margin: 0px 0px 30px -10px;
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
 .rest-name {
