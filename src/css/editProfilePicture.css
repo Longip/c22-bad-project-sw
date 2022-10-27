@@ -2,11 +2,9 @@ body {
     user-select: none;
     box-sizing: border-box;
     background-color: #f7f6f6;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 18px;
-
 }
-
 
 .container {
     box-sizing: border-box;
@@ -35,11 +33,9 @@ body {
     display: flex;
     justify-content: space-around;
     /* overflow: hidden; */
-
 }
 
 /* ======================================= TOP BANNER ======================================= */
-
 
 .top-banner {
     /* background-image: url(../assets/site-images/header4.png);
@@ -53,14 +49,11 @@ body {
     opacity: 0.8;
     width: 100vw;
     background-color: white;
-
 }
 
-.banner-logo>img {
+.banner-logo > img {
     transform: scale(0.8) translate(-150px, -160px);
 }
-
-
 
 /* ======================================= NAVBAR ======================================= */
 
@@ -86,9 +79,7 @@ body {
 }
 
 .ourlogo {
-    transform:
-        scale(0.7) translate(-110px, -50px);
-
+    transform: scale(0.7) translate(-110px, -50px);
 }
 
 .menu-btn {
@@ -97,7 +88,6 @@ body {
 }
 
 /* ======================================= Profile-bar ======================================= */
-
 
 .main-container {
     width: 100vw;
@@ -157,7 +147,7 @@ body {
     transition: all 0.5s;
 }
 
-.user-image>.image-src>img {
+.user-image > .image-src > img {
     width: 150px;
     height: 150px;
     object-fit: cover;
@@ -210,7 +200,6 @@ body {
     align-items: center;
 }
 
-
 #choose-photo-btn-label {
     margin-top: 15px;
     width: 100px;
@@ -224,7 +213,6 @@ body {
     transform: translateY(-50px);
 }
 
-
 .user-info {
     height: 0px;
     transition-delay: 0s;
@@ -232,35 +220,33 @@ body {
 }
 
 .bar-function {
-
     color: snow;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     text-align: center;
-
 }
 
-.bar-function>div {
+.bar-function > div {
     margin-top: 30px;
     cursor: pointer;
 }
 
-.bar-function>a {
+.bar-function > a {
     margin-top: 30px;
     cursor: pointer;
     text-decoration: none;
     color: white;
 }
 
-.bar-function>div:hover {
+.bar-function > div:hover {
     transform: translateY(-5px) scale(1.1) translateZ(0);
     cursor: pointer;
     transition-duration: 0.4s;
 }
 
-.bar-function>a:hover {
+.bar-function > a:hover {
     transform: translateY(-5px) scale(1.1) translateZ(0);
     cursor: pointer;
     transition-duration: 0.4s;
@@ -311,7 +297,6 @@ body {
 
 /* ======================================= Circular-progress-bar ======================================= */
 
-
 .right-container {
     width: 300px;
     height: 350px;
@@ -333,7 +318,6 @@ body {
     margin-top: 10px;
     color: rgba(255, 111, 33);
 }
-
 
 .circular-progress {
     position: relative;
@@ -363,7 +347,6 @@ body {
 .cuisine-result {
     margin-top: 15px;
     text-align: center;
-
 }
 
 .foodCat {
@@ -371,7 +354,6 @@ body {
 }
 
 /* ======================================= Profile ======================================= */
-
 
 .basic-profile-container {
     height: auto;
@@ -391,9 +373,8 @@ body {
     margin-top: 15px;
     text-align: center;
     font-size: 60px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
-
 
 /* ======================================= Album ======================================= */
 .album-container {
@@ -409,11 +390,10 @@ body {
 }
 
 .form-btn:hover {
-    scale: 1.1;
+    transform: scale(1.1);
 }
 
-
-.inner>a>img {
+.inner > a > img {
     width: 300px;
     height: 300px;
     border-radius: 7px;
@@ -490,9 +470,7 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-
 }
-
 
 #update-btn {
     margin-top: 15px;
@@ -504,7 +482,6 @@ body {
     color: white;
     text-align: center;
 }
-
 
 .button {
     margin-top: 15px;

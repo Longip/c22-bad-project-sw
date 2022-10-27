@@ -1,39 +1,44 @@
 import { Knex } from "knex";
-import { hashPassword } from "../utils/hash"
-
-
+import { User } from "../model/User";
+import { hashPassword } from "../utils/hash";
 
 export class UserService {
-    constructor(private knex: Knex) { }
+    constructor(private knex: Knex) {}
 
-    async getUserByUsername(username: string): Promise<any> {
+    async getUserByUsername(username: string): Promise<User> {
         let userResult = (
-            await this.knex.raw(/*sql*/`
+            await this.knex.raw(
+                /*sql*/ `
             SELECT * 
             FROM users 
             WHERE username = ?
         `,
-                [username])
-        )
-        return userResult
+                [username]
+            )
+        ).first();
+
+        let userReust2 = this.knex.select("*").from("users").where({ username, price: 20 }).first();
+        console.log(userReust2.toSQL());
+        await userReust2;
+        return userResult;
     }
 
-    async createUser(username: string, password: string, email: string | null): Promise<any> {
+    async createUser(username: string, password: string, email: string | null): Promise<User> {
+        let hashedPassword = await hashPassword(password);
 
-        let hashedPassword = await hashPassword(password)
+        let result = await this.knex
+            .insert({
+                username: username,
+                password: hashedPassword,
+            })
+            .into("users")
+            .returning("*");
 
-
-        let result = await this.knex.insert({
-            username: username,
-            password: hashedPassword
-        }).into("users").returning('*');
-
-        return result;
+        return result[0];
     }
 
     async getDistrict(x: any, y: any): Promise<any> {
-        let locationResult = (
-            await this.knex.raw(/*sql*/`
+        let locationResult = await this.knex.raw(/*sql*/ `
             with 
             distinct_district as (
                 select 
@@ -47,38 +52,28 @@ export class UserService {
             )
             select * from distriect_rand_resto join restaurants r on r.id = distriect_rand_resto.restaurant_id
             ORDER BY coordinates <-> point '(${x}, ${y})' LIMIT 1
-        `,
-            ))
-        return locationResult
+        `);
+        return locationResult;
     }
 
-    async getDistrictName (district_id: number): Promise<any> {
-
-        let districtResult = (
-            await this.knex.raw(`
+    async getDistrictName(district_id: number): Promise<any> {
+        let districtResult = await this.knex.raw(`
             select name from districts where id = ${district_id}
-        `,
-            ))
-        return districtResult
-    }
-    async getFavouriteCatID (user_id: number): Promise<any> {
+        `);
 
-        let districtResult = (
-            await this.knex.raw(`
+        return districtResult;
+    }
+    async getFavouriteCatID(user_id: number): Promise<any> {
+        let districtResult = await this.knex.raw(`
             select category_id from user_food_category where user_id = ${user_id}
-        `,
-            ))
-        return districtResult
+        `);
+        return districtResult;
     }
 
-    async getFoodCat (cat_id: number): Promise<any> {
-
-        let result = (
-            await this.knex.raw(`
+    async getFoodCat(cat_id: number): Promise<any> {
+        let result = await this.knex.raw(`
             select name from food_categories where id = ${cat_id}
-        `,
-            ))
-        return result
+        `);
+        return result;
     }
-
 }
